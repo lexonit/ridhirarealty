@@ -1,0 +1,175 @@
+
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import SectionWrapper from '../components/ui/SectionWrapper';
+import ContactSection from '../components/ContactSection';
+import { ThreeDCard } from '../components/ui/AceternityUI';
+import { Icons } from '../components/ui/Icons';
+import { motion } from 'framer-motion';
+import { blogService } from '../services/blogService';
+import { insightsService } from '../services/insightsService';
+import { BlogPost, HeroSectionData } from '../types';
+import { Skeleton } from '../components/ui/Skeleton';
+
+const InsightsPage: React.FC = () => {
+  const [loading, setLoading] = useState(true);
+  const [heroData, setHeroData] = useState<HeroSectionData | null>(null);
+  const [articles, setArticles] = useState<BlogPost[]>([]);
+  const [videos, setVideos] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      const [hero, blogPosts, vids] = await Promise.all([
+        insightsService.getHeroData(),
+        blogService.getAllPosts(),
+        insightsService.getVideos()
+      ]);
+      setHeroData(hero);
+      setArticles(blogPosts);
+      setVideos(vids);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  if (loading || !heroData) {
+    return (
+      <main className="bg-white dark:bg-black min-h-screen">
+         <Skeleton className="h-[60vh] w-full rounded-none" />
+         <div className="container mx-auto px-6 py-24 space-y-12">
+            <Skeleton className="h-64 w-full" />
+            <Skeleton className="h-64 w-full" />
+         </div>
+      </main>
+    );
+  }
+
+  return (
+    <main className="bg-white dark:bg-black min-h-screen transition-colors duration-300">
+      
+      {/* Hero Section */}
+      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+         <div className="absolute inset-0 z-0">
+           <img 
+             src={heroData.backgroundImage}
+             alt={heroData.subTitleLabel}
+             className="w-full h-full object-cover"
+           />
+           <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
+         </div>
+         
+         <div className="relative z-10 container mx-auto px-6 text-center">
+           <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span>
+           <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">{heroData.title}</h1>
+           <p className="text-white/80 max-w-xl mx-auto text-lg font-light">
+             {heroData.subtitle}
+           </p>
+         </div>
+      </div>
+
+      {/* Articles Section */}
+      <div className="container mx-auto px-6 py-24 border-b border-slate-200 dark:border-white/5">
+        <div className="flex items-center justify-between mb-12">
+          <h2 className="text-3xl font-serif text-slate-900 dark:text-white">Latest Market Trends</h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
+            {articles.map((article, idx) => (
+              <SectionWrapper key={article.id} delay={idx * 0.1}>
+                <Link to={`/insights/${article.id}`} className="group cursor-pointer block h-full">
+                  <div className="overflow-hidden rounded-2xl mb-6 relative h-[300px] shadow-lg dark:shadow-none">
+                    <img 
+                      src={article.image} 
+                      alt={article.title} 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute top-4 left-4 bg-brand-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-widest">
+                      {article.category}
+                    </div>
+                  </div>
+                  <div className="flex items-center text-slate-500 dark:text-white/40 text-xs uppercase tracking-widest mb-3">
+                    {article.date} • {article.readTime}
+                  </div>
+                  <h3 className="text-2xl font-serif text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors mb-3">
+                    {article.title}
+                  </h3>
+                  <p className="text-slate-600 dark:text-white/60 text-sm line-clamp-2">
+                    {article.excerpt}
+                  </p>
+                </Link>
+              </SectionWrapper>
+            ))}
+        </div>
+      </div>
+
+      {/* Video Gallery Section */}
+      <div className="bg-slate-50 dark:bg-luxury-charcoal py-24 relative overflow-hidden transition-colors duration-300">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-brand-600 dark:text-brand-500 uppercase tracking-widest text-sm block mb-4 font-semibold">Multimedia</span>
+            <h2 className="text-4xl font-serif text-slate-900 dark:text-white">Exclusive Video Content</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {videos.map((video, idx) => (
+              // @ts-ignore: Suppressing strict type check for standard motion props
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+              >
+                <ThreeDCard className="w-full h-[320px] cursor-pointer group">
+                  <div className="relative h-full w-full rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl bg-black">
+                    {/* Thumbnail */}
+                    <img 
+                      src={video.image} 
+                      alt={video.title} 
+                      className="w-full h-full object-cover opacity-90 dark:opacity-80 group-hover:opacity-70 dark:group-hover:opacity-60 transition-opacity duration-500"
+                    />
+                    
+                    {/* Play Button Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-white/20 dark:bg-white/10 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                        <Icons.Play className="w-8 h-8 text-white fill-white ml-1" />
+                      </div>
+                    </div>
+
+                    {/* Metadata Overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent pt-12">
+                      <h3 className="text-lg font-serif text-white mb-2 line-clamp-1 group-hover:text-brand-400 transition-colors">{video.title}</h3>
+                      <div className="flex items-center justify-between text-xs text-white/60">
+                         <span className="flex items-center gap-1"><Icons.Clock className="w-3 h-3" /> {video.duration}</span>
+                         <span className="flex items-center gap-1"><Icons.Eye className="w-3 h-3" /> {video.views} views</span>
+                      </div>
+                    </div>
+
+                    {/* Hover Effect */}
+                    <div className="absolute inset-0 border-2 border-brand-500/0 group-hover:border-brand-500/50 rounded-xl transition-colors duration-500 pointer-events-none"></div>
+                  </div>
+                </ThreeDCard>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+             <a 
+               href="https://www.youtube.com/@invest_dubai_ramesh" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               className="inline-block text-brand-600 dark:text-brand-400 hover:text-slate-900 dark:hover:text-white uppercase tracking-widest text-xs border-b border-brand-500/30 hover:border-slate-900 dark:hover:border-white pb-1 transition-all"
+             >
+               Visit Our YouTube Channel
+             </a>
+          </div>
+        </div>
+      </div>
+      
+      <ContactSection />
+    </main>
+  );
+};
+
+export default InsightsPage;

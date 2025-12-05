@@ -1,17 +1,27 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { blogService } from '../services/blogService';
 import { BlogPost } from '../types';
 import { Icons } from '../components/ui/Icons';
 import SectionWrapper from '../components/ui/SectionWrapper';
 import { Skeleton } from '../components/ui/Skeleton';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const BlogPostPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [post, setPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
   const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
+
+  // Parallax Hero
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -52,6 +62,7 @@ const BlogPostPage: React.FC = () => {
   if (!post) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-luxury-black text-slate-900 dark:text-white">
+        <SEO title="Article Not Found" />
         <h2 className="text-3xl font-serif mb-4">Article Not Found</h2>
         <Link to="/insights" className="text-brand-500 hover:underline">Return to Insights Hub</Link>
       </div>
@@ -60,31 +71,40 @@ const BlogPostPage: React.FC = () => {
 
   return (
     <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
+      <SEO 
+        title={post.title} 
+        description={post.excerpt}
+        image={post.image}
+      />
       
       {/* Hero Image */}
-      <div className="relative h-[60vh] w-full overflow-hidden">
-        <img 
-          src={post.image} 
-          alt={post.title} 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
+      <div ref={heroRef} className="relative h-[60vh] w-full overflow-hidden">
+        <motion.div style={{ y }} className="absolute inset-0">
+          <img 
+            src={post.image} 
+            alt={post.title} 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
+        </motion.div>
         
         <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 z-20">
           <div className="container mx-auto">
-            <span className="bg-brand-600 text-white px-3 py-1 text-xs font-bold uppercase tracking-widest inline-block mb-4">
-              {post.category}
-            </span>
-            <h1 className="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight max-w-4xl">
-              {post.title}
-            </h1>
-            <div className="flex flex-wrap gap-6 text-white/80 text-sm font-light tracking-wide items-center">
-              <span className="flex items-center gap-2"><Icons.Users className="w-4 h-4" /> {post.author}</span>
-              <span className="w-px h-4 bg-white/30"></span>
-              <span className="flex items-center gap-2"><Icons.Clock className="w-4 h-4" /> {post.date}</span>
-              <span className="w-px h-4 bg-white/30"></span>
-              <span>{post.readTime}</span>
-            </div>
+            <SectionWrapper>
+              <span className="bg-brand-600 text-white px-3 py-1 text-xs font-bold uppercase tracking-widest inline-block mb-4">
+                {post.category}
+              </span>
+              <h1 className="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight max-w-4xl">
+                {post.title}
+              </h1>
+              <div className="flex flex-wrap gap-6 text-white/80 text-sm font-light tracking-wide items-center">
+                <span className="flex items-center gap-2"><Icons.Users className="w-4 h-4" /> {post.author}</span>
+                <span className="w-px h-4 bg-white/30"></span>
+                <span className="flex items-center gap-2"><Icons.Clock className="w-4 h-4" /> {post.date}</span>
+                <span className="w-px h-4 bg-white/30"></span>
+                <span>{post.readTime}</span>
+              </div>
+            </SectionWrapper>
           </div>
         </div>
       </div>
@@ -120,39 +140,43 @@ const BlogPostPage: React.FC = () => {
           <div className="lg:col-span-1 space-y-12">
             
             {/* Author Box */}
-            <div className="bg-slate-50 dark:bg-luxury-charcoal p-8 rounded-xl border border-slate-200 dark:border-white/5">
-              <h3 className="font-serif text-xl text-slate-900 dark:text-white mb-4">About the Author</h3>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-brand-200 dark:bg-brand-900 rounded-full flex items-center justify-center">
-                  <span className="font-serif font-bold text-brand-800 dark:text-brand-200 text-lg">RR</span>
+            <SectionWrapper delay={0.2}>
+              <div className="bg-slate-50 dark:bg-luxury-charcoal p-8 rounded-xl border border-slate-200 dark:border-white/5">
+                <h3 className="font-serif text-xl text-slate-900 dark:text-white mb-4">About the Author</h3>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-brand-200 dark:bg-brand-900 rounded-full flex items-center justify-center">
+                    <span className="font-serif font-bold text-brand-800 dark:text-brand-200 text-lg">RR</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 dark:text-white">{post.author}</p>
+                    <p className="text-xs text-slate-500 dark:text-white/50 uppercase tracking-widest">Real Estate Analyst</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-bold text-slate-900 dark:text-white">{post.author}</p>
-                  <p className="text-xs text-slate-500 dark:text-white/50 uppercase tracking-widest">Real Estate Analyst</p>
-                </div>
+                <p className="text-slate-600 dark:text-white/60 text-sm leading-relaxed">
+                  Specializing in luxury property market analysis and investment strategies within the UAE region.
+                </p>
               </div>
-              <p className="text-slate-600 dark:text-white/60 text-sm leading-relaxed">
-                Specializing in luxury property market analysis and investment strategies within the UAE region.
-              </p>
-            </div>
+            </SectionWrapper>
 
             {/* Related Posts */}
-            <div>
-              <h3 className="font-serif text-xl text-slate-900 dark:text-white mb-6">More Insights</h3>
-              <div className="space-y-6">
-                {relatedPosts.map(rel => (
-                  <Link to={`/insights/${rel.id}`} key={rel.id} className="group block">
-                    <div className="h-40 overflow-hidden rounded-lg mb-3 relative">
-                      <img src={rel.image} alt={rel.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    </div>
-                    <span className="text-xs text-brand-600 dark:text-brand-400 uppercase tracking-widest font-bold">{rel.category}</span>
-                    <h4 className="font-serif text-lg text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors mt-1">
-                      {rel.title}
-                    </h4>
-                  </Link>
-                ))}
+            <SectionWrapper delay={0.3}>
+              <div>
+                <h3 className="font-serif text-xl text-slate-900 dark:text-white mb-6">More Insights</h3>
+                <div className="space-y-6">
+                  {relatedPosts.map(rel => (
+                    <Link to={`/insights/${rel.id}`} key={rel.id} className="group block">
+                      <div className="h-40 overflow-hidden rounded-lg mb-3 relative">
+                        <img src={rel.image} alt={rel.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      </div>
+                      <span className="text-xs text-brand-600 dark:text-brand-400 uppercase tracking-widest font-bold">{rel.category}</span>
+                      <h4 className="font-serif text-lg text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors mt-1">
+                        {rel.title}
+                      </h4>
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
+            </SectionWrapper>
 
           </div>
         </div>

@@ -15,6 +15,7 @@ import { motion } from 'framer-motion';
 import { Property, FeatureItem, DeveloperLogo } from '../types';
 import { Skeleton } from '../components/ui/Skeleton';
 import LuxuryPropertyCard from '../components/LuxuryPropertyCard';
+import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   const [featuredProjects, setFeaturedProjects] = useState<Property[]>([]);
@@ -53,6 +54,11 @@ const Home: React.FC = () => {
 
   return (
     <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
+      <SEO 
+        title="Top Luxury Real Estate Agents Dubai" 
+        description="Discover the best luxury properties in Dubai with Ridhira Realty. We specialize in high-ROI off-plan investments, waterfront villas, and Golden Visa advisory."
+      />
+
       {/* Video Hero Section */}
       <Hero />
       

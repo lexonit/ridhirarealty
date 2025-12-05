@@ -1,12 +1,13 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import SectionWrapper from '../components/ui/SectionWrapper';
 import ContactSection from '../components/ContactSection';
 import { Icons } from '../components/ui/Icons';
-import { TextReveal } from '../components/ui/AceternityUI';
 import { aboutService } from '../services/aboutService';
 import { HeroSectionData, FeatureItem } from '../types';
 import { Skeleton } from '../components/ui/Skeleton';
+import SEO from '../components/SEO';
 
 const AboutPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -17,6 +18,14 @@ const AboutPage: React.FC = () => {
   const [teamExpertise, setTeamExpertise] = useState<FeatureItem[]>([]);
   const [promises, setPromises] = useState<string[]>([]);
   const [vision, setVision] = useState<any>(null);
+
+  // Parallax Hero Refs
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,24 +67,30 @@ const AboutPage: React.FC = () => {
 
   return (
     <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
+      <SEO 
+        title="About Us - Trusted Real Estate Advisory" 
+        description="Learn about Ridhira Realty's mission to redefine property investment through transparency, data-driven insights, and unwavering trust."
+      />
       
-      {/* Hero Section */}
-      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-         <div className="absolute inset-0 z-0">
+      {/* Hero Section with Parallax */}
+      <div ref={heroRef} className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+         <motion.div style={{ y }} className="absolute inset-0 z-0">
            <img 
              src={heroData.backgroundImage}
              alt={heroData.subTitleLabel}
              className="w-full h-full object-cover"
            />
            <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
-         </div>
+         </motion.div>
          
          <div className="relative z-10 container mx-auto px-6 text-center">
-           <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span>
-           <h1 className="text-5xl md:text-7xl font-serif text-white mb-6" dangerouslySetInnerHTML={{ __html: heroData.title }}></h1>
-           <p className="text-white/80 max-w-2xl mx-auto text-lg font-light leading-relaxed">
-             {heroData.subtitle}
-           </p>
+           <SectionWrapper>
+             <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span>
+             <h1 className="text-5xl md:text-7xl font-serif text-white mb-6" dangerouslySetInnerHTML={{ __html: heroData.title }}></h1>
+             <p className="text-white/80 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+               {heroData.subtitle}
+             </p>
+           </SectionWrapper>
          </div>
       </div>
 

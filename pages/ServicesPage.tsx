@@ -1,12 +1,13 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import SectionWrapper from '../components/ui/SectionWrapper';
 import ContactSection from '../components/ContactSection';
 import { Icons } from '../components/ui/Icons';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { servicePageService } from '../services/servicePageService';
 import { HeroSectionData, FeatureItem, StatItem } from '../types';
 import { Skeleton } from '../components/ui/Skeleton';
+import SEO from '../components/SEO';
 
 const ServicesPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -14,6 +15,14 @@ const ServicesPage: React.FC = () => {
   const [services, setServices] = useState<FeatureItem[]>([]);
   const [propertyTypes, setPropertyTypes] = useState<any[]>([]);
   const [investmentStats, setInvestmentStats] = useState<StatItem[]>([]);
+
+  // Parallax Hero
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,23 +57,30 @@ const ServicesPage: React.FC = () => {
 
   return (
     <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
+      <SEO 
+        title="Our Services - Property Management & Consultation" 
+        description="Comprehensive real estate services including investment advisory, property management, golden visa assistance, and residential sales."
+      />
+      
       {/* Hero Section */}
-      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-         <div className="absolute inset-0 z-0">
+      <div ref={heroRef} className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+         <motion.div style={{ y }} className="absolute inset-0 z-0">
            <img 
              src={heroData.backgroundImage}
              alt={heroData.subTitleLabel}
              className="w-full h-full object-cover"
            />
            <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
-         </div>
+         </motion.div>
          
          <div className="relative z-10 container mx-auto px-6 text-center">
-           <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span>
-           <h1 className="text-4xl md:text-6xl font-serif text-white mb-6">{heroData.title}</h1>
-           <p className="text-white/80 max-w-3xl mx-auto leading-relaxed text-lg font-light">
-             {heroData.subtitle}
-           </p>
+           <SectionWrapper>
+             <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span>
+             <h1 className="text-4xl md:text-6xl font-serif text-white mb-6">{heroData.title}</h1>
+             <p className="text-white/80 max-w-3xl mx-auto leading-relaxed text-lg font-light">
+               {heroData.subtitle}
+             </p>
+           </SectionWrapper>
          </div>
       </div>
 

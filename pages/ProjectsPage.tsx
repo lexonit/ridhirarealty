@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import PropertyGrid from '../components/PropertyGrid';
 import { propertyService } from '../services/propertyService';
@@ -7,6 +7,8 @@ import SectionWrapper from '../components/ui/SectionWrapper';
 import { Property } from '../types';
 import { Icons } from '../components/ui/Icons';
 import { MOCK_PROPERTIES } from '../services/mockData';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const ProjectsPage: React.FC = () => {
   const [properties, setProperties] = useState<Property[]>([]);
@@ -17,6 +19,14 @@ const ProjectsPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
   const [selectedType, setSelectedType] = useState('All');
   const [priceRange, setPriceRange] = useState('All');
+
+  // Parallax Hero
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   // Load initial data
   useEffect(() => {
@@ -74,25 +84,31 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
+      <SEO 
+        title="Luxury Projects & Properties" 
+        description="Browse our curated collection of luxury villas, apartments, and penthouses in Dubai's most prestigious communities."
+      />
       
       {/* Hero Section */}
-      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-         <div className="absolute inset-0 z-0">
+      <div ref={heroRef} className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+         <motion.div style={{ y }} className="absolute inset-0 z-0">
            <img 
              src="https://images.unsplash.com/photo-1512453979798-5ea904f8486d?q=80&w=2070&auto=format&fit=crop" 
              alt="Dubai Skyline" 
              className="w-full h-full object-cover"
            />
            <div className="absolute inset-0 bg-black/50 dark:bg-black/60" />
-         </div>
+         </motion.div>
          
          <div className="relative z-10 container mx-auto px-6 text-center">
-           <div className="w-px h-16 bg-gradient-to-b from-brand-500 to-transparent mx-auto mb-6"></div>
-           <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">Our Portfolio</span>
-           <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">Master Projects</h1>
-           <p className="text-white/80 max-w-xl mx-auto text-lg font-light">
-             Explore our collection of iconic developments defining the future of luxury living in Dubai and beyond.
-           </p>
+           <SectionWrapper>
+             <div className="w-px h-16 bg-gradient-to-b from-brand-500 to-transparent mx-auto mb-6"></div>
+             <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">Our Portfolio</span>
+             <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">Master Projects</h1>
+             <p className="text-white/80 max-w-xl mx-auto text-lg font-light">
+               Explore our collection of iconic developments defining the future of luxury living in Dubai and beyond.
+             </p>
+           </SectionWrapper>
          </div>
       </div>
 

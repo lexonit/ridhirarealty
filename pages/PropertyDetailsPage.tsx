@@ -1,12 +1,13 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { propertyService } from '../services/propertyService';
 import { Property } from '../types';
 import { Icons } from '../components/ui/Icons';
 import SectionWrapper from '../components/ui/SectionWrapper';
 import { Skeleton } from '../components/ui/Skeleton';
+import SEO from '../components/SEO';
 
 const PropertyDetailsPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -14,6 +15,14 @@ const PropertyDetailsPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [activeSection, setActiveSection] = useState('overview');
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+
+  // Parallax Hero
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   useEffect(() => {
     const fetchProperty = async () => {
@@ -142,6 +151,7 @@ const PropertyDetailsPage: React.FC = () => {
   if (!property) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-luxury-black text-slate-900 dark:text-white">
+        <SEO title="Property Not Found" />
         <h2 className="text-3xl font-serif mb-4">Property Not Found</h2>
         <Link to="/projects" className="text-brand-500 hover:underline">Return to Portfolio</Link>
       </div>
@@ -150,17 +160,22 @@ const PropertyDetailsPage: React.FC = () => {
 
   return (
     <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
+      <SEO 
+        title={property.title} 
+        description={`${property.title} in ${property.location}. Luxury ${property.type} starting from AED ${(property.price / 1000000).toFixed(1)}M. ${property.description}`}
+        image={property.images[0]}
+      />
       
       {/* --- IMMERSIVE HERO --- */}
-      <div className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0">
+      <div ref={heroRef} className="relative h-screen w-full overflow-hidden">
+        <motion.div style={{ y }} className="absolute inset-0">
           <img 
             src={property.images[0]} 
             alt={property.title} 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90" />
-        </div>
+        </motion.div>
         
         <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 z-20">
           <div className="container mx-auto flex flex-col md:flex-row items-end justify-between gap-8">
@@ -283,10 +298,12 @@ const PropertyDetailsPage: React.FC = () => {
       {/* --- AMENITIES SECTION --- */}
       <section id="amenities" className="py-24 bg-slate-50 dark:bg-luxury-charcoal transition-colors duration-300">
          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-               <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-4">World-Class Amenities</h2>
-               <p className="text-slate-600 dark:text-white/60 max-w-2xl mx-auto">Experience a lifestyle curated for the elite, with facilities that cater to your every need.</p>
-            </div>
+            <SectionWrapper>
+              <div className="text-center mb-16">
+                 <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-4">World-Class Amenities</h2>
+                 <p className="text-slate-600 dark:text-white/60 max-w-2xl mx-auto">Experience a lifestyle curated for the elite, with facilities that cater to your every need.</p>
+              </div>
+            </SectionWrapper>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                {property.amenities.map((amenity, idx) => (
@@ -313,30 +330,34 @@ const PropertyDetailsPage: React.FC = () => {
       {/* --- GALLERY SECTION --- */}
       <section id="gallery" className="py-24 bg-white dark:bg-luxury-black transition-colors duration-300">
          <div className="container mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-12 text-center">Interiors & Views</h2>
+            <SectionWrapper>
+              <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-12 text-center">Interiors & Views</h2>
+            </SectionWrapper>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-               {/* Large Feature Image (Use index 1 or fallback to 0) */}
-               <div className="md:col-span-2 h-[500px] overflow-hidden rounded-sm group relative">
-                  <img src={property.images[1] || property.images[0]} alt="Interior" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-                  <div className="absolute bottom-6 right-6 bg-white/90 dark:bg-black/80 px-4 py-2 text-xs uppercase tracking-widest">Living Area</div>
-               </div>
-               
-               {/* Secondary Images (Use distinct images) */}
-               {property.images.length > 2 ? 
-                 property.images.slice(2, 4).map((img, idx) => (
-                    <div key={idx} className="h-[350px] overflow-hidden rounded-sm group relative">
-                      <img src={img} alt="Detail" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-                    </div>
-                 )) : 
-                 // Fallback if few images, reuse with slight variation
-                 property.images.slice(0, 2).map((img, idx) => (
-                    <div key={idx} className="h-[350px] overflow-hidden rounded-sm group relative">
-                      <img src={img} alt="Detail" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-                    </div>
-                 ))
-               }
-            </div>
+            <SectionWrapper delay={0.2}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                 {/* Large Feature Image (Use index 1 or fallback to 0) */}
+                 <div className="md:col-span-2 h-[500px] overflow-hidden rounded-sm group relative">
+                    <img src={property.images[1] || property.images[0]} alt="Interior" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    <div className="absolute bottom-6 right-6 bg-white/90 dark:bg-black/80 px-4 py-2 text-xs uppercase tracking-widest">Living Area</div>
+                 </div>
+                 
+                 {/* Secondary Images (Use distinct images) */}
+                 {property.images.length > 2 ? 
+                   property.images.slice(2, 4).map((img, idx) => (
+                      <div key={idx} className="h-[350px] overflow-hidden rounded-sm group relative">
+                        <img src={img} alt="Detail" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                      </div>
+                   )) : 
+                   // Fallback if few images, reuse with slight variation
+                   property.images.slice(0, 2).map((img, idx) => (
+                      <div key={idx} className="h-[350px] overflow-hidden rounded-sm group relative">
+                        <img src={img} alt="Detail" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                      </div>
+                   ))
+                 }
+              </div>
+            </SectionWrapper>
             
             <div className="text-center mt-12">
                <button onClick={() => scrollToSection('gallery')} className="border border-slate-900 dark:border-white px-10 py-3 text-slate-900 dark:text-white uppercase tracking-widest text-xs hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
@@ -350,7 +371,7 @@ const PropertyDetailsPage: React.FC = () => {
       <section id="location" className="h-[500px] bg-slate-200 dark:bg-slate-800 relative group overflow-hidden">
          <img src="https://images.unsplash.com/photo-1577083288073-40892c0860a4?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 transition-transform duration-1000" alt="Map Background" />
          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-white dark:bg-luxury-charcoal p-8 md:p-12 shadow-2xl max-w-lg text-center backdrop-blur-md bg-opacity-90 dark:bg-opacity-90">
+            <SectionWrapper className="bg-white dark:bg-luxury-charcoal p-8 md:p-12 shadow-2xl max-w-lg text-center backdrop-blur-md bg-opacity-90 dark:bg-opacity-90">
                <Icons.MapPin className="w-10 h-10 text-brand-600 dark:text-brand-500 mx-auto mb-4" />
                <h3 className="text-2xl font-serif text-slate-900 dark:text-white mb-2">{property.location}</h3>
                <p className="text-slate-600 dark:text-white/60 mb-6">Ideally situated with easy access to major highways, airports, and luxury shopping destinations.</p>
@@ -360,7 +381,7 @@ const PropertyDetailsPage: React.FC = () => {
                >
                  Open in Google Maps
                </button>
-            </div>
+            </SectionWrapper>
          </div>
       </section>
 
@@ -368,7 +389,7 @@ const PropertyDetailsPage: React.FC = () => {
       <section id="register" className="py-24 bg-brand-900 relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
          <div className="container mx-auto px-6 relative z-10">
-            <div className="bg-white dark:bg-luxury-charcoal overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+            <SectionWrapper className="bg-white dark:bg-luxury-charcoal overflow-hidden shadow-2xl flex flex-col lg:flex-row">
                
                {/* Form Side */}
                <div className="p-10 lg:p-16 w-full lg:w-1/2">
@@ -426,7 +447,7 @@ const PropertyDetailsPage: React.FC = () => {
                   </div>
                </div>
 
-            </div>
+            </SectionWrapper>
          </div>
       </section>
 

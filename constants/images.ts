@@ -42,6 +42,10 @@ export const PUBLIC_IMAGES = {
   // What is the Next Section
   rakVision2030: '/whatisthenext/RAKVision2030.jpg',
   wynnResortCasino: '/whatisthenext/WynnResortCasino.png',
+  
+  // Founder Section
+  founderCEO: '/founder/founder-ceo.jpg',
+  founderAdvisoryBoard: '/founder/SRAJUADVISORYBOARDMEMBERDIRECTOR.jpg',
 } as const;
 
 // Image rotation arrays for different sections
@@ -89,4 +93,10 @@ export const WHY_IMAGES = {
 export const WHAT_IS_NEXT_IMAGES = {
   rakVision: PUBLIC_IMAGES.rakVision2030,
   wynnResort: PUBLIC_IMAGES.wynnResortCasino,
+} as const;
+
+// Founder Section Images
+export const FOUNDER_IMAGES = {
+  ceo: PUBLIC_IMAGES.founderCEO,
+  advisoryBoard: PUBLIC_IMAGES.founderAdvisoryBoard,
 } as const;

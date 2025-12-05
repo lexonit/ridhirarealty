@@ -7,6 +7,7 @@ import { aboutService } from '../services/aboutService';
 import { HeroSectionData, FeatureItem } from '../types';
 import { Skeleton } from '../components/ui/Skeleton';
 import SEO from '../components/SEO';
+import { FOUNDER_IMAGES } from '../constants/images';
 
 const AboutPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -17,6 +18,7 @@ const AboutPage: React.FC = () => {
   const [teamExpertise, setTeamExpertise] = useState<FeatureItem[]>([]);
   const [promises, setPromises] = useState<string[]>([]);
   const [vision, setVision] = useState<any>(null);
+  const [founderImagesLoaded, setFounderImagesLoaded] = useState({ ceo: false, advisoryBoard: false });
 
   // Parallax Hero Refs
   const heroRef = useRef(null);
@@ -220,6 +222,74 @@ const AboutPage: React.FC = () => {
             <p className="text-white/80 text-lg font-light">
               {vision.futureOutlook}
             </p>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Founder Section */}
+      <SectionWrapper className="py-24 bg-slate-50 dark:bg-luxury-black transition-colors duration-300">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">Our Leadership</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white">Visionary Leadership</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            {/* SS RAJU - Advisory Board Member & Director */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl">
+                <div className="relative h-96 md:h-[500px] bg-slate-200 dark:bg-white/5">
+                  {!founderImagesLoaded.advisoryBoard && <Skeleton className="w-full h-full rounded-none" />}
+                  <img 
+                    src={FOUNDER_IMAGES.advisoryBoard}
+                    alt="SS Raju - Advisory Board Member & Director"
+                    onLoad={() => setFounderImagesLoaded(prev => ({ ...prev, advisoryBoard: true }))}
+                    className={`w-full h-full object-cover ${!founderImagesLoaded.advisoryBoard ? 'hidden' : ''}`}
+                  />
+                </div>
+              </div>
+              <div className="mt-8">
+                <h3 className="text-3xl font-serif text-slate-900 dark:text-white mb-2">SS Raju</h3>
+                <p className="text-brand-600 dark:text-brand-400 font-semibold text-lg mb-4">Advisory Board Member & Director</p>
+                <p className="text-slate-600 dark:text-white/70 leading-relaxed">
+                  With decades of experience in real estate investment and strategic advisory, SS Raju brings visionary leadership to Ridhira Realty. His expertise in emerging markets and commitment to excellence drive the company's mission to deliver exceptional value to investors.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Founder & CEO */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl">
+                <div className="relative h-96 md:h-[500px] bg-slate-200 dark:bg-white/5">
+                  {!founderImagesLoaded.ceo && <Skeleton className="w-full h-full rounded-none" />}
+                  <img 
+                    src={FOUNDER_IMAGES.ceo}
+                    alt="Founder & CEO"
+                    onLoad={() => setFounderImagesLoaded(prev => ({ ...prev, ceo: true }))}
+                    className={`w-full h-full object-cover ${!founderImagesLoaded.ceo ? 'hidden' : ''}`}
+                  />
+                </div>
+              </div>
+              <div className="mt-8">
+                <h3 className="text-3xl font-serif text-slate-900 dark:text-white mb-2">Founder & CEO</h3>
+                <p className="text-brand-600 dark:text-brand-400 font-semibold text-lg mb-4">Ridhira Realty</p>
+                <p className="text-slate-600 dark:text-white/70 leading-relaxed">
+                  Leading Ridhira Realty with passion and purpose, our Founder & CEO is dedicated to revolutionizing the real estate investment landscape in the UAE. Their strategic vision and market insights have established Ridhira as a trusted partner for high-net-worth investors globally.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </SectionWrapper>

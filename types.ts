@@ -9,7 +9,7 @@ export interface Property {
   beds: number;
   baths: number;
   sqft: number;
-  type: 'Villa' | 'Penthouse' | 'Mansion' | 'Apartment';
+  type: 'Villa' | 'Penthouse' | 'Mansion' | 'Apartment' | 'Office';
   images: string[];
   description: string;
   amenities: string[];

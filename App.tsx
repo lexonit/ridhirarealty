@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
@@ -44,7 +44,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className="bg-white dark:bg-luxury-black min-h-screen text-slate-900 dark:text-white selection:bg-brand-500 selection:text-white transition-colors duration-300">
         <ScrollToTop />
         <Navbar theme={theme} toggleTheme={toggleTheme} />
@@ -63,7 +63,7 @@ const App: React.FC = () => {
         <Footer />
         <WhatsAppFloat />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

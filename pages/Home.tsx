@@ -65,12 +65,246 @@ const Home: React.FC = () => {
       {/* Video Hero Section */}
       <Hero />
       
+      {/* About Ridhira Realty Section */}
+      <SectionWrapper className="py-24 bg-slate-50 dark:bg-luxury-charcoal transition-colors duration-300">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">About Ridhira Realty</span>
+              <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-8">
+                Advisory. Intelligence. Integrity.
+              </h2>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="space-y-6 text-center mb-12"
+            >
+              <p className="text-lg md:text-xl text-slate-700 dark:text-white/80 leading-relaxed">
+                Ridhira Realty exists to transform how people invest in real estate — turning speculation into strategy.
+              </p>
+              <p className="text-lg text-slate-600 dark:text-white/70 leading-relaxed">
+                We combine verified data, market expertise, and human guidance to help clients achieve meaningful growth through Dubai and Ras Al Khaimah's dynamic property markets.
+              </p>
+              <p className="text-lg text-slate-600 dark:text-white/70 leading-relaxed">
+                Every consultation begins with education — because we believe clarity comes before commitment.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="bg-white dark:bg-luxury-black p-8 md:p-12 rounded-2xl border-l-4 border-brand-500 shadow-lg dark:shadow-none">
+                <Icons.MessageSquare className="w-10 h-10 text-brand-500/30 mb-4" />
+                <p className="text-2xl md:text-3xl font-serif text-slate-800 dark:text-white italic leading-relaxed">
+                  "First impressions don't sell — they educate."
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Our Philosophy Section */}
+      <SectionWrapper className="py-24 bg-white dark:bg-luxury-black transition-colors duration-300">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">Our Philosophy</span>
+              <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-8">
+                Our Foundation: Research. Educate. Advise. Execute.
+              </h2>
+              <p className="text-lg text-slate-600 dark:text-white/70 leading-relaxed mb-8">
+                At Ridhira Realty, we believe real estate success is built on knowledge.
+              </p>
+              <p className="text-slate-700 dark:text-white/80 mb-6 font-medium">
+                Our process is clear and proven:
+              </p>
+              
+              <div className="space-y-6">
+                {[
+                  { num: '1', title: 'Research', desc: 'We analyse verified data, trends, and developer insights.' },
+                  { num: '2', title: 'Educate', desc: 'We empower clients with transparent comparisons and ROI projections.' },
+                  { num: '3', title: 'Advise', desc: 'We craft personalized strategies aligned with your goals.' },
+                  { num: '4', title: 'Execute', desc: 'We manage the entire process with trust, precision, and accountability.' }
+                ].map((step, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex gap-4 items-start group"
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 bg-brand-500 text-white rounded-lg flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform duration-300">
+                      {step.num}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">{step.title}</h3>
+                      <p className="text-slate-600 dark:text-white/70">{step.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="mt-8 text-lg font-medium text-slate-800 dark:text-white/90 italic border-l-4 border-brand-500 pl-6"
+              >
+                Every decision we support is driven by intelligence, not impulse.
+              </motion.p>
+            </motion.div>
+
+            {/* Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="relative h-[500px] lg:h-[600px] rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl"
+            >
+              <img
+                src="/home/CommunityFocus.png"
+                alt="Our Philosophy - Strategic Real Estate Planning"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+            </motion.div>
+          </div>
+        </div>
+      </SectionWrapper>
+
       {/* Introduction Divider */}
       <div className="h-24 md:h-32 bg-white dark:bg-luxury-black flex items-center justify-center transition-colors duration-300">
         <FloatingElement>
           <div className="w-[1px] h-12 md:h-16 bg-slate-200 dark:bg-white/20"></div>
         </FloatingElement>
       </div>
+
+      {/* Services Offered Section */}
+      <SectionWrapper className="py-24 bg-slate-50 dark:bg-luxury-charcoal transition-colors duration-300">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">Services Offered</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-6">
+              Comprehensive Real Estate Advisory Services
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {[
+              {
+                icon: 'TrendingUp',
+                title: 'Investor Advisory',
+                desc: 'Personalized guidance to maximize ROI and portfolio growth.',
+                image: '/home/pexels-mikhail-nilov-8319455.jpg'
+              },
+              {
+                icon: 'Building2',
+                title: 'Property Sales & Resales',
+                desc: 'Direct access to leading developers and verified resale opportunities.',
+                image: '/home/pexels-marjan-147528816-10484112.jpg'
+              },
+              {
+                icon: 'FileCheck',
+                title: 'Property Valuation',
+                desc: 'Accurate, data-backed assessments for buying, selling, or refinancing.',
+                image: '/home/pexels-lina-12238283.jpg'
+              },
+              {
+                icon: 'ShieldCheck',
+                title: 'Property Management',
+                desc: 'End-to-end management ensuring long-term returns.',
+                image: '/home/Property MAnagement_Image_aotskqaotskqaots.png'
+              },
+              {
+                icon: 'Globe',
+                title: 'Market Insights',
+                desc: 'Real-time analysis, reports, and investment intelligence across UAE markets.',
+                image: '/home/pexels-vince-21856199.jpg'
+              }
+            ].map((service, idx) => {
+              const IconComponent = Icons[service.icon as keyof typeof Icons];
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group bg-white dark:bg-luxury-black rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 hover:border-brand-500/50 transition-all duration-300 shadow-lg dark:shadow-none hover:shadow-2xl"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-4 left-4">
+                      <div className="w-12 h-12 bg-brand-500 rounded-lg flex items-center justify-center">
+                        <IconComponent className="w-6 h-6 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-slate-600 dark:text-white/70 leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl"
+            >
+              View All Services
+              <Icons.ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
+        </div>
+      </SectionWrapper>
 
       {/* --- WHY CHOOSE US (New Section with Comet Cards) --- */}
       <SectionWrapper className="py-24 bg-white dark:bg-luxury-black transition-colors duration-300">
@@ -109,107 +343,7 @@ const Home: React.FC = () => {
         </div>
       </SectionWrapper>
 
-      {/* --- LATEST WORK / OUR PROJECTS SECTION --- */}
-      <SectionWrapper className="py-16 md:py-24 bg-slate-50 dark:bg-luxury-black transition-colors duration-300">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div>
-              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-2">Latest Work</span>
-              <h2 className="text-3xl md:text-5xl font-serif text-slate-900 dark:text-white">Our Projects</h2>
-            </div>
-            <Link to="/projects" className="group flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
-              View all Projects
-              <Icons.ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
 
-          {loading ? (
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-               {[...Array(6)].map((_, i) => (
-                  <div key={i} className="bg-white dark:bg-luxury-charcoal rounded-xl overflow-hidden border border-slate-200 dark:border-white/5">
-                    <Skeleton className="h-64 w-full rounded-none" />
-                    <div className="p-6">
-                      <Skeleton className="h-6 w-3/4 mb-4" />
-                      <Skeleton className="h-4 w-1/2 mb-4" />
-                      <div className="flex justify-between mt-4">
-                        <Skeleton className="h-4 w-1/4" />
-                        <Skeleton className="h-8 w-8 rounded-full" />
-                      </div>
-                    </div>
-                  </div>
-               ))}
-             </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {latestWork.map((project, idx) => (
-                <LuxuryPropertyCard key={project.id} property={project} index={idx} />
-              ))}
-            </div>
-          )}
-        </div>
-      </SectionWrapper>
-
-      {/* --- FEATURED PROJECTS SECTION --- */}
-      <SectionWrapper className="py-24 bg-white dark:bg-luxury-black transition-colors duration-300">
-        <div className="container mx-auto px-6">
-           <div className="text-center mb-16">
-              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">Featured Projects</span>
-              <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-6">Curated Opportunities for Intelligent Investors</h2>
-           </div>
-
-           {loading ? (
-             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-               {[...Array(3)].map((_, i) => (
-                 <div key={i} className="h-[400px] w-full rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 relative">
-                    <Skeleton className="w-full h-full rounded-none" />
-                    <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
-                      <Skeleton className="h-1 w-10 mb-4 bg-brand-500" />
-                      <Skeleton className="h-8 w-3/4 mb-2" />
-                      <Skeleton className="h-4 w-1/2" />
-                    </div>
-                 </div>
-               ))}
-             </div>
-           ) : (
-             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {featuredProjects.slice(0, 3).map((project, idx) => (
-                  // @ts-ignore: Suppressing strict type check for standard motion props
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.2 }}
-                  >
-                    <Link to={`/projects/${project.id}`}>
-                      <ThreeDCard className="h-[400px] w-full cursor-pointer group">
-                        <div className="relative h-full w-full rounded-xl overflow-hidden shadow-xl dark:shadow-none border border-slate-200 dark:border-white/10">
-                          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10 opacity-90" />
-                          <img 
-                            src={project.images[0]} 
-                            alt={project.title} 
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                          />
-                          <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
-                             <div className="w-10 h-[2px] bg-brand-500 mb-4 transition-all duration-300 group-hover:w-20"></div>
-                             <h3 className="text-2xl font-serif text-white mb-2 leading-tight">{project.title}</h3>
-                             <p className="text-white/70 text-sm font-light line-clamp-2">{project.description}</p>
-                          </div>
-                        </div>
-                      </ThreeDCard>
-                    </Link>
-                  </motion.div>
-                ))}
-             </div>
-           )}
-           
-           <div className="text-center mt-12">
-             <Link to="/projects" className="inline-block px-8 py-3 border border-slate-200 dark:border-white/20 rounded-full text-slate-900 dark:text-white uppercase tracking-widest text-xs hover:bg-brand-500 hover:border-brand-500 hover:text-white transition-all duration-300">
-               View All Projects
-             </Link>
-           </div>
-        </div>
-      </SectionWrapper>
 
       {/* --- TRUSTED DEVELOPERS MARQUEE --- */}
       <SectionWrapper className="py-16 bg-slate-50 dark:bg-luxury-charcoal border-y border-slate-200 dark:border-white/5 overflow-hidden">
@@ -225,51 +359,6 @@ const Home: React.FC = () => {
                </div>
              ))}
           </div>
-        </div>
-      </SectionWrapper>
-
-      {/* --- WHY DUBAI & RAK SECTION --- */}
-      <SectionWrapper className="py-24 bg-brand-900 text-white relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-20" 
-          style={{ backgroundImage: `url('${WHY_DUBAI_BACKGROUND}')` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-900 to-luxury-black/90"></div>
-        
-        <div className="container mx-auto px-6 relative z-10">
-           <div className="flex flex-col lg:flex-row items-center gap-16">
-             <div className="flex-1">
-                <span className="text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">Why Dubai & Ras Al Khaimah</span>
-                <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight">Two Powerhouses.<br/>One Investment Vision.</h2>
-                <h3 className="text-xl text-white/90 mb-8 font-light">Dubai – The Global Benchmark</h3>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8">
-                  {benefits.map((benefit, idx) => (
-                    <div key={idx} className="flex items-center gap-3">
-                      <Icons.CheckCircle className="w-5 h-5 text-brand-400 shrink-0" />
-                      <span className="text-sm md:text-base text-white/80">{benefit}</span>
-                    </div>
-                  ))}
-                  <div className="flex items-center gap-3">
-                     <Icons.ShieldCheck className="w-5 h-5 text-brand-400 shrink-0" />
-                     <span className="text-sm md:text-base text-white/80">Unmatched Safety</span>
-                  </div>
-                </div>
-             </div>
-             
-             <div className="flex-1 w-full">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-4">
-                     <img src={WHY_IMAGES.propertyTax} alt="0% Tax" className="w-full h-40 md:h-56 object-cover rounded-2xl border border-white/10 shadow-lg" />
-                     <img src={WHY_IMAGES.foreignOwnership} alt="100% Foreign Ownership" className="w-full h-40 md:h-56 object-cover rounded-2xl border border-white/10 shadow-lg" />
-                  </div>
-                  <div className="space-y-4 translate-y-8">
-                     <img src={WHY_IMAGES.rentalYields} alt="10% Yields" className="w-full h-40 md:h-56 object-cover rounded-2xl border border-white/10 shadow-lg" />
-                     <img src={WHY_IMAGES.infrastructure} alt="World-class Infrastructure" className="w-full h-40 md:h-56 object-cover rounded-2xl border border-white/10 shadow-lg" />
-                  </div>
-                </div>
-             </div>
-           </div>
         </div>
       </SectionWrapper>
 
@@ -305,67 +394,199 @@ const Home: React.FC = () => {
 
       <GallerySection />
       
-      {/* --- WHAT IS THE NEXT SECTION --- */}
+      {/* --- WHAT IS THE NEXT & WHY DUBAI SECTION --- */}
       <SectionWrapper className="py-24 bg-slate-50 dark:bg-luxury-charcoal transition-colors duration-300">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">What is the Next</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-6">Upcoming Opportunities & Future Vision</h2>
-            <p className="text-slate-600 dark:text-white/60 max-w-2xl mx-auto">Discover the next generation of investment opportunities in the UAE, from Ras Al Khaimah's visionary 2030 projects to premium resort developments.</p>
+
+             {/* Why Dubai & RAK - Placed Next */}
+          <div className="mt-6">
+            <div className="text-center mb-16">
+              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">Why Dubai & Ras Al Khaimah</span>
+              <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-6">Two Powerhouses. One Investment Vision.</h2>
+              <h3 className="text-xl text-slate-700 dark:text-white/90 mb-8 font-light">Dubai – The Global Benchmark</h3>
+            </div>
+
+            <div className="flex flex-col lg:flex-row items-center gap-16">
+              <div className="flex-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8">
+                  {benefits.map((benefit, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: idx * 0.1 }}
+                      viewport={{ once: true }}
+                      className="flex items-center gap-3"
+                    >
+                      <Icons.CheckCircle className="w-5 h-5 text-brand-600 dark:text-brand-400 shrink-0" />
+                      <span className="text-sm md:text-base text-slate-700 dark:text-white/80">{benefit}</span>
+                    </motion.div>
+                  ))}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: benefits.length * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex items-center gap-3"
+                  >
+                    <Icons.ShieldCheck className="w-5 h-5 text-brand-600 dark:text-brand-400 shrink-0" />
+                    <span className="text-sm md:text-base text-slate-700 dark:text-white/80">Unmatched Safety</span>
+                  </motion.div>
+                </div>
+              </div>
+              
+              <div className="flex-1 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-4">
+                    <motion.img
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6 }}
+                      viewport={{ once: true }}
+                      src={WHY_IMAGES.propertyTax}
+                      alt="0% Tax"
+                      className="w-full h-40 md:h-56 object-cover rounded-2xl border border-slate-200 dark:border-white/10 shadow-lg"
+                    />
+                    <motion.img
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                      viewport={{ once: true }}
+                      src={WHY_IMAGES.foreignOwnership}
+                      alt="100% Foreign Ownership"
+                      className="w-full h-40 md:h-56 object-cover rounded-2xl border border-slate-200 dark:border-white/10 shadow-lg"
+                    />
+                  </div>
+                  <div className="space-y-4 md:translate-y-8">
+                    <motion.img
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.1 }}
+                      viewport={{ once: true }}
+                      src={WHY_IMAGES.rentalYields}
+                      alt="10% Yields"
+                      className="w-full h-40 md:h-56 object-cover rounded-2xl border border-slate-200 dark:border-white/10 shadow-lg"
+                    />
+                    <motion.img
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.3 }}
+                      viewport={{ once: true }}
+                      src={WHY_IMAGES.infrastructure}
+                      alt="World-class Infrastructure"
+                      className="w-full h-40 md:h-56 object-cover rounded-2xl border border-slate-200 dark:border-white/10 shadow-lg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* RAK Vision 2030 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 hover:border-brand-500 transition-all duration-300 shadow-md hover:shadow-xl dark:shadow-none"
-            >
-              <div className="relative h-80 overflow-hidden bg-slate-200 dark:bg-white/5">
-                {!imagesLoaded.rakVision && <Skeleton className="w-full h-full rounded-none" />}
-                <img 
-                  src={WHAT_IS_NEXT_IMAGES.rakVision} 
-                  alt="RAK Vision 2030"
-                  onLoad={() => setImagesLoaded(prev => ({ ...prev, rakVision: true }))}
-                  className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${!imagesLoaded.rakVision ? 'hidden' : ''}`}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                <h3 className="text-2xl font-serif mb-2">RAK Vision 2030</h3>
-                <p className="text-sm text-white/80">Transforming Ras Al Khaimah into a premier global destination with world-class infrastructure and sustainable development.</p>
-              </div>
-            </motion.div>
+          {/* What is the Next */}
+          <div className="mt-24">
+            <div className="text-center mb-16">
+              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">What is the Next</span>
+              <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-6">Upcoming Opportunities & Future Vision</h2>
+              <p className="text-slate-600 dark:text-white/60 max-w-2xl mx-auto">Discover the next generation of investment opportunities in the UAE, from Ras Al Khaimah's visionary 2030 projects to premium resort developments.</p>
+            </div>
 
-            {/* Wynn Resort & Casino */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 hover:border-brand-500 transition-all duration-300 shadow-md hover:shadow-xl dark:shadow-none"
-            >
-              <div className="relative h-80 overflow-hidden bg-slate-200 dark:bg-white/5">
-                {!imagesLoaded.wynnResort && <Skeleton className="w-full h-full rounded-none" />}
-                <img 
-                  src={WHAT_IS_NEXT_IMAGES.wynnResort} 
-                  alt="Wynn Resort Casino"
-                  onLoad={() => setImagesLoaded(prev => ({ ...prev, wynnResort: true }))}
-                  className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${!imagesLoaded.wynnResort ? 'hidden' : ''}`}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                <h3 className="text-2xl font-serif mb-2">Wynn Resort & Casino</h3>
-                <p className="text-sm text-white/80">Luxury hospitality and entertainment destination bringing world-renowned experiences to the UAE market.</p>
-              </div>
-            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* RAK Vision 2030 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 hover:border-brand-500 transition-all duration-300 shadow-md hover:shadow-xl dark:shadow-none"
+              >
+                <div className="relative h-80 overflow-hidden bg-slate-200 dark:bg-white/5">
+                  {!imagesLoaded.rakVision && <Skeleton className="w-full h-full rounded-none" />}
+                  <img 
+                    src={WHAT_IS_NEXT_IMAGES.rakVision} 
+                    alt="RAK Vision 2030"
+                    onLoad={() => setImagesLoaded(prev => ({ ...prev, rakVision: true }))}
+                    className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${!imagesLoaded.rakVision ? 'hidden' : ''}`}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                  <h3 className="text-2xl font-serif mb-2">RAK Vision 2030</h3>
+                  <p className="text-sm text-white/80">Transforming Ras Al Khaimah into a premier global destination with world-class infrastructure and sustainable development.</p>
+                </div>
+              </motion.div>
+
+              {/* Wynn Resort & Casino */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 hover:border-brand-500 transition-all duration-300 shadow-md hover:shadow-xl dark:shadow-none"
+              >
+                <div className="relative h-80 overflow-hidden bg-slate-200 dark:bg-white/5">
+                  {!imagesLoaded.wynnResort && <Skeleton className="w-full h-full rounded-none" />}
+                  <img 
+                    src={WHAT_IS_NEXT_IMAGES.wynnResort} 
+                    alt="Wynn Resort Casino"
+                    onLoad={() => setImagesLoaded(prev => ({ ...prev, wynnResort: true }))}
+                    className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${!imagesLoaded.wynnResort ? 'hidden' : ''}`}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                  <h3 className="text-2xl font-serif mb-2">Wynn Resort & Casino</h3>
+                  <p className="text-sm text-white/80">Luxury hospitality and entertainment destination bringing world-renowned experiences to the UAE market.</p>
+                </div>
+              </motion.div>
+            </div>
           </div>
+
+       
         </div>
       </SectionWrapper>
       
+
+
+              {/* --- LATEST WORK / OUR PROJECTS SECTION --- */}
+      <SectionWrapper className="py-16 md:py-24 bg-slate-50 dark:bg-luxury-black transition-colors duration-300">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-2">Featured Projects </span>
+              <h2 className="text-3xl md:text-5xl font-serif text-slate-900 dark:text-white">Curated Opportunities for Intelligent Investors</h2>
+            </div>
+            <Link to="/projects" className="group flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+              View all Projects
+              <Icons.ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+
+          {loading ? (
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               {[...Array(6)].map((_, i) => (
+                  <div key={i} className="bg-white dark:bg-luxury-charcoal rounded-xl overflow-hidden border border-slate-200 dark:border-white/5">
+                    <Skeleton className="h-64 w-full rounded-none" />
+                    <div className="p-6">
+                      <Skeleton className="h-6 w-3/4 mb-4" />
+                      <Skeleton className="h-4 w-1/2 mb-4" />
+                      <div className="flex justify-between mt-4">
+                        <Skeleton className="h-4 w-1/4" />
+                        <Skeleton className="h-8 w-8 rounded-full" />
+                      </div>
+                    </div>
+                  </div>
+               ))}
+             </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {latestWork.map((project, idx) => (
+                <LuxuryPropertyCard key={project.id} property={project} index={idx} />
+              ))}
+            </div>
+          )}
+        </div>
+      </SectionWrapper>
+
       {/* --- NEW CUSTOM CTA SECTION --- */}
       <SectionWrapper id="contact" className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0">

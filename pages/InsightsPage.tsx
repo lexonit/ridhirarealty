@@ -10,6 +10,7 @@ import { insightsService } from '../services/insightsService';
 import { BlogPost, HeroSectionData } from '../types';
 import { Skeleton } from '../components/ui/Skeleton';
 import SEO from '../components/SEO';
+import { FlipWords } from '../components/ui/flip-words';
 
 const InsightsPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -19,7 +20,7 @@ const InsightsPage: React.FC = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   // Parallax Hero
-  const heroRef = useRef(null);
+  const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
@@ -62,20 +63,26 @@ const InsightsPage: React.FC = () => {
       />
       
       {/* Hero Section */}
-      <div ref={heroRef} className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <div ref={heroRef} className="relative h-[60vh] flex items-center justify-center overflow-hidden" style={{
+        backgroundImage: `url('/home/pexels-lina-12238283.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}>
          <motion.div style={{ y }} className="absolute inset-0 z-0">
-           <img 
-             src={heroData.backgroundImage}
-             alt={heroData.subTitleLabel}
-             className="w-full h-full object-cover"
-           />
            <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
          </motion.div>
          
          <div className="relative z-10 container mx-auto px-6 text-center">
            <SectionWrapper>
              <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span>
-             <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">{heroData.title}</h1>
+             <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">
+               <FlipWords 
+                 words={["Market Insights", "Expert Analysis", "Trends & Data", "Industry Knowledge"]} 
+                 duration={3000}
+                 className="text-brand-400"
+               />
+             </h1>
              <p className="text-white/80 max-w-xl mx-auto text-lg font-light">
                {heroData.subtitle}
              </p>

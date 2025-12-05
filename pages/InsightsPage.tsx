@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import SectionWrapper from '../components/ui/SectionWrapper';
@@ -126,7 +125,7 @@ const InsightsPage: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10">
           <SectionWrapper>
             <div className="text-center mb-16">
-              <span className="text-brand-600 dark:text-brand-500 uppercase tracking-widest text-sm block mb-4 font-semibold">Multimedia</span>
+              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">Multimedia</span>
               <h2 className="text-4xl font-serif text-slate-900 dark:text-white">Exclusive Video Content</h2>
             </div>
 

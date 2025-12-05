@@ -1,4 +1,3 @@
-
 import { Property } from '../types';
 
 export const MOCK_PROPERTIES: Property[] = [

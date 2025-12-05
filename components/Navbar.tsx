@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Icons } from './ui/Icons';
 import { Link, useLocation } from 'react-router-dom';
@@ -49,23 +48,23 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   
   // Dynamic background classes based on theme and scroll state
   const getNavBackground = () => {
-    // If menu is open, make parent transparent to prevent clipping of the fixed overlay child
-    // The overlay itself provides the background color
     if (isOpen) {
       return 'bg-transparent py-3 md:py-4';
     }
 
     if (scrolled || !isHome) {
+      // Updated backdrop color to match new luxury black
       return 'bg-white/90 dark:bg-luxury-black/95 backdrop-blur-md py-2 md:py-3 border-b border-black/5 dark:border-white/10 shadow-lg dark:shadow-none';
     }
-    return 'bg-gradient-to-b from-black/80 to-transparent py-4 md:py-6';
+    return 'bg-gradient-to-b from-luxury-black/90 to-transparent py-4 md:py-6';
   };
 
   const navBackground = getNavBackground();
   
   // Text color logic
-  // If menu is open, force contrast against the menu overlay (Dark Text in Light Mode, White in Dark Mode)
-  const textColorClass = (!scrolled && isHome && !isOpen) ? 'text-white hover:text-brand-400' : 'text-slate-800 dark:text-white hover:text-brand-500 dark:hover:text-brand-400';
+  const textColorClass = (!scrolled && isHome && !isOpen) 
+    ? 'text-white hover:text-brand-300' 
+    : 'text-slate-800 dark:text-white hover:text-brand-500 dark:hover:text-brand-300';
   
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${navBackground}`}>
@@ -84,7 +83,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           <img 
             src="/logo/logo.png" 
             alt="Ridhira Realty" 
-            className="h-16 w-48 object-contain transition-transform duration-300 group-hover:scale-105" 
+            className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
           />
         </Link>
 
@@ -131,7 +130,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
         {/* Mobile Header Layout */}
         <div className="lg:hidden flex justify-between w-full items-center z-50 relative">
           <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center">
-             <img src="/logo/logo.png" alt="Ridhira Realty" className="h-10 w-48 object-contain" />
+             <img src="/logo/logo.png" alt="Ridhira Realty" className="h-10 w-auto object-contain" />
           </Link>
 
           <div className="flex items-center gap-4">

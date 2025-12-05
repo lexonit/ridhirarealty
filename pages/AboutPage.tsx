@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import SectionWrapper from '../components/ui/SectionWrapper';
@@ -129,7 +128,7 @@ const AboutPage: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-brand-600 dark:text-brand-500 uppercase tracking-widest text-sm block mb-4 font-semibold">What Sets Us Apart</span>
+              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">What Sets Us Apart</span>
               <h2 className="text-4xl font-serif text-slate-900 dark:text-white mb-8">Unlike listing-driven brokers, we focus on data, depth and direction.</h2>
               <ul className="space-y-6">
                 {differentiators.map((item, i) => (

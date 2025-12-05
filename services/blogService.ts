@@ -3,184 +3,137 @@ import { BlogPost } from '../types';
 
 const MOCK_BLOGS: BlogPost[] = [
   {
-    id: 'buying-house-dubai-2026',
-    title: 'Buying a House in Dubai in 2026 – Smart Investment with the Right Knowledge',
-    category: 'Investment Guide',
-    date: 'Oct 24, 2024',
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea904f8486d?q=80&w=2070&auto=format&fit=crop',
-    author: 'Ridhira Realty Team',
-    readTime: '8 min read',
-    excerpt: 'Dubai’s real estate market is evolving rapidly. Avoid these 12 common mistakes to ensure your investment is secure and profitable.',
+    id: '12-mistakes-first-time-buyers',
+    title: '12 Mistakes First-Time Buyers Make in Dubai',
+    category: 'Buying Guide',
+    date: 'Nov 20, 2025',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2073&auto=format&fit=crop',
+    author: 'Ridhira Realty',
+    readTime: '6 min read',
+    excerpt: 'Avoid common pitfalls when investing in Dubai real estate. From overlooking service charges to ignoring future infrastructure.',
     content: `
-      <p class="lead">Dubai’s real estate market is evolving rapidly with rising demand, new master communities, flexible payment plans, and major government-backed developments. However, many buyers—especially first-time homebuyers and overseas investors—make avoidable mistakes that can lead to financial loss, delays, and stress.</p>
-      
-      <p>At <strong>Ridhira Realty LLC</strong>, our mission is to help investors make confident, data-driven, insight-backed property decisions. Below are the 12 most common mistakes to avoid when buying a house in Dubai in 2026.</p>
-
-      <h3>1. Not Researching the Developer’s Track Record</h3>
-      <p>Dubai has several trusted developers, but not all offer the same reliability. Always check:</p>
-      <ul>
-        <li>Past project quality</li>
-        <li>Delivery timelines</li>
-        <li>Financial strength</li>
-        <li>Customer feedback</li>
-      </ul>
-      <p>This ensures your investment is secure and future value is protected.</p>
-
-      <h3>2. Focusing Only on Price — Not Long-Term Value</h3>
-      <p>A low upfront price doesn’t always mean a smart investment. Evaluate:</p>
-      <ul>
-        <li>Community development potential</li>
-        <li>Future infrastructure</li>
-        <li>School, hospital, and metro accessibility</li>
-        <li>Rental demand and ROI projections</li>
-      </ul>
-      <p>In 2026, value appreciation and ROI matter more than cost alone.</p>
-
-      <h3>3. Ignoring Payment Plan Structures</h3>
-      <p>Dubai offers attractive plans like 1% monthly, 50/50, 60/40, and post-handover options. Buyers often forget to evaluate:</p>
-      <ul>
-        <li>Mortgage interest impact</li>
-        <li>Post-handover commitments</li>
-        <li>Annual service charges</li>
-      </ul>
-      <p>Choose a plan aligned with your financial comfort and strategy.</p>
-
-      <h3>4. Not Checking Service Charges</h3>
-      <p>Service charges vary across communities and affect:</p>
-      <ul>
-        <li>Rental income</li>
-        <li>Annual maintenance cost</li>
-        <li>Long-term profitability</li>
-      </ul>
-      <p>Always check the service charge per sq. ft before deciding.</p>
-
-      <h3>5. Underestimating Closing Costs</h3>
-      <p>Beyond the property price, additional costs include:</p>
-      <ul>
-        <li>4% DLD fees</li>
-        <li>Oqood fees (for off-plan)</li>
-        <li>Agency fees</li>
-        <li>NOC charges</li>
-        <li>Mortgage registration fees</li>
-      </ul>
-      <p>Plan these in advance to avoid last-minute surprises.</p>
-
-      <h3>6. Forgetting to Verify RERA Compliance</h3>
-      <p>RERA rules protect buyers. Ensure:</p>
-      <ul>
-        <li>The project is RERA-approved</li>
-        <li>Payments go to an escrow account</li>
-        <li>Valid RERA project ID</li>
-        <li>Contracts follow RERA guidelines</li>
-      </ul>
-      <p>This safeguards your investment from disputes and delays.</p>
-
-      <h3>7. Not Reviewing Actual Floor Plans</h3>
-      <p>Marketing visuals can differ from real layouts. Always review:</p>
-      <ul>
-        <li>Accurate floor plan</li>
-        <li>Kitchen design</li>
-        <li>Balcony usability</li>
-        <li>Furniture spacing</li>
-        <li>Actual view and orientation</li>
-      </ul>
-      <p>A practical layout increases resale value.</p>
-
-      <h3>8. Buying Without Understanding ROI & Rental Demand</h3>
-      <p>Different communities have different rental strengths. Research:</p>
-      <ul>
-        <li>Holiday home vs long-term potential</li>
-        <li>Expected ROI (Dubai averages 6–10%)</li>
-        <li>Vacancy trends</li>
-        <li>Tenant demographics</li>
-      </ul>
-      <p>Choose areas with strong demand and consistent returns.</p>
-
-      <h3>9. Choosing Emotion Instead of Investment Strategy</h3>
-      <p>Your dream home may not always be the best investment. Consider:</p>
-      <ul>
-        <li>ROI</li>
-        <li>Appreciation potential</li>
-        <li>Resale liquidity</li>
-        <li>Market cycle timing</li>
-      </ul>
-      <p>Always ask: “Will this maximize my returns?”</p>
-
-      <h3>10. Ignoring Future Infrastructure Growth</h3>
-      <p>Upcoming mega-developments will boost value, including:</p>
-      <ul>
-        <li>Dubai Metro expansions</li>
-        <li>Palm Jebel Ali revival</li>
-        <li>RAK Wynn Casino economic impact</li>
-        <li>New business and lifestyle districts</li>
-        <li>Schools, hospitals, malls, and new road networks</li>
-      </ul>
-      <p>Invest where future growth is coming—not already priced in.</p>
-
-      <h3>11. Booking Without Professional Guidance</h3>
-      <p>Many buyers book under marketing pressure. Professional advisors help:</p>
-      <ul>
-        <li>Compare developer quality</li>
-        <li>Spot hidden costs</li>
-        <li>Negotiate better pricing</li>
-        <li>Access pre-launch or exclusive inventory</li>
-        <li>Avoid overpriced or low-demand properties</li>
-      </ul>
-      <p>Ridhira Realty ensures clarity, transparency, and data-driven decision-making.</p>
-
-      <h3>12. Not Aligning the Property with Visa & Residency Goals</h3>
-      <p>Your property may influence:</p>
-      <ul>
-        <li>Golden Visa eligibility (AED 2M+)</li>
-        <li>10-year residency options</li>
-        <li>Income and documentation needs</li>
-        <li>Long-term UAE planning</li>
-      </ul>
-      <p>Choose a property aligned with your personal and family residency goals.</p>
-
-      <hr />
-
-      <h3>Final Thoughts</h3>
-      <p>Dubai’s 2026 property market offers exceptional opportunities, but avoiding these mistakes ensures your investment is profitable, future-ready, and stress-free.</p>
-      
-      <p>At <strong>Ridhira Realty LLC</strong>, our philosophy is simple yet powerful:<br/>
-      <em>Research. Educate. Advise. Execute.</em></p>
-      
-      <p>We help you make smart, insight-driven real estate decisions with transparency and trust.</p>
+      <p class="lead">Buying a home in Dubai is a thrilling milestone, but it comes with complexities. First-time buyers often overlook critical factors like total acquisition costs, community management fees, and long-term resale value.</p>
+      <p>In this comprehensive guide, we outline the top 12 mistakes new investors make and how to avoid them to ensure a secure and profitable investment.</p>
+      <div class="mt-8">
+        <a href="https://ridhirarealty.blogspot.com/2025/11/12-mistakes-first-time-buyers-make-in.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-600 text-white px-6 py-3 rounded-lg font-bold uppercase tracking-widest hover:bg-brand-700 transition-colors">
+          Read Full Article on Blog
+        </a>
+      </div>
     `
   },
   {
-    id: 'biophilic-design-luxury',
-    title: "The Rise of Biophilic Design in Luxury Villas",
-    category: "Design",
-    date: "Sep 28, 2024",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop",
-    author: "Sarah Jenkins",
-    readTime: "5 min read",
-    excerpt: "How nature is being integrated into modern architecture to create healthier, more sustainable living environments.",
-    content: "<p>Content coming soon...</p>"
+    id: 'dubai-metro-blue-line-impact',
+    title: 'Dubai Metro Blue Line Impact: A New Era',
+    category: 'Infrastructure',
+    date: 'Nov 18, 2025',
+    image: 'https://images.unsplash.com/photo-1576016770956-debb63d92058?q=80&w=2070&auto=format&fit=crop',
+    author: 'Ridhira Realty',
+    readTime: '5 min read',
+    excerpt: 'How the new Blue Line expansion will transform connectivity and property values across key Dubai communities.',
+    content: `
+      <p class="lead">The Dubai Metro Blue Line is set to revolutionize public transport in the city, linking major residential and commercial hubs. Infrastructure projects of this scale historically correlate with significant property appreciation in surrounding areas.</p>
+      <p>Discover which districts stand to gain the most from this new connectivity corridor.</p>
+      <div class="mt-8">
+        <a href="https://ridhirarealty.blogspot.com/2025/11/dubai-metro-blue-line-impact-new-era.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-600 text-white px-6 py-3 rounded-lg font-bold uppercase tracking-widest hover:bg-brand-700 transition-colors">
+          Read Full Article on Blog
+        </a>
+      </div>
+    `
   },
   {
-    id: 'palm-jebel-ali-frontier',
-    title: "Why Palm Jebel Ali is the Next Frontier",
-    category: "Investment",
-    date: "Sep 15, 2024",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop",
-    author: "Ridhira Analyst",
-    readTime: "6 min read",
-    excerpt: "Analyzing the projected growth and infrastructure plans for Dubai's newest mega-island project.",
-    content: "<p>Content coming soon...</p>"
+    id: 'which-dubai-property-type-delivers',
+    title: 'Which Dubai Property Type Delivers Best ROI?',
+    category: 'Investment',
+    date: 'Nov 15, 2025',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
+    author: 'Ridhira Realty',
+    readTime: '7 min read',
+    excerpt: 'Villas vs. Apartments vs. Townhouses. We analyze rental yields and capital appreciation to help you choose.',
+    content: `
+      <p class="lead">Maximizing Return on Investment (ROI) requires selecting the right asset class. While villas offer high capital appreciation, apartments in prime areas often yield better short-term rental income.</p>
+      <p>We break down the numbers to help you decide which property type aligns with your investment goals.</p>
+      <div class="mt-8">
+        <a href="https://ridhirarealty.blogspot.com/2025/11/which-dubai-property-type-delivers.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-600 text-white px-6 py-3 rounded-lg font-bold uppercase tracking-widest hover:bg-brand-700 transition-colors">
+          Read Full Article on Blog
+        </a>
+      </div>
+    `
   },
   {
-    id: 'ultra-vip-concierge',
-    title: "Experience the Ultra-VIP Concierge Service",
-    category: "Lifestyle",
-    date: "Aug 30, 2024",
-    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop",
-    author: "Lifestyle Team",
-    readTime: "4 min read",
-    excerpt: "From private jet charters to exclusive event access, discover what true luxury service entails.",
-    content: "<p>Content coming soon...</p>"
+    id: 'first-time-homebuyer-checklist',
+    title: 'First-Time Homebuyer Checklist',
+    category: 'Guides',
+    date: 'Nov 12, 2025',
+    image: 'https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop',
+    author: 'Ridhira Realty',
+    readTime: '4 min read',
+    excerpt: 'Your essential step-by-step guide to navigating the Dubai property market, from mortgage pre-approval to handover.',
+    content: `
+      <p class="lead">Don't let the process overwhelm you. Our ultimate checklist covers every essential step for first-time buyers in Dubai.</p>
+      <p>From securing mortgage pre-approval and understanding DLD fees to the final snagging inspection, we ensure you are prepared for every stage of the transaction.</p>
+      <div class="mt-8">
+        <a href="https://ridhirarealty.blogspot.com/2025/11/first-time-homebuyer-checklist.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-600 text-white px-6 py-3 rounded-lg font-bold uppercase tracking-widest hover:bg-brand-700 transition-colors">
+          Read Full Article on Blog
+        </a>
+      </div>
+    `
+  },
+  {
+    id: 'ras-al-khaimah-vs-dubai',
+    title: 'Ras Al Khaimah vs Dubai: Which is Better?',
+    category: 'Market Analysis',
+    date: 'Nov 10, 2025',
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea904f8486d?q=80&w=2070&auto=format&fit=crop',
+    author: 'Ridhira Realty',
+    readTime: '6 min read',
+    excerpt: 'Comparing the established luxury of Dubai with the emerging high-growth potential of Ras Al Khaimah.',
+    content: `
+      <p class="lead">With the upcoming Wynn Resort, Ras Al Khaimah (RAK) is emerging as a serious competitor to Dubai for real estate investment. But can it match Dubai's established stability?</p>
+      <p>We compare price points, rental yields, and future growth projections for both emirates to help you decide where to place your capital.</p>
+      <div class="mt-8">
+        <a href="https://ridhirarealty.blogspot.com/2025/11/ras-al-khaimah-vs-dubai-which-is-better.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-600 text-white px-6 py-3 rounded-lg font-bold uppercase tracking-widest hover:bg-brand-700 transition-colors">
+          Read Full Article on Blog
+        </a>
+      </div>
+    `
+  },
+  {
+    id: 'dubai-real-estate-market-update',
+    title: 'Dubai Real Estate Market Update',
+    category: 'Market Trends',
+    date: 'Nov 08, 2025',
+    image: 'https://images.unsplash.com/photo-1597659840241-37e2b9c2f55f?q=80&w=2070&auto=format&fit=crop',
+    author: 'Ridhira Realty',
+    readTime: '5 min read',
+    excerpt: 'Latest insights on price trends, transaction volumes, and the hottest communities for investment right now.',
+    content: `
+      <p class="lead">Stay ahead of the curve with our latest quarterly market update. We analyze transaction data to identify shifting trends in Dubai's dynamic real estate sector.</p>
+      <p>Find out which areas are seeing the highest appreciation and where the smart money is moving in late 2025.</p>
+      <div class="mt-8">
+        <a href="https://ridhirarealty.blogspot.com/2025/11/dubai-real-estate-market-update.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-600 text-white px-6 py-3 rounded-lg font-bold uppercase tracking-widest hover:bg-brand-700 transition-colors">
+          Read Full Article on Blog
+        </a>
+      </div>
+    `
+  },
+  {
+    id: 'tourism-growth-impact-dubai',
+    title: 'Tourism Growth: Its Impact on Dubai',
+    category: 'Economy',
+    date: 'Nov 05, 2025',
+    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2025&auto=format&fit=crop',
+    author: 'Ridhira Realty',
+    readTime: '5 min read',
+    excerpt: 'How record-breaking tourist numbers are driving demand for short-term rentals and hospitality properties.',
+    content: `
+      <p class="lead">Dubai continues to shatter tourism records, directly fueling demand for holiday homes and short-term rental properties.</p>
+      <p>Learn how investors can leverage this tourism boom to generate superior yields through holiday home investments and hospitality-focused real estate.</p>
+      <div class="mt-8">
+        <a href="https://ridhirarealty.blogspot.com/2025/11/tourism-growth-its-impact-on-dubai.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-600 text-white px-6 py-3 rounded-lg font-bold uppercase tracking-widest hover:bg-brand-700 transition-colors">
+          Read Full Article on Blog
+        </a>
+      </div>
+    `
   }
 ];
 

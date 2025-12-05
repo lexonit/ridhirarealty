@@ -1,4 +1,3 @@
-
 import React, { useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, useInView, Variants } from 'framer-motion';
 import { cn } from '../../utils';

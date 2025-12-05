@@ -1,4 +1,3 @@
-
 import { HeroSlide, FeatureItem, DeveloperLogo } from '../types';
 import { Icons } from '../components/ui/Icons';
 

@@ -1,9 +1,18 @@
 import { GoogleGenAI } from "@google/genai";
 
-// NOTE: In a real production app, this key would be proxied through a backend.
-// For this demo, we assume it's available in the env or the user provides it.
-// The code adheres to the guideline of using process.env.API_KEY.
-const API_KEY = process.env.API_KEY || ''; 
+// Safe access to API Key to prevent "ReferenceError: process is not defined" in browser environments
+const getApiKey = () => {
+  try {
+    if (typeof process !== 'undefined' && process.env) {
+      return process.env.API_KEY || '';
+    }
+  } catch (e) {
+    // Ignore error if process is not defined
+  }
+  return '';
+};
+
+const API_KEY = getApiKey();
 
 let client: GoogleGenAI | null = null;
 

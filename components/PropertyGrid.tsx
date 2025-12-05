@@ -119,7 +119,7 @@ const PropertyGrid: React.FC<Props> = ({ properties, title, showViewAll = true, 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-brand-600 dark:text-brand-500 uppercase tracking-widest text-xs md:text-sm font-semibold"
+            className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs md:text-sm font-semibold"
           >
             Exclusive Portfolio
           </motion.span>
@@ -134,7 +134,7 @@ const PropertyGrid: React.FC<Props> = ({ properties, title, showViewAll = true, 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-slate-900 dark:text-white">{title}</h2>
             
             {showViewAll && !loading && (
-              <Link to="/projects" className="text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-brand-500 transition-colors flex items-center text-xs md:text-sm uppercase tracking-widest pb-2 border-b border-slate-300 dark:border-white/20 hover:border-brand-600 dark:hover:border-brand-500 self-start md:self-auto">
+              <Link to="/projects" className="text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors flex items-center text-xs md:text-sm uppercase tracking-widest pb-2 border-b border-slate-300 dark:border-white/20 hover:border-brand-600 dark:hover:border-brand-500 self-start md:self-auto">
                 View All Collections <Icons.ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             )}

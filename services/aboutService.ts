@@ -1,4 +1,3 @@
-
 import { HeroSectionData, FeatureItem, StatItem } from '../types';
 import { Icons } from '../components/ui/Icons';
 
@@ -69,18 +68,36 @@ const VISION = {
     },
     {
       title: "Global Presence & Outreach",
-      description: "Through our UAE and India network, we serve individual investors, HNIs, and corporates. We regularly host Investor Workshops and Roadshows to educate buyers entering the UAE market."
+      description: "Through our UAE and India network, we serve individual investors, HNIs, and corporates. We bridge the gap between international capital and local opportunities."
     }
   ],
-  futureOutlook: "We will continue building analytics tools and AI platforms to make advisory more accurate and accessible. As the UAE transforms into an AI-first economy, Ridhira Realty will remain your bridge between intelligence and investment."
+  futureOutlook: "By 2026, Ridhira Realty aims to be the most trusted digital-first real estate advisory in the region, managing over AED 2B in client assets."
 };
 
+// Simulate delay
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
 export const aboutService = {
-  getHeroData: async () => HERO_DATA,
-  getIntroText: async () => INTRO_TEXT,
-  getCoreValues: async () => CORE_VALUES,
-  getDifferentiatorsList: async () => DIFFERENTIATORS_LIST,
-  getTeamExpertise: async () => TEAM_EXPERTISE,
-  getPromises: async () => PROMISES,
-  getVision: async () => VISION
+  getHeroData: async () => {
+    // await delay(100);
+    return HERO_DATA;
+  },
+  getIntroText: async () => {
+    return INTRO_TEXT;
+  },
+  getCoreValues: async () => {
+    return CORE_VALUES;
+  },
+  getDifferentiatorsList: async () => {
+    return DIFFERENTIATORS_LIST;
+  },
+  getTeamExpertise: async () => {
+    return TEAM_EXPERTISE;
+  },
+  getPromises: async () => {
+    return PROMISES;
+  },
+  getVision: async () => {
+    return VISION;
+  }
 };

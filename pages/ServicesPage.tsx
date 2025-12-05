@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import SectionWrapper from '../components/ui/SectionWrapper';
 import ContactSection from '../components/ContactSection';
@@ -129,7 +128,7 @@ const ServicesPage: React.FC = () => {
       <SectionWrapper className="py-24 bg-slate-50 dark:bg-luxury-charcoal relative transition-colors duration-300">
          <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-               <span className="text-brand-600 dark:text-brand-500 uppercase tracking-widest text-sm font-semibold">Tailored Portfolio</span>
+               <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-sm font-semibold">Tailored Portfolio</span>
                <h2 className="text-4xl font-serif text-slate-900 dark:text-white mt-4">Property Types We Specialize In</h2>
                <p className="text-slate-600 dark:text-white/50 mt-4">Curated property types for investor profiles and lifestyles.</p>
             </div>

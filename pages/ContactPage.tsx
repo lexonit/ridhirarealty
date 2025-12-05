@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import ContactSection from '../components/ContactSection';
 import { Icons } from '../components/ui/Icons';
@@ -131,7 +130,7 @@ const ContactPage: React.FC = () => {
           
           {/* Form Side */}
           <div className="w-full lg:w-1/2">
-            <span className="text-brand-600 dark:text-brand-500 uppercase tracking-widest text-xs font-semibold block mb-4">Get In Touch</span>
+            <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">Get In Touch</span>
             <h2 className="text-4xl font-serif text-slate-900 dark:text-white mb-6">Send Us a Message</h2>
             <p className="text-slate-600 dark:text-white/60 mb-8 leading-relaxed">
               Whether you're looking to invest in off-plan properties or need advice on your current portfolio, our team is here to assist you.

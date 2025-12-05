@@ -18,7 +18,7 @@ const LuxuryPropertyCard: React.FC<Props> = ({ property, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="group relative rounded-xl overflow-hidden shadow-2xl transition-transform duration-300 hover:-translate-y-2 border border-brand-800/50"
+      className="group relative rounded-xl overflow-hidden shadow-2xl transition-transform duration-300 hover:-translate-y-2 border border-brand-800/30"
     >
       {/* 1. Image Section (65-70% Height) */}
       <div className="relative h-[400px] w-full overflow-hidden bg-gray-900">
@@ -39,18 +39,18 @@ const LuxuryPropertyCard: React.FC<Props> = ({ property, index }) => {
         </button>
 
         {/* Top Badge */}
-        <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-4 py-1 border border-white/20 rounded-sm">
+        <div className="absolute top-4 right-4 bg-luxury-black/60 backdrop-blur-md px-4 py-1 border border-white/20 rounded-sm">
            <span className="text-white text-xs font-bold uppercase tracking-widest">{property.type}</span>
         </div>
       </div>
 
-      {/* 2. Details Section (Theme Background - Navy Blue) */}
-      <div className="bg-brand-900 p-6 text-white relative z-10 border-t border-brand-500/30">
+      {/* 2. Details Section (Theme Background - Luxury Charcoal/Navy) */}
+      <div className="bg-luxury-charcoal p-6 text-white relative z-10 border-t border-brand-500/20">
         {/* Title & Location Row */}
         <div className="flex justify-between items-start mb-2">
            <div>
-             <h3 className="text-xl font-serif font-bold leading-tight text-white group-hover:text-brand-100 transition-colors">{property.title}</h3>
-             <p className="text-xs uppercase tracking-wider font-semibold opacity-70 mt-1 text-brand-100">{property.type}</p>
+             <h3 className="text-xl font-serif font-bold leading-tight text-white group-hover:text-brand-200 transition-colors">{property.title}</h3>
+             <p className="text-xs uppercase tracking-wider font-semibold opacity-70 mt-1 text-brand-200">{property.type}</p>
            </div>
            <div className="flex flex-col items-end text-right">
               <Icons.MapPin className="w-5 h-5 text-brand-400 mb-1" />
@@ -65,7 +65,7 @@ const LuxuryPropertyCard: React.FC<Props> = ({ property, index }) => {
         </div>
 
         {/* Amenities Grid (2x2) matches screenshot style */}
-        <div className="grid grid-cols-2 gap-y-4 gap-x-2 mb-6 border-t border-brand-700 pt-4 text-white/80">
+        <div className="grid grid-cols-2 gap-y-4 gap-x-2 mb-6 border-t border-white/10 pt-4 text-white/80">
            <div className="flex items-center gap-3">
               <Icons.Waves className="w-5 h-5 opacity-70" />
               <span className="text-sm font-medium">Pool</span>
@@ -96,7 +96,7 @@ const LuxuryPropertyCard: React.FC<Props> = ({ property, index }) => {
         <div className="grid grid-cols-2 gap-4">
            <Link 
              to={`/projects/${property.id}`}
-             className="flex items-center justify-center gap-2 bg-white text-brand-900 py-3 px-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-50 transition-colors rounded-sm"
+             className="flex items-center justify-center gap-2 bg-white text-luxury-black py-3 px-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-100 transition-colors rounded-sm shadow-md"
            >
              <Icons.Phone className="w-4 h-4" /> Inquiry
            </Link>
@@ -104,7 +104,7 @@ const LuxuryPropertyCard: React.FC<Props> = ({ property, index }) => {
              href={`https://wa.me/971561705995?text=Hi, I am interested in ${property.title}`}
              target="_blank"
              rel="noreferrer"
-             className="flex items-center justify-center gap-2 bg-brand-700 text-white border border-brand-600 py-3 px-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-600 transition-colors rounded-sm"
+             className="flex items-center justify-center gap-2 bg-brand-600 text-white border border-brand-500 py-3 px-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-500 transition-colors rounded-sm shadow-md"
            >
              <Icons.MessageSquare className="w-4 h-4" /> Whatsapp
            </a>

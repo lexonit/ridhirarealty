@@ -1,4 +1,3 @@
-
 import { HeroSectionData, FeatureItem, StatItem } from '../types';
 import { Icons } from '../components/ui/Icons';
 
@@ -65,37 +64,63 @@ const SERVICES: FeatureItem[] = [
     features: ["Eligibility assessment", "DLD-verified project curation", "Escrow compliance certification"],
     image: "https://images.unsplash.com/photo-1540910419868-474947ce5ade?q=80&w=2070&auto=format&fit=crop", 
     icon: Icons.Star
-  },
-  {
-    title: "Investor Advisory Dashboard",
-    description: "Real-time tracking of your holdings through our upcoming Investor Dashboard.",
-    features: ["ROI calculator", "Comparison tracker", "Market alerts", "AI Assistant"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop", 
-    icon: Icons.Search
-  },
-  {
-    title: "Property Valuation",
-    description: "Get data-driven valuations and market updates across Dubai and RAK.",
-    features: ["Comparative Market Analysis", "Yield benchmarking", "Developer credibility index"],
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop", 
-    icon: Icons.Square
   }
 ];
 
 const PROPERTY_TYPES = [
-  { name: "Apartment", desc: "Steady rental income in high-demand areas", img: "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?q=80&w=1984&auto=format&fit=crop" },
-  { name: "Townhouse", desc: "Privacy, space, and modern architecture", img: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?q=80&w=2070&auto=format&fit=crop" },
-  { name: "Villa", desc: "Exclusive residences with premium amenities", img: "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop" },
-  { name: "Mansion", desc: "Ultra-luxury estates for discerning buyers", img: "https://images.unsplash.com/photo-1600596542815-3ad19fb21208?q=80&w=2074&auto=format&fit=crop" },
-  { name: "Off-Plan", desc: "High appreciation & flexible payment plans", img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2031&auto=format&fit=crop" },
-  { name: "Plot", desc: "Build your own project in prime freehold zones", img: "https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?q=80&w=2070&auto=format&fit=crop" },
+  {
+    name: "Luxury Villas",
+    desc: "Spacious, private residences in gated communities like Palm Jumeirah and Emirates Hills.",
+    img: "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    name: "Penthouses",
+    desc: "Sky-high living with panoramic views and exclusive amenities.",
+    img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    name: "Waterfront Apartments",
+    desc: "Premium apartments with direct beach access and sea views.",
+    img: "https://images.unsplash.com/photo-1512453979798-5ea904f8486d?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    name: "Townhouses",
+    desc: "Community-focused living with modern designs and family-friendly amenities.",
+    img: "https://images.unsplash.com/photo-1600596542815-3ad19fb21208?q=80&w=2074&auto=format&fit=crop"
+  },
+  {
+    name: "Off-Plan Investment",
+    desc: "High-growth potential properties in emerging districts.",
+    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    name: "Commercial Spaces",
+    desc: "Strategic office and retail spaces in business hubs.",
+    img: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop"
+  }
 ];
 
 const INVESTMENT_STATS: StatItem[] = [
-  { value: "0%", label: "Income Tax" },
-  { value: "6-10%", label: "Rental Yield" },
-  { value: "100%", label: "Freehold Ownership" },
-  { value: "World-Class", label: "Infrastructure", icon: Icons.Star }
+  {
+    value: "6-10%",
+    label: "Avg. Rental Yield",
+    icon: undefined
+  },
+  {
+    value: "0%",
+    label: "Income Tax",
+    icon: undefined
+  },
+  {
+    value: "100%",
+    label: "Foreign Ownership",
+    icon: undefined
+  },
+  {
+    value: "AED 2M",
+    label: "Golden Visa Entry",
+    icon: undefined
+  }
 ];
 
 export const servicePageService = {

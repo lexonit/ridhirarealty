@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Hero from '../components/Hero';
 import PropertyGrid from '../components/PropertyGrid';
@@ -73,7 +72,7 @@ const Home: React.FC = () => {
       <SectionWrapper className="py-24 bg-white dark:bg-luxury-black transition-colors duration-300">
         <div className="container mx-auto px-6">
           <div className="mb-16">
-            <span className="text-brand-600 dark:text-brand-500 uppercase tracking-widest text-xs font-semibold block mb-4">Why Choose Us</span>
+            <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">Why Choose Us</span>
             <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white">Why Choose Ridhira Realty?</h2>
           </div>
 
@@ -111,10 +110,10 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <span className="text-brand-600 dark:text-brand-500 uppercase tracking-widest text-xs font-semibold block mb-2">Latest Work</span>
+              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-2">Latest Work</span>
               <h2 className="text-3xl md:text-5xl font-serif text-slate-900 dark:text-white">Our Projects</h2>
             </div>
-            <Link to="/projects" className="group flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-brand-500 transition-colors">
+            <Link to="/projects" className="group flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
               View all Projects
               <Icons.ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
@@ -150,7 +149,7 @@ const Home: React.FC = () => {
       <SectionWrapper className="py-24 bg-white dark:bg-luxury-black transition-colors duration-300">
         <div className="container mx-auto px-6">
            <div className="text-center mb-16">
-              <span className="text-brand-600 dark:text-brand-500 uppercase tracking-widest text-xs font-semibold block mb-4">Featured Projects</span>
+              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">Featured Projects</span>
               <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-6">Curated Opportunities for Intelligent Investors</h2>
            </div>
 
@@ -211,14 +210,14 @@ const Home: React.FC = () => {
       {/* --- TRUSTED DEVELOPERS MARQUEE --- */}
       <SectionWrapper className="py-16 bg-slate-50 dark:bg-luxury-charcoal border-y border-slate-200 dark:border-white/5 overflow-hidden">
         <div className="text-center mb-10">
-          <span className="text-brand-600 dark:text-brand-500 uppercase tracking-widest text-xs font-semibold">Authorized Channel Partner</span>
+          <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold">Authorized Channel Partner</span>
         </div>
         
         <div className="relative flex overflow-hidden group">
-          <div className="flex animate-scroll whitespace-nowrap gap-16 px-8 items-center">
+          <div className="flex animate-scroll whitespace-nowrap gap-8 px-8 items-center">
              {[...developers, ...developers].map((dev, idx) => (
-               <div key={`${dev.name}-${idx}`} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-500 opacity-50 hover:opacity-100">
-                 <img src={dev.logo} alt={dev.name} className="h-10 md:h-12 w-auto object-contain" />
+               <div key={`${dev.name}-${idx}`} className="flex-shrink-0 bg-white p-4 rounded-lg shadow-sm border border-slate-100 dark:border-white/10 opacity-90 hover:opacity-100 transition-opacity">
+                 <img src={dev.logo} alt={dev.name} className="h-8 md:h-10 w-auto object-contain" />
                </div>
              ))}
           </div>
@@ -285,7 +284,7 @@ const Home: React.FC = () => {
       <SectionWrapper className="py-24 bg-slate-50 dark:bg-luxury-black transition-colors duration-300">
         <div className="container mx-auto px-6">
            <div className="text-center mb-16">
-              <span className="text-brand-600 dark:text-brand-500 uppercase tracking-widest text-xs font-semibold block mb-4">The Ridhira Difference</span>
+              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">The Ridhira Difference</span>
               <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-6">Why Investors Choose Ridhira</h2>
            </div>
 

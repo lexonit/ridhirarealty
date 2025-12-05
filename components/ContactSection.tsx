@@ -1,7 +1,12 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import SectionWrapper from './ui/SectionWrapper';
+import { Icons } from './ui/Icons';
 
 const ContactSection: React.FC = () => {
+  const location = useLocation();
+  const isContactPage = location.pathname === '/contact';
+
   return (
     <SectionWrapper id="contact" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-brand-900/20 z-0"></div>
@@ -10,9 +15,25 @@ const ContactSection: React.FC = () => {
         <p className="text-white/60 max-w-xl mx-auto mb-12">
           Schedule a private consultation with our property experts to discover your next legacy.
         </p>
-        <button className="bg-brand-500 text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-white hover:text-brand-900 transition-colors shadow-[0_0_30px_rgba(0,94,184,0.3)]">
-          Book Private Viewing
-        </button>
+        
+        {isContactPage ? (
+          <a 
+            href="https://wa.me/971561705995" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-500 text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-white hover:text-brand-900 transition-colors shadow-[0_0_30px_rgba(0,94,184,0.3)]"
+          >
+            <Icons.MessageSquare className="w-5 h-5" />
+            Book via WhatsApp
+          </a>
+        ) : (
+          <Link 
+            to="/contact" 
+            className="inline-block bg-brand-500 text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-white hover:text-brand-900 transition-colors shadow-[0_0_30px_rgba(0,94,184,0.3)]"
+          >
+            Book Private Viewing
+          </Link>
+        )}
       </div>
     </SectionWrapper>
   );

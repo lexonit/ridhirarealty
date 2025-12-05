@@ -6,7 +6,7 @@ const HERO_DATA: HeroSectionData = {
   title: "Get in Touch",
   subtitle: "Begin your journey towards exceptional real estate opportunities. Our advisors are ready to assist you.",
   subTitleLabel: "Connect With Us",
-  backgroundImage: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop"
+  backgroundImage: "https://images.unsplash.com/photo-1423666639041-f142fcb93315?q=80&w=2059&auto=format&fit=crop"
 };
 
 const CONTACT_INFO: FeatureItem[] = [

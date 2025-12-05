@@ -1,17 +1,17 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icons } from './ui/Icons';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-100 dark:bg-black text-slate-800 dark:text-white pt-24 pb-12 border-t border-slate-200 dark:border-white/5 transition-colors duration-300">
+    <footer className="bg-slate-100 dark:bg-luxury-black text-slate-800 dark:text-white pt-24 pb-12 border-t border-slate-200 dark:border-white/5 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="space-y-6">
-            <Link to="/" className="text-2xl font-serif tracking-widest font-bold block">
-              Ridhira
-              <span className="text-brand-600 dark:text-brand-500"> Realty</span>
+            <Link to="/" className="block">
+              <img src="/logo/logo.png" alt="Ridhira Realty" className="h-12 w-48" />
             </Link>
             <p className="text-slate-600 dark:text-white/50 text-sm leading-relaxed">
               Redefining the skyline of Dubai with architectural masterpieces. 

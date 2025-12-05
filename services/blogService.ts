@@ -1,3 +1,4 @@
+
 import { BlogPost } from '../types';
 
 const MOCK_BLOGS: BlogPost[] = [

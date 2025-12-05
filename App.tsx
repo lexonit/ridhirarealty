@@ -45,7 +45,7 @@ const App: React.FC = () => {
 
   return (
     <HashRouter>
-      <div className="bg-white dark:bg-black min-h-screen text-slate-900 dark:text-white selection:bg-brand-500 selection:text-white transition-colors duration-300">
+      <div className="bg-white dark:bg-luxury-black min-h-screen text-slate-900 dark:text-white selection:bg-brand-500 selection:text-white transition-colors duration-300">
         <ScrollToTop />
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         <Routes>

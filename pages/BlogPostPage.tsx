@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { blogService } from '../services/blogService';
@@ -29,7 +30,7 @@ const BlogPostPage: React.FC = () => {
 
   if (loading) {
     return (
-      <main className="bg-white dark:bg-black min-h-screen transition-colors duration-300">
+      <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
          <Skeleton className="h-[60vh] w-full rounded-none mb-12" />
          <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2 space-y-6">
@@ -50,7 +51,7 @@ const BlogPostPage: React.FC = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-slate-900 dark:text-white">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-luxury-black text-slate-900 dark:text-white">
         <h2 className="text-3xl font-serif mb-4">Article Not Found</h2>
         <Link to="/insights" className="text-brand-500 hover:underline">Return to Insights Hub</Link>
       </div>
@@ -58,7 +59,7 @@ const BlogPostPage: React.FC = () => {
   }
 
   return (
-    <main className="bg-white dark:bg-black min-h-screen transition-colors duration-300">
+    <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
       
       {/* Hero Image */}
       <div className="relative h-[60vh] w-full overflow-hidden">

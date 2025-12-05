@@ -45,7 +45,7 @@ const AboutPage: React.FC = () => {
 
   if (loading || !heroData || !introText || !vision) {
     return (
-      <main className="bg-white dark:bg-black min-h-screen">
+      <main className="bg-white dark:bg-luxury-black min-h-screen">
          <Skeleton className="h-[60vh] w-full rounded-none" />
          <div className="container mx-auto px-6 py-24 space-y-8">
             <Skeleton className="h-4 w-32 mx-auto" />
@@ -57,7 +57,7 @@ const AboutPage: React.FC = () => {
   }
 
   return (
-    <main className="bg-white dark:bg-black min-h-screen transition-colors duration-300">
+    <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
       
       {/* Hero Section */}
       <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
@@ -110,7 +110,7 @@ const AboutPage: React.FC = () => {
       </div>
 
       {/* Differentiators */}
-      <SectionWrapper className="py-24 bg-white dark:bg-black transition-colors duration-300">
+      <SectionWrapper className="py-24 bg-white dark:bg-luxury-black transition-colors duration-300">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -166,7 +166,7 @@ const AboutPage: React.FC = () => {
       </div>
 
       {/* Our Promise */}
-      <SectionWrapper className="py-24 bg-white dark:bg-black border-y border-slate-200 dark:border-white/5 transition-colors duration-300">
+      <SectionWrapper className="py-24 bg-white dark:bg-luxury-black border-y border-slate-200 dark:border-white/5 transition-colors duration-300">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-serif text-slate-900 dark:text-white text-center mb-12">Our Promise to Investors</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">

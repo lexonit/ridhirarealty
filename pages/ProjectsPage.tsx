@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import PropertyGrid from '../components/PropertyGrid';
@@ -72,7 +73,7 @@ const ProjectsPage: React.FC = () => {
   const hasActiveFilters = searchQuery || selectedType !== 'All' || priceRange !== 'All';
 
   return (
-    <main className="bg-white dark:bg-black min-h-screen transition-colors duration-300">
+    <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
       
       {/* Hero Section */}
       <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">

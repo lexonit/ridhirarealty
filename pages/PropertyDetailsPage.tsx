@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -94,7 +95,7 @@ const PropertyDetailsPage: React.FC = () => {
 
   if (loading) {
     return (
-      <main className="bg-white dark:bg-black min-h-screen transition-colors duration-300">
+      <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
         {/* Skeleton Hero */}
         <div className="relative h-screen w-full bg-slate-200 dark:bg-luxury-charcoal animate-pulse">
            <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 z-20">
@@ -140,7 +141,7 @@ const PropertyDetailsPage: React.FC = () => {
 
   if (!property) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-slate-900 dark:text-white">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-luxury-black text-slate-900 dark:text-white">
         <h2 className="text-3xl font-serif mb-4">Property Not Found</h2>
         <Link to="/projects" className="text-brand-500 hover:underline">Return to Portfolio</Link>
       </div>
@@ -148,7 +149,7 @@ const PropertyDetailsPage: React.FC = () => {
   }
 
   return (
-    <main className="bg-white dark:bg-black min-h-screen transition-colors duration-300">
+    <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
       
       {/* --- IMMERSIVE HERO --- */}
       <div className="relative h-screen w-full overflow-hidden">
@@ -228,7 +229,7 @@ const PropertyDetailsPage: React.FC = () => {
       </div>
 
       {/* --- OVERVIEW SECTION --- */}
-      <section id="overview" className="py-24 bg-white dark:bg-black transition-colors duration-300">
+      <section id="overview" className="py-24 bg-white dark:bg-luxury-black transition-colors duration-300">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
@@ -290,14 +291,10 @@ const PropertyDetailsPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                {property.amenities.map((amenity, idx) => (
                  <SectionWrapper key={idx} delay={idx * 0.1}>
-                    <div className="group relative h-64 w-full overflow-hidden bg-white dark:bg-black cursor-pointer">
-                       {/* Placeholder generic amenity images based on index to give variety */}
+                    <div className="group relative h-64 w-full overflow-hidden bg-white dark:bg-luxury-black cursor-pointer">
+                       {/* Use the property's images as fallback for amenities to ensure reliability */}
                        <img 
-                         src={`https://source.unsplash.com/random/600x400?luxury,${idx}`} 
-                         // Fallback if unsplash random is blocked, use property image
-                         onError={(e) => {
-                            (e.target as HTMLImageElement).src = property.images[idx % property.images.length]
-                         }}
+                         src={property.images[idx % property.images.length]} 
                          alt={amenity}
                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                        />
@@ -314,7 +311,7 @@ const PropertyDetailsPage: React.FC = () => {
       </section>
 
       {/* --- GALLERY SECTION --- */}
-      <section id="gallery" className="py-24 bg-white dark:bg-black transition-colors duration-300">
+      <section id="gallery" className="py-24 bg-white dark:bg-luxury-black transition-colors duration-300">
          <div className="container mx-auto px-6">
             <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-12 text-center">Interiors & Views</h2>
             
@@ -332,7 +329,7 @@ const PropertyDetailsPage: React.FC = () => {
                       <img src={img} alt="Detail" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                     </div>
                  )) : 
-                 // Fallback if few images, reuse with slight variation or leave blank? Reusing for layout.
+                 // Fallback if few images, reuse with slight variation
                  property.images.slice(0, 2).map((img, idx) => (
                     <div key={idx} className="h-[350px] overflow-hidden rounded-sm group relative">
                       <img src={img} alt="Detail" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />

@@ -48,12 +48,12 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <main className="bg-white dark:bg-black min-h-screen transition-colors duration-300">
+    <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
       {/* Video Hero Section */}
       <Hero />
       
       {/* Introduction Divider */}
-      <div className="h-24 md:h-32 bg-white dark:bg-black flex items-center justify-center transition-colors duration-300">
+      <div className="h-24 md:h-32 bg-white dark:bg-luxury-black flex items-center justify-center transition-colors duration-300">
         <FloatingElement>
           <div className="w-[1px] h-12 md:h-16 bg-slate-200 dark:bg-white/20"></div>
         </FloatingElement>
@@ -143,7 +143,7 @@ const Home: React.FC = () => {
       </SectionWrapper>
 
       {/* --- FEATURED PROJECTS SECTION --- */}
-      <SectionWrapper className="py-24 bg-white dark:bg-black transition-colors duration-300">
+      <SectionWrapper className="py-24 bg-white dark:bg-luxury-black transition-colors duration-300">
         <div className="container mx-auto px-6">
            <div className="text-center mb-16">
               <span className="text-brand-600 dark:text-brand-500 uppercase tracking-widest text-xs font-semibold block mb-4">Featured Projects</span>

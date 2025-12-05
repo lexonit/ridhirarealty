@@ -6,7 +6,7 @@ const HERO_DATA: HeroSectionData = {
   title: "Knowledge First.<br/>Trust Always.",
   subtitle: "Redefining property investment through transparency, data-driven insights, and a vision for sustainable returns.",
   subTitleLabel: "About Ridhira Realty",
-  backgroundImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+  backgroundImage: "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop"
 };
 
 const INTRO_TEXT = {

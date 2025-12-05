@@ -5,7 +5,7 @@ import SectionWrapper from '../components/ui/SectionWrapper';
 import ContactSection from '../components/ContactSection';
 import { ThreeDCard } from '../components/ui/AceternityUI';
 import { Icons } from '../components/ui/Icons';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { blogService } from '../services/blogService';
 import { insightsService } from '../services/insightsService';
 import { BlogPost, HeroSectionData } from '../types';
@@ -16,6 +16,7 @@ const InsightsPage: React.FC = () => {
   const [heroData, setHeroData] = useState<HeroSectionData | null>(null);
   const [articles, setArticles] = useState<BlogPost[]>([]);
   const [videos, setVideos] = useState<any[]>([]);
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,7 +36,7 @@ const InsightsPage: React.FC = () => {
 
   if (loading || !heroData) {
     return (
-      <main className="bg-white dark:bg-black min-h-screen">
+      <main className="bg-white dark:bg-luxury-black min-h-screen">
          <Skeleton className="h-[60vh] w-full rounded-none" />
          <div className="container mx-auto px-6 py-24 space-y-12">
             <Skeleton className="h-64 w-full" />
@@ -46,7 +47,7 @@ const InsightsPage: React.FC = () => {
   }
 
   return (
-    <main className="bg-white dark:bg-black min-h-screen transition-colors duration-300">
+    <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
       
       {/* Hero Section */}
       <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
@@ -120,6 +121,7 @@ const InsightsPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
+                onClick={() => setSelectedVideo(video.videoId)}
               >
                 <ThreeDCard className="w-full h-[320px] cursor-pointer group">
                   <div className="relative h-full w-full rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl bg-black">
@@ -142,7 +144,7 @@ const InsightsPage: React.FC = () => {
                       <h3 className="text-lg font-serif text-white mb-2 line-clamp-1 group-hover:text-brand-400 transition-colors">{video.title}</h3>
                       <div className="flex items-center justify-between text-xs text-white/60">
                          <span className="flex items-center gap-1"><Icons.Clock className="w-3 h-3" /> {video.duration}</span>
-                         <span className="flex items-center gap-1"><Icons.Eye className="w-3 h-3" /> {video.views} views</span>
+                         <span className="flex items-center gap-1"><Icons.Eye className="w-3 h-3" /> {video.views}</span>
                       </div>
                     </div>
 
@@ -166,6 +168,38 @@ const InsightsPage: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      {/* Video Modal */}
+      <AnimatePresence>
+        {selectedVideo && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-xl p-4 md:p-12"
+            onClick={() => setSelectedVideo(null)}
+          >
+            <div className="relative w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-white/10">
+              <button 
+                onClick={(e) => { e.stopPropagation(); setSelectedVideo(null); }}
+                className="absolute top-4 right-4 z-50 text-white hover:text-brand-500 transition-colors bg-black/50 p-2 rounded-full"
+              >
+                <Icons.X className="w-6 h-6" />
+              </button>
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1&rel=0`}
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       
       <ContactSection />
     </main>

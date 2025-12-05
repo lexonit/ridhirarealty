@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Icons } from './ui/Icons';
 import { Link, useLocation } from 'react-router-dom';
@@ -55,9 +56,9 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
     }
 
     if (scrolled || !isHome) {
-      return 'bg-white/90 dark:bg-luxury-black/95 backdrop-blur-md py-3 md:py-4 border-b border-black/5 dark:border-white/10 shadow-lg dark:shadow-none';
+      return 'bg-white/90 dark:bg-luxury-black/95 backdrop-blur-md py-2 md:py-3 border-b border-black/5 dark:border-white/10 shadow-lg dark:shadow-none';
     }
-    return 'bg-gradient-to-b from-black/80 to-transparent py-6 md:py-8';
+    return 'bg-gradient-to-b from-black/80 to-transparent py-4 md:py-6';
   };
 
   const navBackground = getNavBackground();
@@ -65,15 +66,13 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   // Text color logic
   // If menu is open, force contrast against the menu overlay (Dark Text in Light Mode, White in Dark Mode)
   const textColorClass = (!scrolled && isHome && !isOpen) ? 'text-white hover:text-brand-400' : 'text-slate-800 dark:text-white hover:text-brand-500 dark:hover:text-brand-400';
-  const logoColorClass = (!scrolled && isHome && !isOpen) ? 'text-white' : 'text-brand-900 dark:text-white';
-  const subLogoColorClass = (!scrolled && isHome && !isOpen) ? 'text-brand-300' : 'text-brand-600 dark:text-brand-300';
-
+  
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${navBackground}`}>
       <div className="container mx-auto px-4 lg:px-6 relative flex justify-between items-center">
         
         {/* Desktop Layout - Left Links */}
-        <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
+        <div className="hidden lg:flex items-center space-x-4 xl:space-x-8 w-1/3">
           <Link to="/" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors ${textColorClass}`}>Home</Link>
           <Link to="/about" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors ${textColorClass}`}>About Us</Link>
           <Link to="/services" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors ${textColorClass}`}>Services Offered</Link>
@@ -82,16 +81,15 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
 
         {/* Desktop Layout - Centered Logo */}
         <Link to="/" className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 group flex-col items-center justify-center">
-          <div className={`text-2xl md:text-3xl font-serif tracking-widest font-medium transition-colors ${logoColorClass}`}>
-            RIDHIRA
-          </div>
-          <div className={`text-[10px] md:text-[11px] uppercase tracking-[0.4em] transition-colors mt-1 group-hover:text-brand-500 dark:group-hover:text-white ${subLogoColorClass}`}>
-            Realty
-          </div>
+          <img 
+            src="/logo/logo.png" 
+            alt="Ridhira Realty" 
+            className="h-16 w-48 object-contain transition-transform duration-300 group-hover:scale-105" 
+          />
         </Link>
 
         {/* Desktop Layout - Right Links & Icons */}
-        <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
+        <div className="hidden lg:flex items-center justify-end space-x-4 xl:space-x-8 w-1/3">
           {/* Insights Hub Dropdown */}
           <div className="relative group">
             <Link to="/insights" className={`flex items-center text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors py-4 ${textColorClass}`}>
@@ -132,9 +130,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
 
         {/* Mobile Header Layout */}
         <div className="lg:hidden flex justify-between w-full items-center z-50 relative">
-          <Link to="/" onClick={() => setIsOpen(false)} className="flex flex-col items-start">
-             <span className={`text-lg md:text-xl font-serif tracking-widest ${logoColorClass}`}>RIDHIRA</span>
-             <span className={`text-[8px] uppercase tracking-[0.3em] ${subLogoColorClass}`}>Realty</span>
+          <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center">
+             <img src="/logo/logo.png" alt="Ridhira Realty" className="h-10 w-48 object-contain" />
           </Link>
 
           <div className="flex items-center gap-4">
@@ -156,8 +153,6 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      {/* Moved outside the inner container logic visually by being fixed inset-0.
-          Removing backdrop-filter from parent Nav (via getNavBackground) ensures this fixed child is not clipped. */}
       <div 
         className={`fixed inset-0 bg-white/98 dark:bg-luxury-black/98 backdrop-blur-xl z-40 flex flex-col pt-24 items-center transition-all duration-500 overflow-y-auto ${isOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-full invisible pointer-events-none'}`}
       >

@@ -36,7 +36,7 @@ const ServicesPage: React.FC = () => {
 
   if (loading || !heroData) {
     return (
-      <main className="bg-white dark:bg-black min-h-screen">
+      <main className="bg-white dark:bg-luxury-black min-h-screen">
          <Skeleton className="h-[60vh] w-full rounded-none" />
          <div className="container mx-auto px-6 py-24 space-y-8">
             <Skeleton className="h-64 w-full" />
@@ -47,7 +47,7 @@ const ServicesPage: React.FC = () => {
   }
 
   return (
-    <main className="bg-white dark:bg-black min-h-screen transition-colors duration-300">
+    <main className="bg-white dark:bg-luxury-black min-h-screen transition-colors duration-300">
       {/* Hero Section */}
       <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
          <div className="absolute inset-0 z-0">

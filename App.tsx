@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -10,7 +11,7 @@ import InsightsPage from './pages/InsightsPage';
 import BlogPostPage from './pages/BlogPostPage';
 import PropertyDetailsPage from './pages/PropertyDetailsPage';
 import Footer from './components/Footer';
-import AIChat from './components/AIChat';
+import WhatsAppFloat from './components/WhatsAppFloat';
 import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
@@ -61,7 +62,7 @@ const App: React.FC = () => {
           <Route path="*" element={<Home />} />
         </Routes>
         <Footer />
-        <AIChat />
+        <WhatsAppFloat />
       </div>
     </HashRouter>
   );

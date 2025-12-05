@@ -1,3 +1,4 @@
+
 import React, { useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, useInView, Variants } from 'framer-motion';
 import { cn } from '../../utils';
@@ -136,15 +137,21 @@ export const FloatingElement = ({ children, delay = 0 }: { children?: React.Reac
 // --- Comet Card (Moving Border) ---
 export const CometCard = ({
   className,
+  contentClassName,
   children,
 }: {
   className?: string;
+  contentClassName?: string;
   children?: React.ReactNode;
 }) => {
   return (
     <div className={cn("relative overflow-hidden p-[1px] rounded-xl group", className)}>
-      <div className="absolute inset-[-1000%] animate-spin-slow bg-[conic-gradient(from_90deg_at_50%_50%,#005eb8_0%,#cbd5e1_50%,#005eb8_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative h-full w-full rounded-xl bg-white dark:bg-luxury-charcoal">
+      {/* 
+        Updated Conic Gradient to use Brand Navy (#003366) and Luxury Silver (#c0c0c0) 
+        This ensures the "comet" tail matches the site theme.
+      */}
+      <div className="absolute inset-[-1000%] animate-spin-slow bg-[conic-gradient(from_90deg_at_50%_50%,#003366_0%,#c0c0c0_50%,#003366_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className={cn("relative h-full w-full rounded-xl bg-white dark:bg-luxury-charcoal", contentClassName)}>
         {children}
       </div>
     </div>

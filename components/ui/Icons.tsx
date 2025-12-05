@@ -4,7 +4,8 @@ import {
   Phone, Mail, Instagram, Linkedin, Send, Play, Pause,
   Heart, Clock, Eye, Sun, Moon,
   CheckCircle, ShieldCheck, TrendingUp, Globe, FileCheck, Users, Briefcase,
-  Youtube, Download, Share2
+  Youtube, Download, Share2, Waves, Dumbbell, Warehouse, Building2,
+  Languages, Banknote
 } from 'lucide-react';
 
 export const Icons = {
@@ -13,5 +14,6 @@ export const Icons = {
   Phone, Mail, Instagram, Linkedin, Send, Play, Pause,
   Heart, Clock, Eye, Sun, Moon,
   CheckCircle, ShieldCheck, TrendingUp, Globe, FileCheck, Users, Briefcase,
-  Youtube, Download, Share2
+  Youtube, Download, Share2, Waves, Dumbbell, Warehouse, Building2,
+  Languages, Banknote
 };

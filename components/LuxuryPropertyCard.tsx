@@ -1,0 +1,117 @@
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Property } from '../types';
+import { Icons } from './ui/Icons';
+import { motion } from 'framer-motion';
+
+interface Props {
+  property: Property;
+  index: number;
+}
+
+const LuxuryPropertyCard: React.FC<Props> = ({ property, index }) => {
+  return (
+    // @ts-ignore
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="group relative rounded-xl overflow-hidden shadow-2xl transition-transform duration-300 hover:-translate-y-2 border border-brand-800/50"
+    >
+      {/* 1. Image Section (65-70% Height) */}
+      <div className="relative h-[400px] w-full overflow-hidden bg-gray-900">
+        <Link to={`/projects/${property.id}`}>
+          <img
+            src={property.images[0]}
+            alt={property.title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+          />
+        </Link>
+        
+        {/* Navigation Arrows (Decorative based on screenshot) */}
+        <button className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-2 rounded-full backdrop-blur-sm transition-colors border border-white/20">
+          <Icons.ChevronRight className="w-5 h-5 rotate-180" />
+        </button>
+        <button className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-2 rounded-full backdrop-blur-sm transition-colors border border-white/20">
+          <Icons.ChevronRight className="w-5 h-5" />
+        </button>
+
+        {/* Top Badge */}
+        <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-4 py-1 border border-white/20 rounded-sm">
+           <span className="text-white text-xs font-bold uppercase tracking-widest">{property.type}</span>
+        </div>
+      </div>
+
+      {/* 2. Details Section (Theme Background - Navy Blue) */}
+      <div className="bg-brand-900 p-6 text-white relative z-10 border-t border-brand-500/30">
+        {/* Title & Location Row */}
+        <div className="flex justify-between items-start mb-2">
+           <div>
+             <h3 className="text-xl font-serif font-bold leading-tight text-white group-hover:text-brand-100 transition-colors">{property.title}</h3>
+             <p className="text-xs uppercase tracking-wider font-semibold opacity-70 mt-1 text-brand-100">{property.type}</p>
+           </div>
+           <div className="flex flex-col items-end text-right">
+              <Icons.MapPin className="w-5 h-5 text-brand-400 mb-1" />
+              <span className="text-xs font-medium text-white/90">{property.location.split(',')[0]}</span>
+           </div>
+        </div>
+
+        {/* Price */}
+        <div className="mb-6 mt-4">
+           <p className="text-xs uppercase tracking-wider opacity-60 mb-1">Starting From</p>
+           <p className="text-2xl font-serif font-bold text-white">{property.currency} {(property.price).toLocaleString()}</p>
+        </div>
+
+        {/* Amenities Grid (2x2) matches screenshot style */}
+        <div className="grid grid-cols-2 gap-y-4 gap-x-2 mb-6 border-t border-brand-700 pt-4 text-white/80">
+           <div className="flex items-center gap-3">
+              <Icons.Waves className="w-5 h-5 opacity-70" />
+              <span className="text-sm font-medium">Pool</span>
+           </div>
+           <div className="flex items-center gap-3">
+              <Icons.Dumbbell className="w-5 h-5 opacity-70" />
+              <span className="text-sm font-medium">Gym</span>
+           </div>
+           <div className="flex items-center gap-3">
+              <Icons.Warehouse className="w-5 h-5 opacity-70" />
+              <span className="text-sm font-medium">Parking</span>
+           </div>
+           <div className="flex items-center gap-3">
+              <Icons.BedDouble className="w-5 h-5 opacity-70" />
+              <span className="text-sm font-medium">{property.beds} Bedroom</span>
+           </div>
+           <div className="flex items-center gap-3">
+              <Icons.Square className="w-5 h-5 opacity-70" />
+              <span className="text-sm font-medium">{property.sqft} sq.ft</span>
+           </div>
+           <div className="flex items-center gap-3">
+              <Icons.Building2 className="w-5 h-5 opacity-70" />
+              <span className="text-sm font-medium">Balcony</span>
+           </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="grid grid-cols-2 gap-4">
+           <Link 
+             to={`/projects/${property.id}`}
+             className="flex items-center justify-center gap-2 bg-white text-brand-900 py-3 px-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-50 transition-colors rounded-sm"
+           >
+             <Icons.Phone className="w-4 h-4" /> Inquiry
+           </Link>
+           <a 
+             href={`https://wa.me/971561705995?text=Hi, I am interested in ${property.title}`}
+             target="_blank"
+             rel="noreferrer"
+             className="flex items-center justify-center gap-2 bg-brand-700 text-white border border-brand-600 py-3 px-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-600 transition-colors rounded-sm"
+           >
+             <Icons.MessageSquare className="w-4 h-4" /> Whatsapp
+           </a>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+export default LuxuryPropertyCard;

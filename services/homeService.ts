@@ -58,6 +58,29 @@ const DIFFERENTIATORS: FeatureItem[] = [
   }
 ];
 
+const WHY_CHOOSE_US: FeatureItem[] = [
+  {
+    title: "Specialists in Investment Properties",
+    description: "Tailored selections for dream homes and high-ROI investments.",
+    icon: Icons.TrendingUp
+  },
+  {
+    title: "Multilingual, Client-Focused Team",
+    description: "We speak multiple languages to ensure smooth, transparent communication with clients from around the world.",
+    icon: Icons.Languages
+  },
+  {
+    title: "Golden Visa & Mortgage Support",
+    description: "From securing a Golden Visa to mortgage consultancy, we simplify every step.",
+    icon: Icons.FileCheck // Using FileCheck for Visa/Documents
+  },
+  {
+    title: "Global Reach",
+    description: "Personalized, one-on-one service backed by an international network across India, GCC, and the UAE.",
+    icon: Icons.Globe
+  }
+];
+
 const DEVELOPERS: DeveloperLogo[] = [
   { name: "Emaar", logo: "https://logo.clearbit.com/emaar.com" },
   { name: "Damac", logo: "https://logo.clearbit.com/damacproperties.com" },
@@ -83,6 +106,9 @@ export const homeService = {
   getDifferentiators: async (): Promise<FeatureItem[]> => {
     // await delay(100);
     return DIFFERENTIATORS;
+  },
+  getWhyChooseUs: async (): Promise<FeatureItem[]> => {
+    return WHY_CHOOSE_US;
   },
   getDevelopers: async (): Promise<DeveloperLogo[]> => {
     // await delay(100);

@@ -14,6 +14,7 @@ import { Icons } from '../components/ui/Icons';
 import { motion } from 'framer-motion';
 import { Property, FeatureItem, DeveloperLogo } from '../types';
 import { Skeleton } from '../components/ui/Skeleton';
+import LuxuryPropertyCard from '../components/LuxuryPropertyCard';
 
 const Home: React.FC = () => {
   const [featuredProjects, setFeaturedProjects] = useState<Property[]>([]);
@@ -23,16 +24,18 @@ const Home: React.FC = () => {
   // Content States
   const [benefits, setBenefits] = useState<string[]>([]);
   const [differentiators, setDifferentiators] = useState<FeatureItem[]>([]);
+  const [whyChooseUs, setWhyChooseUs] = useState<FeatureItem[]>([]);
   const [developers, setDevelopers] = useState<DeveloperLogo[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       
-      const [allProps, fetchedBenefits, fetchedDiffs, fetchedDevs] = await Promise.all([
+      const [allProps, fetchedBenefits, fetchedDiffs, fetchedWhy, fetchedDevs] = await Promise.all([
         propertyService.getAllProperties(),
         homeService.getBenefits(),
         homeService.getDifferentiators(),
+        homeService.getWhyChooseUs(),
         homeService.getDevelopers()
       ]);
 
@@ -40,6 +43,7 @@ const Home: React.FC = () => {
       setFeaturedProjects(allProps.filter(p => p.featured));
       setBenefits(fetchedBenefits);
       setDifferentiators(fetchedDiffs);
+      setWhyChooseUs(fetchedWhy);
       setDevelopers(fetchedDevs);
       
       setLoading(false);
@@ -58,6 +62,43 @@ const Home: React.FC = () => {
           <div className="w-[1px] h-12 md:h-16 bg-slate-200 dark:bg-white/20"></div>
         </FloatingElement>
       </div>
+
+      {/* --- WHY CHOOSE US (New Section with Comet Cards) --- */}
+      <SectionWrapper className="py-24 bg-white dark:bg-luxury-black transition-colors duration-300">
+        <div className="container mx-auto px-6">
+          <div className="mb-16">
+            <span className="text-brand-600 dark:text-brand-500 uppercase tracking-widest text-xs font-semibold block mb-4">Why Choose Us</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white">Why Choose Ridhira Realty?</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {whyChooseUs.map((item, idx) => (
+              // @ts-ignore
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="h-full"
+              >
+                <CometCard className="h-full" contentClassName="bg-brand-900 dark:bg-brand-900 border border-brand-800">
+                  <div className="p-8 flex flex-col h-full">
+                    <div className="mb-6">
+                      {item.icon && <item.icon className="w-12 h-12 text-brand-400" strokeWidth={1.5} />}
+                    </div>
+                    <h3 className="text-xl font-serif text-white mb-4 leading-tight">{item.title}</h3>
+                    <p className="text-brand-100/80 text-sm leading-relaxed mb-4 flex-1">
+                      {item.description}
+                    </p>
+                    <div className="w-12 h-[2px] bg-brand-500/50 mt-auto group-hover:w-full transition-all duration-500"></div>
+                  </div>
+                </CometCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
 
       {/* --- LATEST WORK / OUR PROJECTS SECTION --- */}
       <SectionWrapper className="py-16 md:py-24 bg-slate-50 dark:bg-luxury-black transition-colors duration-300">
@@ -92,50 +133,7 @@ const Home: React.FC = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {latestWork.map((project, idx) => (
-                // @ts-ignore: Suppressing strict type check for standard motion props
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                >
-                  <CometCard className="h-full">
-                    {/* Image */}
-                    <div className="relative h-64 overflow-hidden group">
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
-                      <img 
-                        src={project.images[0]} 
-                        alt={project.location} 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute top-4 right-4 z-20 bg-white/90 dark:bg-black/70 backdrop-blur-sm px-3 py-1 rounded-sm border border-slate-200 dark:border-white/10">
-                        <span className="text-brand-600 dark:text-white text-xs font-bold tracking-wider">
-                          {project.currency} {(project.price / 1000).toFixed(0)}K
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Details */}
-                    <div className="p-6 group">
-                      <h3 className="text-lg font-serif text-slate-900 dark:text-white mb-2 line-clamp-1">{project.title}</h3>
-                      <p className="text-sm text-slate-500 dark:text-white/60 mb-3">{project.location}</p>
-                      
-                      {/* Extract handover from amenities if present */}
-                      <div className="flex items-center gap-2 text-slate-500 dark:text-white/50 text-xs uppercase tracking-wide mb-4">
-                        <Icons.Clock className="w-3 h-3" />
-                        {project.amenities.find(a => a.includes('Handover')) || 'Handover Soon'}
-                      </div>
-
-                      <div className="pt-4 border-t border-slate-100 dark:border-white/5 flex justify-between items-center">
-                        <span className="text-[10px] text-slate-400 dark:text-white/40 uppercase tracking-widest">Investment Opportunity</span>
-                        <Link to={`/projects/${project.id}`} className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-900 dark:text-white group-hover:bg-brand-500 group-hover:text-white transition-colors">
-                          <Icons.ChevronRight className="w-4 h-4" />
-                        </Link>
-                      </div>
-                    </div>
-                  </CometCard>
-                </motion.div>
+                <LuxuryPropertyCard key={project.id} property={project} index={idx} />
               ))}
             </div>
           )}

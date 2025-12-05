@@ -2,16 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { ParallaxScroll } from './ui/ParallaxScroll';
 import { propertyService } from '../services/propertyService';
 import SectionWrapper from './ui/SectionWrapper';
+import { GALLERY_IMAGES } from '../constants/images';
 
 const GallerySection: React.FC = () => {
   const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {
-    propertyService.getAllProperties().then(props => {
-      // Collect all images from properties to create a rich gallery
-      const allImages = props.flatMap(p => p.images).slice(0, 9);
-      setImages(allImages);
-    });
+    // Use public gallery images from constants
+    setImages(GALLERY_IMAGES as unknown as string[]);
   }, []);
 
   return (

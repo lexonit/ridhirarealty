@@ -15,11 +15,15 @@ import { Property, FeatureItem, DeveloperLogo } from '../types';
 import { Skeleton } from '../components/ui/Skeleton';
 import LuxuryPropertyCard from '../components/LuxuryPropertyCard';
 import SEO from '../components/SEO';
+import { WHY_DUBAI_BACKGROUND, WHY_IMAGES, WHAT_IS_NEXT_IMAGES } from '../constants/images';
 
 const Home: React.FC = () => {
   const [featuredProjects, setFeaturedProjects] = useState<Property[]>([]);
   const [latestWork, setLatestWork] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
+  
+  // Image Loading States
+  const [imagesLoaded, setImagesLoaded] = useState({ rakVision: false, wynnResort: false });
   
   // Content States
   const [benefits, setBenefits] = useState<string[]>([]);
@@ -226,7 +230,10 @@ const Home: React.FC = () => {
 
       {/* --- WHY DUBAI & RAK SECTION --- */}
       <SectionWrapper className="py-24 bg-brand-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1512453979798-5ea904f8486d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20" />
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-20" 
+          style={{ backgroundImage: `url('${WHY_DUBAI_BACKGROUND}')` }}
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-900 to-luxury-black/90"></div>
         
         <div className="container mx-auto px-6 relative z-10">
@@ -251,28 +258,14 @@ const Home: React.FC = () => {
              </div>
              
              <div className="flex-1 w-full">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-4 translate-y-8">
-                     <div className="h-40 md:h-56 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm p-6 flex flex-col justify-end">
-                        <span className="text-4xl font-serif text-brand-400 mb-2">0%</span>
-                        <span className="text-xs uppercase tracking-widest text-white/60">Tax</span>
-                     </div>
-                     <div className="h-40 md:h-56 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm p-6 flex flex-col justify-end">
-                        <span className="text-4xl font-serif text-brand-400 mb-2">100%</span>
-                        <span className="text-xs uppercase tracking-widest text-white/60">Ownership</span>
-                     </div>
-                  </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-4">
-                     <div className="h-40 md:h-56 bg-brand-500 rounded-2xl border border-white/10 p-6 flex flex-col justify-end shadow-2xl">
-                        <Icons.TrendingUp className="w-8 h-8 text-white mb-auto" />
-                        <span className="text-4xl font-serif text-white mb-2">10%</span>
-                        <span className="text-xs uppercase tracking-widest text-white/80">Yields</span>
-                     </div>
-                     <div className="h-40 md:h-56 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm p-6 flex flex-col justify-end">
-                        <Icons.Globe className="w-8 h-8 text-brand-400 mb-auto" />
-                        <span className="text-lg font-serif text-white">Golden Visa</span>
-                        <span className="text-xs uppercase tracking-widest text-white/60 mt-1">Eligibility</span>
-                     </div>
+                     <img src={WHY_IMAGES.propertyTax} alt="0% Tax" className="w-full h-40 md:h-56 object-cover rounded-2xl border border-white/10 shadow-lg" />
+                     <img src={WHY_IMAGES.foreignOwnership} alt="100% Foreign Ownership" className="w-full h-40 md:h-56 object-cover rounded-2xl border border-white/10 shadow-lg" />
+                  </div>
+                  <div className="space-y-4 translate-y-8">
+                     <img src={WHY_IMAGES.rentalYields} alt="10% Yields" className="w-full h-40 md:h-56 object-cover rounded-2xl border border-white/10 shadow-lg" />
+                     <img src={WHY_IMAGES.infrastructure} alt="World-class Infrastructure" className="w-full h-40 md:h-56 object-cover rounded-2xl border border-white/10 shadow-lg" />
                   </div>
                 </div>
              </div>
@@ -306,20 +299,80 @@ const Home: React.FC = () => {
 
       <AboutSection />
       
-      <SectionWrapper>
+      {/* <SectionWrapper>
         <VideoShowcase />
-      </SectionWrapper>
+      </SectionWrapper> */}
 
       <GallerySection />
       
+      {/* --- WHAT IS THE NEXT SECTION --- */}
+      <SectionWrapper className="py-24 bg-slate-50 dark:bg-luxury-charcoal transition-colors duration-300">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">What is the Next</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-6">Upcoming Opportunities & Future Vision</h2>
+            <p className="text-slate-600 dark:text-white/60 max-w-2xl mx-auto">Discover the next generation of investment opportunities in the UAE, from Ras Al Khaimah's visionary 2030 projects to premium resort developments.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* RAK Vision 2030 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 hover:border-brand-500 transition-all duration-300 shadow-md hover:shadow-xl dark:shadow-none"
+            >
+              <div className="relative h-80 overflow-hidden bg-slate-200 dark:bg-white/5">
+                {!imagesLoaded.rakVision && <Skeleton className="w-full h-full rounded-none" />}
+                <img 
+                  src={WHAT_IS_NEXT_IMAGES.rakVision} 
+                  alt="RAK Vision 2030"
+                  onLoad={() => setImagesLoaded(prev => ({ ...prev, rakVision: true }))}
+                  className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${!imagesLoaded.rakVision ? 'hidden' : ''}`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                <h3 className="text-2xl font-serif mb-2">RAK Vision 2030</h3>
+                <p className="text-sm text-white/80">Transforming Ras Al Khaimah into a premier global destination with world-class infrastructure and sustainable development.</p>
+              </div>
+            </motion.div>
+
+            {/* Wynn Resort & Casino */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 hover:border-brand-500 transition-all duration-300 shadow-md hover:shadow-xl dark:shadow-none"
+            >
+              <div className="relative h-80 overflow-hidden bg-slate-200 dark:bg-white/5">
+                {!imagesLoaded.wynnResort && <Skeleton className="w-full h-full rounded-none" />}
+                <img 
+                  src={WHAT_IS_NEXT_IMAGES.wynnResort} 
+                  alt="Wynn Resort Casino"
+                  onLoad={() => setImagesLoaded(prev => ({ ...prev, wynnResort: true }))}
+                  className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${!imagesLoaded.wynnResort ? 'hidden' : ''}`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                <h3 className="text-2xl font-serif mb-2">Wynn Resort & Casino</h3>
+                <p className="text-sm text-white/80">Luxury hospitality and entertainment destination bringing world-renowned experiences to the UAE market.</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </SectionWrapper>
+      
       {/* --- NEW CUSTOM CTA SECTION --- */}
       <SectionWrapper id="contact" className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-luxury-charcoal z-0">
-          <div className="absolute inset-0 bg-brand-900/40 mix-blend-overlay"></div>
-          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover opacity-20" alt="Consultation" />
+        <div className="absolute inset-0 z-0">
+          <img src="/home/create a banner Dubai Burj Khalifa image _with out words_ (2) (1).jpg" className="w-full h-full object-cover" alt="Dubai Burj Khalifa" />
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl font-serif text-white mb-6">Ready to Begin Your Property Journey?</h2>
           <p className="text-white/70 max-w-2xl mx-auto mb-10 text-lg font-light">
             Let Ridhira Realty guide you through the UAE’s most promising investment destinations — backed by research, clarity, and trust.
           </p>

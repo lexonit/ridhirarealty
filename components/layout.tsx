@@ -4,6 +4,7 @@ import { NAV_ITEMS } from '../constants';
 import { Button, SparklesCore, Menu, MenuItem, ProductItem, HoveredLink } from './ui';
 import { Menu as MenuIcon, X, Sun, Moon, ChevronDown, Mail, ArrowRight, Twitter, Linkedin, Instagram, LogIn } from 'lucide-react';
 import { cn } from '../components/ui';
+import { LUXURY_IMAGES } from '../constants/images';
 
 interface NavbarProps {
   onNavigate: (path: string) => void;
@@ -53,21 +54,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPath, theme, 
                             <ProductItem
                                 title="For IT Providers"
                                 href="/services/it-providers"
-                                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=400&auto=format&fit=crop"
+                                src={LUXURY_IMAGES[0]}
                                 description="Scale your MSP business with AI employees."
                                 onClick={() => handleNav('/services/it-providers')}
                             />
                             <ProductItem
                                 title="AI Project Manager"
                                 href="/services/ai-project-manager"
-                                src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=400&auto=format&fit=crop"
+                                src={LUXURY_IMAGES[1]}
                                 description="Stop babysitting tickets. Let AI manage workflow."
                                 onClick={() => handleNav('/services/ai-project-manager')}
                             />
                             <ProductItem
                                 title="AI Chatbots"
                                 href="/services/ai-chat"
-                                src="https://images.unsplash.com/photo-1535378437327-b714946946aa?q=80&w=400&auto=format&fit=crop"
+                                src={LUXURY_IMAGES[2]}
                                 description="24/7 Customer support agents."
                                 onClick={() => handleNav('/services/ai-chat')}
                             />

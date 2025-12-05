@@ -6,6 +6,7 @@ import { FlipText } from './ui/AceternityUI';
 import { propertyService } from '../services/propertyService';
 import { homeService } from '../services/homeService';
 import { Property, HeroSlide } from '../types';
+import { HERO_IMAGES } from '../constants/images';
 
 const Hero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -94,7 +95,7 @@ const Hero: React.FC = () => {
           playsInline
           preload="auto"
           className="w-full h-full object-cover scale-105"
-          poster="https://images.unsplash.com/photo-1600596542815-3ad19fb21208?q=80&w=2074&auto=format&fit=crop"
+          // poster={HERO_IMAGES[0]}
         >
           {/* Using a reliable HD source for smoother playback. */}
           <source src="https://www.pexels.com/download/video/27740273/" type="video/mp4" />

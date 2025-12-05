@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Icons } from './ui/Icons';
+import { VIDEO_POSTER_IMAGE } from '../constants/images';
 
 const VideoShowcase: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -23,7 +24,7 @@ const VideoShowcase: React.FC = () => {
           ref={videoRef}
           loop 
           playsInline
-          poster="https://images.unsplash.com/photo-1512453979798-5ea904f8486d?q=80&w=2070&auto=format&fit=crop"
+          poster={VIDEO_POSTER_IMAGE}
           className="w-full h-full object-cover"
         >
           <source src="https://videos.pexels.com/video-files/7578552/7578552-uhd_3840_2160_25fps.mp4" type="video/mp4" />

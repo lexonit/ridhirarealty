@@ -220,8 +220,8 @@ const Home: React.FC = () => {
         <div className="relative flex overflow-hidden group">
           <div className="flex animate-scroll whitespace-nowrap gap-8 px-8 items-center">
              {[...developers, ...developers].map((dev, idx) => (
-               <div key={`${dev.name}-${idx}`} className="flex-shrink-0 bg-white p-4 rounded-lg shadow-sm border border-slate-100 dark:border-white/10 opacity-90 hover:opacity-100 transition-opacity">
-                 <img src={dev.logo} alt={dev.name} className="h-8 md:h-10 w-auto object-contain" />
+               <div key={`${dev.name}-${idx}`} className="flex-shrink-0 bg-white p-1 rounded-lg shadow-sm border border-slate-100 dark:border-white/10 opacity-90 hover:opacity-100 transition-opacity">
+                 <img src={dev.logo} alt={dev.name} className="h-24 md:h-24 w-auto object-contain" />
                </div>
              ))}
           </div>

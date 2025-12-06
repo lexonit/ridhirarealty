@@ -88,7 +88,7 @@ const ContactPage: React.FC = () => {
       
       {/* Hero Section */}
       <div ref={heroRef} className="relative h-[60vh] flex items-center justify-center overflow-hidden" style={{
-        backgroundImage: `url('/home/pexels-nextvoyage-1470405.jpg')`,
+        backgroundImage: `url('/contact/hero-contact.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'

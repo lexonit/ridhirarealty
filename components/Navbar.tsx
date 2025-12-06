@@ -71,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
       <div className="container mx-auto px-4 lg:px-6 relative flex justify-between items-center">
         
         {/* Desktop Layout - Left Links */}
-        <div className="hidden lg:flex items-center space-x-4 xl:space-x-8 w-1/3">
+        <div className="hidden lg:flex items-center space-x-4 xl:space-x-8 w-1/2">
           <Link to="/" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors ${textColorClass}`}>Home</Link>
           <Link to="/about" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors ${textColorClass}`}>About Us</Link>
           <Link to="/services" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors ${textColorClass}`}>Services Offered</Link>
@@ -88,7 +88,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
         </Link>
 
         {/* Desktop Layout - Right Links & Icons */}
-        <div className="hidden lg:flex items-center justify-end space-x-4 xl:space-x-8 w-1/3">
+        <div className="hidden lg:flex items-center justify-end space-x-4 xl:space-x-8 w-1/2">
           {/* Insights Hub Dropdown */}
           <div className="relative group">
             <Link to="/insights" className={`flex items-center text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors py-4 ${textColorClass}`}>

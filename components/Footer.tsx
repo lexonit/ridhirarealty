@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-6">
             <Link to="/" className="block">
-              <img src="/logo/logo.png" alt="Ridhira Realty" className="h-12 w-auto" />
+              <img src="/logo/logo.png" alt="Ridhira Realty" className="h-28 w-auto" />
             </Link>
             <p className="text-slate-600 dark:text-white/50 text-sm leading-relaxed">
               Redefining the skyline of Dubai with architectural masterpieces. 

@@ -386,7 +386,7 @@ const Home: React.FC = () => {
         </div>
       </SectionWrapper>
 
-      <AboutSection />
+      {/* <AboutSection /> */}
       
       {/* <SectionWrapper>
         <VideoShowcase />

@@ -100,9 +100,6 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
             <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white dark:bg-luxury-charcoal/95 backdrop-blur-xl border border-black/5 dark:border-white/10 shadow-2xl rounded-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
               <div className="py-2">
                 <Link to="/insights" className="block px-6 py-3 text-xs text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-white/5 hover:text-brand-500 dark:hover:text-brand-400 transition-colors uppercase tracking-wider">
-                  Market Trends
-                </Link>
-                <Link to="/insights" className="block px-6 py-3 text-xs text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-white/5 hover:text-brand-500 dark:hover:text-brand-400 transition-colors uppercase tracking-wider">
                   Video Gallery
                 </Link>
               </div>

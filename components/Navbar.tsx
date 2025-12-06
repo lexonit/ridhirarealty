@@ -153,16 +153,16 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
         className={`fixed inset-0 bg-white/98 dark:bg-luxury-black/98 backdrop-blur-xl z-40 flex flex-col pt-24 items-center transition-all duration-500 overflow-y-auto ${isOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-full invisible pointer-events-none'}`}
       >
         <div className="flex flex-col items-center space-y-6 p-8 text-center w-full min-h-full">
-          <Link to="/" onClick={() => setIsOpen(false)} className="text-xl font-serif text-slate-900 dark:text-white hover:text-brand-500 transition-colors">Home</Link>
-          <Link to="/about" onClick={() => setIsOpen(false)} className="text-xl font-serif text-slate-900 dark:text-white hover:text-brand-500 transition-colors">About Us</Link>
-          <Link to="/services" onClick={() => setIsOpen(false)} className="text-xl font-serif text-slate-900 dark:text-white hover:text-brand-500 transition-colors">Services Offered</Link>
-          <Link to="/projects" onClick={() => setIsOpen(false)} className="text-xl font-serif text-slate-900 dark:text-white hover:text-brand-500 transition-colors">Projects</Link>
+          <Link to="/" onClick={() => setIsOpen(false)} className="text-xl  text-slate-900 dark:text-white hover:text-brand-500 transition-colors">Home</Link>
+          <Link to="/about" onClick={() => setIsOpen(false)} className="text-xl  text-slate-900 dark:text-white hover:text-brand-500 transition-colors">About Us</Link>
+          <Link to="/services" onClick={() => setIsOpen(false)} className="text-xl  text-slate-900 dark:text-white hover:text-brand-500 transition-colors">Services Offered</Link>
+          <Link to="/projects" onClick={() => setIsOpen(false)} className="text-xl  text-slate-900 dark:text-white hover:text-brand-500 transition-colors">Projects</Link>
           
           {/* Mobile Insights Dropdown */}
           <div className="w-full flex flex-col items-center">
             <button 
               onClick={() => setMobileInsightsOpen(!mobileInsightsOpen)}
-              className="flex items-center text-xl font-serif text-slate-900 dark:text-white hover:text-brand-500 transition-colors"
+              className="flex items-center text-xl  text-slate-900 dark:text-white hover:text-brand-500 transition-colors"
             >
               Insights Hub <Icons.ChevronDown className={`ml-2 w-5 h-5 transition-transform ${mobileInsightsOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -172,10 +172,10 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
             </div>
           </div>
 
-          <Link to="/contact" onClick={() => setIsOpen(false)} className="text-xl font-serif text-slate-900 dark:text-white hover:text-brand-500 transition-colors">Contact Us</Link>
+          <Link to="/contact" onClick={() => setIsOpen(false)} className="text-xl  text-slate-900 dark:text-white hover:text-brand-500 transition-colors">Contact Us</Link>
           
           <div className="flex gap-8 mt-auto mb-8 border-t border-slate-200 dark:border-white/10 pt-8 w-full justify-center">
-            <a href="tel:+971561705995" className="flex items-center text-brand-500 dark:text-brand-400 hover:text-brand-700 dark:hover:text-white transition-colors text-lg font-serif">
+            <a href="tel:+971561705995" className="flex items-center text-brand-500 dark:text-brand-400 hover:text-brand-700 dark:hover:text-white transition-colors text-lg ">
               <Icons.Phone className="w-5 h-5 mr-2" />
               +971 56 170 5995
             </a>

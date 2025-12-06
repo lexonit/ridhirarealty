@@ -104,7 +104,7 @@ const ProjectsPage: React.FC = () => {
            <SectionWrapper>
              <div className="w-px h-16 bg-gradient-to-b from-brand-500 to-transparent mx-auto mb-6"></div>
              <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">Our Portfolio</span>
-             <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">
+             <h1 className="text-5xl md:text-7xl  text-white mb-6">
                <FlipWords 
                  words={["Master Projects", "Iconic Developments", "Luxury Living", "Premium Properties"]} 
                  duration={3000}

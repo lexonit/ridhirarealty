@@ -87,7 +87,7 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white font-serif">
+      <h1 className="text-2xl md:text-7xl font-bold dark:text-white ">
         The Art of <br /> Luxury Living
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 text-neutral-800">
@@ -133,7 +133,7 @@ export const ProductCard = ({
         </div>
       </Link>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black/60 pointer-events-none transition-opacity duration-300 rounded-xl"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white font-bold transition-opacity duration-300 font-serif text-xl tracking-wide">
+      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white font-bold transition-opacity duration-300  text-xl tracking-wide">
         {product.title}
       </h2>
     </motion.div>

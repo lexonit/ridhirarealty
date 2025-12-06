@@ -28,7 +28,7 @@ const PropertiesPage: React.FC = () => {
          <div className="relative z-10 container mx-auto px-6 text-center">
            <SectionWrapper>
              <span className="text-brand-500 uppercase tracking-widest text-sm block mb-4">Our Portfolio</span>
-             <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">
+             <h1 className="text-5xl md:text-7xl  text-white mb-6">
                <FlipWords 
                  words={["Luxury Residences", "Premium Estates", "Elite Properties", "Exclusive Homes"]} 
                  duration={3000}

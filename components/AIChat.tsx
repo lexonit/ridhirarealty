@@ -79,7 +79,7 @@ const AIChat: React.FC = () => {
                   <Icons.Star className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-serif font-bold text-white text-sm">Aura AI</h3>
+                  <h3 className=" font-bold text-white text-sm">Aura AI</h3>
                   <p className="text-[10px] text-white/70 uppercase tracking-widest">Ridhira Concierge</p>
                 </div>
               </div>

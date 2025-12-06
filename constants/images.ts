@@ -38,6 +38,7 @@ export const PUBLIC_IMAGES = {
   whyMarketInsights: '/home/why/MarketInsightsHome Page.png',
   whyPropertyTax: '/home/why/PropertyTAX.png',
   whyInfrastructure: '/home/why/World-class infrastructure and unmatched safety.png',
+  goldenVisa: '/home/why/goldenvisa.jpg',
   
   // What is the Next Section
   rakVision2030: '/whatisthenext/RAKVision2030.jpg',
@@ -87,6 +88,7 @@ export const WHY_IMAGES = {
   marketInsights: PUBLIC_IMAGES.whyMarketInsights,
   propertyTax: PUBLIC_IMAGES.whyPropertyTax,
   infrastructure: PUBLIC_IMAGES.whyInfrastructure,
+  goldenVisa: PUBLIC_IMAGES.goldenVisa,
 } as const;
 
 // What is the Next Section Images

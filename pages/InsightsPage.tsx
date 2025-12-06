@@ -76,7 +76,7 @@ const InsightsPage: React.FC = () => {
          <div className="relative z-10 container mx-auto px-6 text-center">
            <SectionWrapper>
              <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span>
-             <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">
+             <h1 className="text-5xl md:text-7xl  text-white mb-6">
                <FlipWords 
                  words={["Market Insights", "Expert Analysis", "Trends & Data", "Industry Knowledge"]} 
                  duration={3000}
@@ -94,7 +94,7 @@ const InsightsPage: React.FC = () => {
       <div className="container mx-auto px-6 py-24 border-b border-slate-200 dark:border-white/5">
         <SectionWrapper>
           <div className="flex items-center justify-between mb-12">
-            <h2 className="text-3xl font-serif text-slate-900 dark:text-white">Latest Market Trends</h2>
+            <h2 className="text-3xl  text-slate-900 dark:text-white">Latest Market Trends</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
@@ -114,7 +114,7 @@ const InsightsPage: React.FC = () => {
                     <div className="flex items-center text-slate-500 dark:text-white/40 text-xs uppercase tracking-widest mb-3">
                       {article.date} • {article.readTime}
                     </div>
-                    <h3 className="text-2xl font-serif text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors mb-3">
+                    <h3 className="text-2xl  text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors mb-3">
                       {article.title}
                     </h3>
                     <p className="text-slate-600 dark:text-white/60 text-sm line-clamp-2">
@@ -133,7 +133,7 @@ const InsightsPage: React.FC = () => {
           <SectionWrapper>
             <div className="text-center mb-16">
               <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">Multimedia</span>
-              <h2 className="text-4xl font-serif text-slate-900 dark:text-white">Exclusive Video Content</h2>
+              <h2 className="text-4xl  text-slate-900 dark:text-white">Exclusive Video Content</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -165,7 +165,7 @@ const InsightsPage: React.FC = () => {
 
                       {/* Metadata Overlay */}
                       <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent pt-12">
-                        <h3 className="text-lg font-serif text-white mb-2 line-clamp-1 group-hover:text-brand-400 transition-colors">{video.title}</h3>
+                        <h3 className="text-lg  text-white mb-2 line-clamp-1 group-hover:text-brand-400 transition-colors">{video.title}</h3>
                         <div className="flex items-center justify-between text-xs text-white/60">
                            <span className="flex items-center gap-1"><Icons.Clock className="w-3 h-3" /> {video.duration}</span>
                            <span className="flex items-center gap-1"><Icons.Eye className="w-3 h-3" /> {video.views}</span>

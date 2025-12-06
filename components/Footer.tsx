@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
 
           {/* Links */}
           <div>
-            <h4 className="font-serif text-lg mb-6 text-slate-900 dark:text-white">Discovery</h4>
+            <h4 className=" text-lg mb-6 text-slate-900 dark:text-white">Discovery</h4>
             <ul className="space-y-4 text-sm text-slate-600 dark:text-white/60">
               <li><Link to="/about" className="hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer transition-colors">Our Story</Link></li>
               <li><Link to="/projects" className="hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer transition-colors">Residences</Link></li>
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
 
           {/* Contact / Address */}
           <div>
-            <h4 className="font-serif text-lg mb-6 text-slate-900 dark:text-white">Our Address</h4>
+            <h4 className=" text-lg mb-6 text-slate-900 dark:text-white">Our Address</h4>
             <ul className="space-y-4 text-sm text-slate-600 dark:text-white/60">
               <li className="flex items-start gap-2">
                 <Icons.MapPin className="w-4 h-4 text-brand-600 dark:text-brand-400 mt-1 shrink-0" /> 
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
 
           {/* Newsletter */}
           <div>
-            <h4 className="font-serif text-lg mb-6 text-slate-900 dark:text-white">Newsletter</h4>
+            <h4 className=" text-lg mb-6 text-slate-900 dark:text-white">Newsletter</h4>
             <p className="text-slate-600 dark:text-white/50 text-xs mb-4">Subscribe for exclusive off-plan updates.</p>
             <div className="flex border-b border-slate-300 dark:border-white/20 pb-2">
               <input type="email" placeholder="Email Address" className="bg-transparent outline-none w-full text-sm placeholder-slate-400 dark:placeholder-white/30 text-slate-900 dark:text-white" />

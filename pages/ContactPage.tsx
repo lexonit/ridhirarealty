@@ -100,7 +100,7 @@ const ContactPage: React.FC = () => {
          <div className="relative z-10 container mx-auto px-6 text-center">
            <SectionWrapper>
              <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span>
-             <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">
+             <h1 className="text-5xl md:text-7xl  text-white mb-6">
                <FlipWords 
                  words={["Get In Touch", "Let's Connect", "Reach Out", "Contact Us"]} 
                  duration={3000}
@@ -123,7 +123,7 @@ const ContactPage: React.FC = () => {
                    <div className="w-12 h-12 bg-brand-100 dark:bg-brand-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
                      {info.icon && <info.icon className="w-5 h-5 text-brand-600 dark:text-brand-500" />}
                    </div>
-                   <h3 className="text-xl font-serif text-slate-900 dark:text-white mb-2">{info.title}</h3>
+                   <h3 className="text-xl  text-slate-900 dark:text-white mb-2">{info.title}</h3>
                    <p className="text-slate-600 dark:text-white/60" dangerouslySetInnerHTML={{ __html: info.description || '' }}></p>
                 </div>
               ))}
@@ -138,7 +138,7 @@ const ContactPage: React.FC = () => {
           {/* Form Side */}
           <div className="w-full lg:w-1/2">
             <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">Get In Touch</span>
-            <h2 className="text-4xl font-serif text-slate-900 dark:text-white mb-6">Send Us a Message</h2>
+            <h2 className="text-4xl  text-slate-900 dark:text-white mb-6">Send Us a Message</h2>
             <p className="text-slate-600 dark:text-white/60 mb-8 leading-relaxed">
               Whether you're looking to invest in off-plan properties or need advice on your current portfolio, our team is here to assist you.
             </p>
@@ -240,7 +240,7 @@ const ContactPage: React.FC = () => {
             <div className="absolute inset-0 bg-brand-900/60 mix-blend-multiply" />
             <div className="absolute bottom-12 left-12 right-12 text-white">
               <Icons.MessageSquare className="w-12 h-12 mb-6 text-brand-400" />
-              <h3 className="text-3xl font-serif mb-4">Prefer WhatsApp?</h3>
+              <h3 className="text-3xl  mb-4">Prefer WhatsApp?</h3>
               <p className="text-white/80 mb-8 leading-relaxed">
                 Chat directly with our senior property consultants for instant updates on new launches and availability.
               </p>
@@ -276,7 +276,7 @@ const ContactPage: React.FC = () => {
           ></iframe>
           
           <div className="absolute bottom-6 left-6 bg-white dark:bg-luxury-black/90 backdrop-blur-md p-6 rounded-xl border border-slate-200 dark:border-white/10 shadow-lg max-w-xs hidden md:block">
-            <h4 className="font-serif text-slate-900 dark:text-white text-lg mb-2">Visit Our Office</h4>
+            <h4 className=" text-slate-900 dark:text-white text-lg mb-2">Visit Our Office</h4>
             <p className="text-xs text-slate-500 dark:text-white/60 mb-4 leading-relaxed">
               Located in the heart of Deira, providing easy access for all our international and local clients.
             </p>

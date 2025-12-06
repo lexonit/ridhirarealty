@@ -316,3 +316,27 @@ export const MOCK_PROPERTIES: Property[] = [
     featured: false
   }
 ];
+
+export const FEATURED_PROJECTS = [
+  {
+    id: 'fp1',
+    name: 'Wynn Al Marjan Island Residences',
+    description: "The region's first integrated resort experience.",
+    location: 'Al Marjan Island, Ras Al Khaimah, UAE',
+    image: '/home/projects/featured/featured01.jpg'
+  },
+  {
+    id: 'fp2',
+    name: 'Palm Jebel Ali Residences',
+    description: 'Waterfront living re-imagined.',
+    location: 'Palm Jebel Ali, Dubai, UAE',
+    image: '/home/projects/featured/featured02.jpg'
+  },
+  {
+    id: 'fp3',
+    name: 'Dubai Creek Harbour',
+    description: 'The next iconic skyline of Dubai.',
+    location: 'Dubai Creek Harbour, Dubai, UAE',
+    image: '/home/projects/featured/featured03.jpg'
+  }
+];

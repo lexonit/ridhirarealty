@@ -107,7 +107,7 @@ const LuxuryPropertyCard: React.FC<Props> = ({ property, index }) => {
         {/* Title & Location Row */}
         <div className="flex justify-between items-start mb-2">
            <div>
-             <h3 className="text-xl font-serif font-bold leading-tight text-white group-hover:text-brand-200 transition-colors">{property.title}</h3>
+             <h3 className="text-xl  font-bold leading-tight text-white group-hover:text-brand-200 transition-colors">{property.title}</h3>
              <p className="text-xs uppercase tracking-wider font-semibold opacity-70 mt-1 text-brand-200">{property.type}</p>
            </div>
            <div className="flex flex-col items-end text-right">
@@ -119,7 +119,7 @@ const LuxuryPropertyCard: React.FC<Props> = ({ property, index }) => {
         {/* Price */}
         <div className="mb-6 mt-4">
            <p className="text-xs uppercase tracking-wider opacity-60 mb-1">Starting From</p>
-           <p className="text-2xl font-serif font-bold text-white">{property.currency} {(property.price).toLocaleString()}</p>
+           <p className="text-2xl  font-bold text-white">{property.currency} {(property.price).toLocaleString()}</p>
         </div>
 
         {/* Amenities Grid (2x2) matches screenshot style */}

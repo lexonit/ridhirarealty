@@ -76,9 +76,9 @@ const ServicesPage: React.FC = () => {
          <div className="relative z-10 container mx-auto px-6 text-center">
            <SectionWrapper>
              <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span>
-             <h1 className="text-4xl md:text-6xl font-serif text-white mb-6">
+             <h1 className="text-4xl md:text-6xl  text-white mb-6">
                <FlipWords 
-                 words={["Comprehensive Services", "Expert Guidance", "Full Support", "End-to-End Solutions"]} 
+                 words={["Real Estate Consultation", "Elegant & Premium", "Property Management", "Investment Properties"]} 
                  duration={3000}
                  className="text-brand-400"
                />
@@ -92,6 +92,12 @@ const ServicesPage: React.FC = () => {
 
       {/* Services Grid */}
       <div className="py-24 container mx-auto px-6">
+        <div className="text-center mb-16">
+          <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">Our Services</span>
+          <h2 className="text-4xl md:text-5xl  text-slate-900 dark:text-white mb-6">Core Advisory & Investment Services</h2>
+          <p className="text-slate-600 dark:text-white/60 max-w-2xl mx-auto">Strategic offerings designed for investors, buyers, and institutions.</p>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {services.map((service, idx) => (
             <SectionWrapper key={idx} delay={idx * 0.05}>
@@ -112,7 +118,7 @@ const ServicesPage: React.FC = () => {
 
                 {/* Content Side */}
                 <div className="p-6 md:p-8 flex-1 flex flex-col justify-center">
-                   <h3 className="text-2xl font-serif text-slate-900 dark:text-white mb-3 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{service.title}</h3>
+                   <h3 className="text-2xl  text-slate-900 dark:text-white mb-3 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{service.title}</h3>
                    <p className="text-slate-600 dark:text-white/60 text-sm mb-6 leading-relaxed">{service.description}</p>
                    
                    <ul className="space-y-2 mt-auto">
@@ -136,7 +142,7 @@ const ServicesPage: React.FC = () => {
          <div className="container mx-auto px-6">
             <div className="text-center mb-16">
                <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-sm font-semibold">Tailored Portfolio</span>
-               <h2 className="text-4xl font-serif text-slate-900 dark:text-white mt-4">Property Types We Specialize In</h2>
+               <h2 className="text-4xl  text-slate-900 dark:text-white mt-4">Property Types We Specialize In</h2>
                <p className="text-slate-600 dark:text-white/50 mt-4">Curated property types for investor profiles and lifestyles.</p>
             </div>
 
@@ -155,7 +161,7 @@ const ServicesPage: React.FC = () => {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                     />
                     <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-                       <h3 className="text-2xl font-serif text-white mb-1 drop-shadow-md">{type.name}</h3>
+                       <h3 className="text-2xl  text-white mb-1 drop-shadow-md">{type.name}</h3>
                        <p className="text-xs text-white/90 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0 drop-shadow-md">
                          {type.desc}
                        </p>
@@ -170,14 +176,14 @@ const ServicesPage: React.FC = () => {
       <SectionWrapper className="py-24 bg-gradient-to-r from-brand-800 to-slate-900 dark:from-brand-900 dark:to-black text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="container mx-auto px-6 relative z-10">
-           <h2 className="text-3xl md:text-5xl font-serif text-white mb-12">Why Invest in UAE Real Estate</h2>
+           <h2 className="text-3xl md:text-5xl  text-white mb-12">Why Invest in UAE Real Estate</h2>
            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
               {investmentStats.map((stat, idx) => (
                 <div key={idx} className="p-6 border border-white/10 rounded-xl bg-white/5 backdrop-blur-sm">
                    {stat.icon ? (
                      <stat.icon className="w-10 h-10 md:w-12 md:h-12 text-brand-400 mx-auto mb-4" />
                    ) : (
-                     <div className="text-4xl md:text-5xl font-serif text-brand-400 mb-2">{stat.value}</div>
+                     <div className="text-4xl md:text-5xl  text-brand-400 mb-2">{stat.value}</div>
                    )}
                    <p className="text-white/70 uppercase tracking-widest text-xs">{stat.label}</p>
                 </div>

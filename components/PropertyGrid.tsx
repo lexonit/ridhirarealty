@@ -75,7 +75,7 @@ const PropertyCard: React.FC<{ property: Property; index: number }> = ({ propert
             <div className="p-5 md:p-6 relative z-20 h-[40%] md:h-[35%] flex flex-col justify-between group-hover:bg-slate-50 dark:group-hover:bg-luxury-charcoal/80 transition-colors">
               <div>
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-lg md:text-xl font-serif text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors line-clamp-1">{property.title}</h3>
+                  <h3 className="text-lg md:text-xl  text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors line-clamp-1">{property.title}</h3>
                 </div>
                 <div className="flex items-center text-slate-600 dark:text-white/60 text-xs md:text-sm mb-4">
                   <Icons.MapPin className="w-3 h-3 mr-1 text-brand-500" />
@@ -131,7 +131,7 @@ const PropertyGrid: React.FC<Props> = ({ properties, title, showViewAll = true, 
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-slate-900 dark:text-white">{title}</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl  text-slate-900 dark:text-white">{title}</h2>
             
             {showViewAll && !loading && (
               <Link to="/projects" className="text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors flex items-center text-xs md:text-sm uppercase tracking-widest pb-2 border-b border-slate-300 dark:border-white/20 hover:border-brand-600 dark:hover:border-brand-500 self-start md:self-auto">

@@ -142,7 +142,7 @@ const Hero: React.FC = () => {
               >
                 <Link 
                   to={currentSlide.ctaLink}
-                  className="inline-block px-8 py-3 bg-transparent border border-white text-white font-serif uppercase tracking-widest text-xs md:text-sm hover:bg-white hover:text-luxury-black transition-all duration-300"
+                  className="inline-block px-8 py-3 bg-transparent border border-white text-white  uppercase tracking-widest text-xs md:text-sm hover:bg-white hover:text-luxury-black transition-all duration-300"
                 >
                   {currentSlide.ctaText}
                 </Link>

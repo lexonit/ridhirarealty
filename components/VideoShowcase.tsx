@@ -49,7 +49,7 @@ const VideoShowcase: React.FC = () => {
             )}
           </button>
         </motion.div>
-        <h3 className="text-white font-serif text-xl md:text-3xl mt-6 md:mt-8 tracking-wide">Experience The Extraordinary</h3>
+        <h3 className="text-white  text-xl md:text-3xl mt-6 md:mt-8 tracking-wide">Experience The Extraordinary</h3>
       </div>
     </section>
   );

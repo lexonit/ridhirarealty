@@ -62,7 +62,7 @@ const BlogPostPage: React.FC = () => {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-luxury-black text-slate-900 dark:text-white">
         <SEO title="Article Not Found" />
-        <h2 className="text-3xl font-serif mb-4">Article Not Found</h2>
+        <h2 className="text-3xl  mb-4">Article Not Found</h2>
         <Link to="/insights" className="text-brand-500 hover:underline">Return to Insights Hub</Link>
       </div>
     );
@@ -93,7 +93,7 @@ const BlogPostPage: React.FC = () => {
               <span className="bg-brand-600 text-white px-3 py-1 text-xs font-bold uppercase tracking-widest inline-block mb-4">
                 {post.category}
               </span>
-              <h1 className="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight max-w-4xl">
+              <h1 className="text-4xl md:text-6xl  text-white mb-6 leading-tight max-w-4xl">
                 {post.title}
               </h1>
               <div className="flex flex-wrap gap-6 text-white/80 text-sm font-light tracking-wide items-center">
@@ -115,7 +115,7 @@ const BlogPostPage: React.FC = () => {
           <div className="lg:col-span-2">
             <SectionWrapper>
               <article className="prose prose-lg dark:prose-invert max-w-none 
-                prose-headings:font-serif prose-headings:text-brand-900 dark:prose-headings:text-white
+                prose-headings: prose-headings:text-brand-900 dark:prose-headings:text-white
                 prose-a:text-brand-600 dark:prose-a:text-brand-400
                 prose-li:marker:text-brand-500
                 prose-img:rounded-xl">
@@ -123,7 +123,7 @@ const BlogPostPage: React.FC = () => {
                 <div dangerouslySetInnerHTML={{ __html: post.content }} />
                 
                 <div className="mt-12 p-8 bg-slate-50 dark:bg-luxury-charcoal rounded-xl border-l-4 border-brand-500">
-                  <h3 className="text-xl font-serif text-slate-900 dark:text-white mb-2">Ready to invest in Dubai?</h3>
+                  <h3 className="text-xl  text-slate-900 dark:text-white mb-2">Ready to invest in Dubai?</h3>
                   <p className="text-slate-600 dark:text-white/70 mb-4">
                     Contact Ridhira Realty today for personalized guidance and access to exclusive off-plan opportunities.
                   </p>
@@ -141,10 +141,10 @@ const BlogPostPage: React.FC = () => {
             {/* Author Box */}
             <SectionWrapper delay={0.2}>
               <div className="bg-slate-50 dark:bg-luxury-charcoal p-8 rounded-xl border border-slate-200 dark:border-white/5">
-                <h3 className="font-serif text-xl text-slate-900 dark:text-white mb-4">About the Author</h3>
+                <h3 className=" text-xl text-slate-900 dark:text-white mb-4">About the Author</h3>
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-brand-200 dark:bg-brand-900 rounded-full flex items-center justify-center">
-                    <span className="font-serif font-bold text-brand-800 dark:text-brand-200 text-lg">RR</span>
+                    <span className=" font-bold text-brand-800 dark:text-brand-200 text-lg">RR</span>
                   </div>
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">{post.author}</p>
@@ -160,7 +160,7 @@ const BlogPostPage: React.FC = () => {
             {/* Related Posts */}
             <SectionWrapper delay={0.3}>
               <div>
-                <h3 className="font-serif text-xl text-slate-900 dark:text-white mb-6">More Insights</h3>
+                <h3 className=" text-xl text-slate-900 dark:text-white mb-6">More Insights</h3>
                 <div className="space-y-6">
                   {relatedPosts.map(rel => (
                     <Link to={`/insights/${rel.id}`} key={rel.id} className="group block">
@@ -168,7 +168,7 @@ const BlogPostPage: React.FC = () => {
                         <img src={rel.image} alt={rel.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       </div>
                       <span className="text-xs text-brand-600 dark:text-brand-400 uppercase tracking-widest font-bold">{rel.category}</span>
-                      <h4 className="font-serif text-lg text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors mt-1">
+                      <h4 className=" text-lg text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors mt-1">
                         {rel.title}
                       </h4>
                     </Link>

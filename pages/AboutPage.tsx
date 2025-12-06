@@ -83,15 +83,15 @@ const AboutPage: React.FC = () => {
          <div className="relative z-10 container mx-auto px-6 text-center">
            <SectionWrapper>
              <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">About Ridhira Realty</span>
-             <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">
+             <h1 className="text-5xl md:text-7xl  text-white mb-6">
                <FlipWords 
-                 words={["Knowledge First", "Trust Always", "Data Driven", "Excellence First"]} 
+                 words={["Knowledge First","Trust Always", "Discover", "Invest", "Prosper"]} 
                  duration={3000}
                  className="text-brand-400"
                />
              </h1>
              <p className="text-white/80 max-w-2xl mx-auto text-lg font-light leading-relaxed">
-               Redefining how property investment is experienced through transparency, advisory excellence, and technology-driven insights.
+              Dubai real estate outlook
              </p>
            </SectionWrapper>
          </div>
@@ -108,7 +108,7 @@ const AboutPage: React.FC = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <p className="text-xl md:text-2xl font-serif text-slate-800 dark:text-white leading-relaxed">
+            <p className="text-xl md:text-2xl  text-slate-800 dark:text-white leading-relaxed">
               Ridhira Realty LLC was founded with one vision — to redefine how property investment is experienced.
             </p>
             <div className="space-y-4 text-slate-600 dark:text-white/70 text-lg leading-relaxed">
@@ -145,7 +145,7 @@ const AboutPage: React.FC = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <Icons.Briefcase className="w-6 h-6 text-brand-600 dark:text-brand-400" />
-                <h3 className="text-2xl font-serif text-slate-900 dark:text-white">Mission</h3>
+                <h3 className="text-2xl  text-slate-900 dark:text-white">Mission</h3>
               </div>
               <p className="text-slate-600 dark:text-white/70">
                 To educate and empower investors through data-driven real estate intelligence.
@@ -161,7 +161,7 @@ const AboutPage: React.FC = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <Icons.Eye className="w-6 h-6 text-brand-600 dark:text-brand-400" />
-                <h3 className="text-2xl font-serif text-slate-900 dark:text-white">Vision</h3>
+                <h3 className="text-2xl  text-slate-900 dark:text-white">Vision</h3>
               </div>
               <p className="text-slate-600 dark:text-white/70">
                 To be the UAE's most trusted name in intelligent property investment.
@@ -175,7 +175,7 @@ const AboutPage: React.FC = () => {
       <div className="py-24 bg-slate-50 dark:bg-luxury-charcoal transition-colors duration-300">
         <div className="container mx-auto px-6">
           <SectionWrapper>
-            <h2 className="text-3xl font-serif text-slate-900 dark:text-white text-center mb-16">Our Core Values</h2>
+            <h2 className="text-3xl  text-slate-900 dark:text-white text-center mb-16">Our Core Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
               {coreValues.map((val, idx) => (
                 <motion.div
@@ -187,7 +187,7 @@ const AboutPage: React.FC = () => {
                   className="bg-white dark:bg-black/40 border border-slate-200 dark:border-white/10 p-8 rounded-xl hover:border-brand-500/50 transition-colors shadow-sm dark:shadow-none group"
                 >
                   <div className="w-12 h-1 bg-brand-500 mb-6 group-hover:w-20 transition-all duration-300"></div>
-                  <h3 className="text-xl font-serif text-brand-600 dark:text-white mb-4">{val.title}</h3>
+                  <h3 className="text-xl  text-brand-600 dark:text-white mb-4">{val.title}</h3>
                   <p className="text-slate-600 dark:text-white/70 text-sm leading-relaxed">{val.description}</p>
                 </motion.div>
               ))}
@@ -202,7 +202,7 @@ const AboutPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">What Sets Us Apart</span>
-              <h2 className="text-4xl font-serif text-slate-900 dark:text-white mb-8">Unlike listing-driven brokers, we focus on data, depth and direction.</h2>
+              <h2 className="text-4xl  text-slate-900 dark:text-white mb-8">Unlike listing-driven brokers, we focus on data, depth and direction.</h2>
               <ul className="space-y-6">
                 {differentiators.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
@@ -213,7 +213,7 @@ const AboutPage: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 p-6 border-l-2 border-brand-500 bg-slate-50 dark:bg-white/5 italic text-slate-800 dark:text-white/90 font-serif rounded-r-lg">
+              <div className="mt-8 p-6 border-l-2 border-brand-500 bg-slate-50 dark:bg-white/5 italic text-slate-800 dark:text-white/90  rounded-r-lg">
                 “We don’t just match you with properties — we match you with possibilities.”
               </div>
             </div>
@@ -238,7 +238,7 @@ const AboutPage: React.FC = () => {
       <div className="py-24 bg-slate-50 dark:bg-luxury-charcoal container-fluid transition-colors duration-300">
         <div className="container mx-auto px-6">
           <SectionWrapper className="text-center mb-16">
-            <h2 className="text-4xl font-serif text-slate-900 dark:text-white mb-6">Our Team & Expertise</h2>
+            <h2 className="text-4xl  text-slate-900 dark:text-white mb-6">Our Team & Expertise</h2>
             <p className="text-slate-600 dark:text-white/60 max-w-2xl mx-auto text-lg">
               RERA-certified advisors, financial analysts and data scientists work together to deliver complete 360° support in:
             </p>
@@ -267,7 +267,7 @@ const AboutPage: React.FC = () => {
       {/* Our Promise */}
       <SectionWrapper className="py-24 bg-white dark:bg-luxury-black border-y border-slate-200 dark:border-white/5 transition-colors duration-300">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-serif text-slate-900 dark:text-white text-center mb-12">Our Promise to Investors</h2>
+          <h2 className="text-3xl md:text-4xl  text-slate-900 dark:text-white text-center mb-12">Our Promise to Investors</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
              {promises.map((promise, idx) => (
                <motion.div
@@ -290,7 +290,7 @@ const AboutPage: React.FC = () => {
       <SectionWrapper className="py-24 container mx-auto px-6 bg-slate-50 dark:bg-luxury-charcoal transition-colors duration-300">
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-serif text-brand-600 dark:text-brand-400 mb-8">Our Vision for the Future</h2>
+            <h2 className="text-3xl md:text-4xl  text-brand-600 dark:text-brand-400 mb-8">Our Vision for the Future</h2>
             <p className="text-slate-600 dark:text-white/70 leading-relaxed text-lg mb-8">
               Aligned with Dubai Vision 2040 and RAK Vision 2030, we aim to lead the AI-driven investment era.
             </p>
@@ -307,7 +307,7 @@ const AboutPage: React.FC = () => {
               viewport={{ once: true }}
               className="bg-white dark:bg-luxury-black p-8 rounded-xl border border-slate-200 dark:border-white/10 hover:border-brand-500/30 transition-colors"
             >
-              <h3 className="text-xl font-serif text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+              <h3 className="text-xl  text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                 <Icons.MapPin className="w-5 h-5 text-brand-600 dark:text-brand-400" />
                 Sustainability & Community Focus
               </h3>
@@ -337,7 +337,7 @@ const AboutPage: React.FC = () => {
               viewport={{ once: true }}
               className="bg-white dark:bg-luxury-black p-8 rounded-xl border border-slate-200 dark:border-white/10 hover:border-brand-500/30 transition-colors"
             >
-              <h3 className="text-xl font-serif text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+              <h3 className="text-xl  text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                 <Icons.Globe className="w-5 h-5 text-brand-600 dark:text-brand-400" />
                 Global Presence & Outreach
               </h3>
@@ -348,7 +348,7 @@ const AboutPage: React.FC = () => {
           </div>
 
           <div className="bg-gradient-to-r from-brand-900 to-luxury-black p-8 md:p-12 rounded-2xl border border-brand-500/20 text-center text-white shadow-2xl">
-            <h3 className="text-2xl font-serif mb-4">Looking Ahead</h3>
+            <h3 className="text-2xl  mb-4">Looking Ahead</h3>
             <p className="text-white/80 text-lg font-light leading-relaxed">
               We will continue building analytics tools and AI platforms to make advisory more accurate and accessible.
               As the UAE transforms into an AI-first economy, Ridhira Realty will remain your bridge between intelligence and investment.
@@ -360,7 +360,7 @@ const AboutPage: React.FC = () => {
       {/* Founders & Leadership */}
       <SectionWrapper className="py-24 bg-white dark:bg-luxury-black transition-colors duration-300">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-serif text-slate-900 dark:text-white text-center mb-16">Our Leadership</h2>
+          <h2 className="text-4xl  text-slate-900 dark:text-white text-center mb-16">Our Leadership</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {/* Ramesh Koneti */}
             <motion.div
@@ -378,7 +378,7 @@ const AboutPage: React.FC = () => {
                 />
               </div>
               <div className="p-8 text-center">
-                <h3 className="text-2xl font-serif text-slate-900 dark:text-white mb-2">Ramesh Koneti</h3>
+                <h3 className="text-2xl  text-slate-900 dark:text-white mb-2">Ramesh Koneti</h3>
                 <p className="text-brand-600 dark:text-brand-400 font-medium">Founder & CEO</p>
               </div>
             </motion.div>
@@ -399,7 +399,7 @@ const AboutPage: React.FC = () => {
                 />
               </div>
               <div className="p-8 text-center">
-                <h3 className="text-2xl font-serif text-slate-900 dark:text-white mb-2">SS Raju</h3>
+                <h3 className="text-2xl  text-slate-900 dark:text-white mb-2">SS Raju</h3>
                 <p className="text-brand-600 dark:text-brand-400 font-medium">Advisory Board Member & Director</p>
               </div>
             </motion.div>

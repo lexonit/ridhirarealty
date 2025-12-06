@@ -15,7 +15,7 @@ const AboutSection: React.FC = () => {
           {/* Text Content */}
           <div className="order-2 lg:order-1 relative z-10">
             <div className="w-16 h-[1px] bg-brand-500 mb-6 md:mb-8"></div>
-            <TextReveal text="Crafting Legacies" className="text-3xl md:text-4xl lg:text-6xl font-serif text-slate-900 dark:text-white mb-6" />
+            <TextReveal text="Crafting Legacies" className="text-3xl md:text-4xl lg:text-6xl  text-slate-900 dark:text-white mb-6" />
             {/* @ts-ignore: Suppressing strict type check for standard motion props */}
             <motion.p 
               initial={{ opacity: 0 }}
@@ -31,11 +31,11 @@ const AboutSection: React.FC = () => {
             
             <div className="grid grid-cols-2 gap-8 mb-8">
                <div>
-                 <h4 className="text-2xl md:text-3xl font-serif text-brand-600 dark:text-brand-400">25+</h4>
+                 <h4 className="text-2xl md:text-3xl  text-brand-600 dark:text-brand-400">25+</h4>
                  <p className="text-[10px] md:text-xs uppercase tracking-widest text-slate-500 dark:text-white/50 mt-1">Years of Excellence</p>
                </div>
                <div>
-                 <h4 className="text-2xl md:text-3xl font-serif text-brand-600 dark:text-brand-400">$2B+</h4>
+                 <h4 className="text-2xl md:text-3xl  text-brand-600 dark:text-brand-400">$2B+</h4>
                  <p className="text-[10px] md:text-xs uppercase tracking-widest text-slate-500 dark:text-white/50 mt-1">Portfolio Value</p>
                </div>
             </div>
@@ -63,7 +63,7 @@ const AboutSection: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="absolute -bottom-10 -left-10 bg-white dark:bg-luxury-black p-6 md:p-8 max-w-[250px] md:max-w-xs border border-slate-200 dark:border-brand-500/30 hidden md:block shadow-2xl"
             >
-               <p className="font-serif italic text-slate-800 dark:text-white/90 text-base md:text-lg">"Architecture is a visual art, and the buildings speak for themselves."</p>
+               <p className=" italic text-slate-800 dark:text-white/90 text-base md:text-lg">"Architecture is a visual art, and the buildings speak for themselves."</p>
             </motion.div>
           </div>
 

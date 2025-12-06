@@ -151,7 +151,7 @@ const PropertyDetailsPage: React.FC = () => {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-luxury-black text-slate-900 dark:text-white">
         <SEO title="Property Not Found" />
-        <h2 className="text-3xl font-serif mb-4">Property Not Found</h2>
+        <h2 className="text-3xl  mb-4">Property Not Found</h2>
         <Link to="/projects" className="text-brand-500 hover:underline">Return to Portfolio</Link>
       </div>
     );
@@ -186,7 +186,7 @@ const PropertyDetailsPage: React.FC = () => {
               <span className="text-brand-400 uppercase tracking-[0.2em] text-sm font-semibold mb-2 block">
                 {property.location}
               </span>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-4 leading-none">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl  text-white mb-4 leading-none">
                 {property.title}
               </h1>
               <div className="flex gap-6 text-white/80 text-sm md:text-base font-light tracking-wide">
@@ -250,7 +250,7 @@ const PropertyDetailsPage: React.FC = () => {
             {/* Story Text */}
             <SectionWrapper>
               <h2 className="text-sm font-bold text-brand-600 dark:text-brand-500 uppercase tracking-widest mb-4">The Concept</h2>
-              <h3 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-8 leading-tight">
+              <h3 className="text-4xl md:text-5xl  text-slate-900 dark:text-white mb-8 leading-tight">
                 A Sanctuary of <br/> Unmatched Elegance.
               </h3>
               <p className="text-slate-600 dark:text-white/70 text-lg leading-relaxed font-light mb-8">
@@ -273,19 +273,19 @@ const PropertyDetailsPage: React.FC = () => {
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4">
                <SectionWrapper delay={0.2} className="bg-slate-50 dark:bg-luxury-charcoal p-8 rounded-none border border-slate-100 dark:border-white/5 text-center">
-                  <span className="block text-3xl font-serif text-slate-900 dark:text-white mb-2">{property.beds}</span>
+                  <span className="block text-3xl  text-slate-900 dark:text-white mb-2">{property.beds}</span>
                   <span className="text-xs uppercase tracking-widest text-slate-500 dark:text-white/50">Bedrooms</span>
                </SectionWrapper>
                <SectionWrapper delay={0.3} className="bg-slate-50 dark:bg-luxury-charcoal p-8 rounded-none border border-slate-100 dark:border-white/5 text-center">
-                  <span className="block text-3xl font-serif text-slate-900 dark:text-white mb-2">{property.sqft.toLocaleString()}</span>
+                  <span className="block text-3xl  text-slate-900 dark:text-white mb-2">{property.sqft.toLocaleString()}</span>
                   <span className="text-xs uppercase tracking-widest text-slate-500 dark:text-white/50">Sq. Ft.</span>
                </SectionWrapper>
                <SectionWrapper delay={0.4} className="bg-slate-50 dark:bg-luxury-charcoal p-8 rounded-none border border-slate-100 dark:border-white/5 text-center">
-                  <span className="block text-3xl font-serif text-slate-900 dark:text-white mb-2">Q4 2026</span>
+                  <span className="block text-3xl  text-slate-900 dark:text-white mb-2">Q4 2026</span>
                   <span className="text-xs uppercase tracking-widest text-slate-500 dark:text-white/50">Completion</span>
                </SectionWrapper>
                <SectionWrapper delay={0.5} className="bg-brand-600 dark:bg-brand-900 p-8 rounded-none border border-transparent text-center">
-                  <span className="block text-3xl font-serif text-white mb-2">{(property.price / 1000000).toFixed(1)}M</span>
+                  <span className="block text-3xl  text-white mb-2">{(property.price / 1000000).toFixed(1)}M</span>
                   <span className="text-xs uppercase tracking-widest text-white/70">Starting Price (AED)</span>
                </SectionWrapper>
             </div>
@@ -299,7 +299,7 @@ const PropertyDetailsPage: React.FC = () => {
          <div className="container mx-auto px-6">
             <SectionWrapper>
               <div className="text-center mb-16">
-                 <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-4">World-Class Amenities</h2>
+                 <h2 className="text-4xl md:text-5xl  text-slate-900 dark:text-white mb-4">World-Class Amenities</h2>
                  <p className="text-slate-600 dark:text-white/60 max-w-2xl mx-auto">Experience a lifestyle curated for the elite, with facilities that cater to your every need.</p>
               </div>
             </SectionWrapper>
@@ -317,7 +317,7 @@ const PropertyDetailsPage: React.FC = () => {
                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
                        <div className="absolute bottom-6 left-6 text-white">
                           <div className="w-10 h-1 bg-white mb-3 transition-all duration-300 group-hover:w-16"></div>
-                          <h3 className="text-xl font-serif tracking-wide">{amenity}</h3>
+                          <h3 className="text-xl  tracking-wide">{amenity}</h3>
                        </div>
                     </div>
                  </SectionWrapper>
@@ -330,7 +330,7 @@ const PropertyDetailsPage: React.FC = () => {
       <section id="gallery" className="py-24 bg-white dark:bg-luxury-black transition-colors duration-300">
          <div className="container mx-auto px-6">
             <SectionWrapper>
-              <h2 className="text-4xl md:text-5xl font-serif text-slate-900 dark:text-white mb-12 text-center">Interiors & Views</h2>
+              <h2 className="text-4xl md:text-5xl  text-slate-900 dark:text-white mb-12 text-center">Interiors & Views</h2>
             </SectionWrapper>
             
             <SectionWrapper delay={0.2}>
@@ -372,7 +372,7 @@ const PropertyDetailsPage: React.FC = () => {
          <div className="absolute inset-0 flex items-center justify-center">
             <SectionWrapper className="bg-white dark:bg-luxury-charcoal p-8 md:p-12 shadow-2xl max-w-lg text-center backdrop-blur-md bg-opacity-90 dark:bg-opacity-90">
                <Icons.MapPin className="w-10 h-10 text-brand-600 dark:text-brand-500 mx-auto mb-4" />
-               <h3 className="text-2xl font-serif text-slate-900 dark:text-white mb-2">{property.location}</h3>
+               <h3 className="text-2xl  text-slate-900 dark:text-white mb-2">{property.location}</h3>
                <p className="text-slate-600 dark:text-white/60 mb-6">Ideally situated with easy access to major highways, airports, and luxury shopping destinations.</p>
                <button 
                 onClick={handleOpenMaps}
@@ -393,7 +393,7 @@ const PropertyDetailsPage: React.FC = () => {
                {/* Form Side */}
                <div className="p-10 lg:p-16 w-full lg:w-1/2">
                   <span className="text-brand-600 dark:text-brand-500 uppercase tracking-widest text-xs font-bold mb-4 block">Exclusive Opportunity</span>
-                  <h2 className="text-3xl md:text-4xl font-serif text-slate-900 dark:text-white mb-6">Register Your Interest</h2>
+                  <h2 className="text-3xl md:text-4xl  text-slate-900 dark:text-white mb-6">Register Your Interest</h2>
                   <p className="text-slate-600 dark:text-white/60 mb-8">
                     Submit your details to receive the official brochure, floor plans, and payment plan options for {property.title}.
                   </p>
@@ -433,7 +433,7 @@ const PropertyDetailsPage: React.FC = () => {
                   <img src={property.images[0]} className="absolute inset-0 w-full h-full object-cover" alt="Concierge" />
                   <div className="absolute inset-0 bg-brand-900/40 mix-blend-multiply"></div>
                   <div className="absolute bottom-10 left-10 right-10 text-white">
-                     <p className="font-serif italic text-xl">"Ideally positioned for high capital appreciation and rental yield."</p>
+                     <p className=" italic text-xl">"Ideally positioned for high capital appreciation and rental yield."</p>
                      <div className="mt-4 flex items-center gap-3">
                         <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center">
                            <Icons.Phone className="w-5 h-5" />

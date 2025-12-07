@@ -52,7 +52,7 @@ const AboutSection: React.FC = () => {
                <img 
                  src={ABOUT_SECTION_IMAGE} 
                  alt="Luxury Interior" 
-                 className="w-full h-full object-cover opacity-90 dark:opacity-80"
+                 className="w-full h-full opacity-90 dark:opacity-80"
                />
             </motion.div>
             {/* Floating Card Overlay */}

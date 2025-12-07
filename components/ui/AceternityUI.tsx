@@ -146,10 +146,10 @@ export const CometCard = ({
   return (
     <div className={cn("relative overflow-hidden p-[1px] rounded-xl group", className)}>
       {/* 
-        Updated Conic Gradient to use Brand Navy (#003366) and Luxury Silver (#c0c0c0) 
-        This ensures the "comet" tail matches the site theme.
+        Updated Conic Gradient to use Goldenrod (#DAA520) for hover animation border
+        This creates a gold shimmer effect on hover.
       */}
-      <div className="absolute inset-[-1000%] animate-spin-slow bg-[conic-gradient(from_90deg_at_50%_50%,#003366_0%,#c0c0c0_50%,#003366_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-[-1000%] animate-spin-slow bg-[conic-gradient(from_90deg_at_50%_50%,#DAA520_0%,#FFD700_50%,#DAA520_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className={cn("relative h-full w-full rounded-xl bg-white dark:bg-luxury-charcoal", contentClassName)}>
         {children}
       </div>

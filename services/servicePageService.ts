@@ -69,33 +69,33 @@ const SERVICES: FeatureItem[] = [
 
 const PROPERTY_TYPES = [
   {
-    name: "Luxury Villas",
-    desc: "Spacious, private residences in gated communities like Palm Jumeirah and Emirates Hills.",
+    name: "Apartment",
+    desc: "Ideal for investors seeking steady rental income in high-demand areas.",
     img: "/service/service01.jpg"
   },
   {
-    name: "Penthouses",
-    desc: "Sky-high living with panoramic views and exclusive amenities.",
+    name: "Townhouse",
+    desc: "Perfect blend of privacy, space, and modern architecture",
     img: "/service/service02.jpg"
   },
   {
-    name: "Waterfront Apartments",
-    desc: "Premium apartments with direct beach access and sea views.",
+    name: "Villa",
+    desc: "Ultra-luxury estates for discerning global buyers",
     img: "/service/service03.jpg"
   },
   {
-    name: "Townhouses",
+    name: "Mansion",
     desc: "Community-focused living with modern designs and family-friendly amenities.",
     img: "/service/service04.jpg"
   },
   {
-    name: "Off-Plan Investment",
-    desc: "High-growth potential properties in emerging districts.",
+    name: "Off-Plan",
+    desc: "Early-stage investments with flexible payment plans and high appreciation",
     img: "/service/service05.jpg"
   },
   {
-    name: "Commercial Spaces",
-    desc: "Strategic office and retail spaces in business hubs.",
+    name: "Plot",
+    desc: "Build your own project or home in prime freehold zones",
     img: "/service/service06.jpg"
   }
 ];

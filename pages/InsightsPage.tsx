@@ -75,7 +75,7 @@ const InsightsPage: React.FC = () => {
          
          <div className="relative z-10 container mx-auto px-6 text-center">
            <SectionWrapper>
-             <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span>
+             <span className="text-brand-400 uppercase tracking-widest block mb-4 font-semibold">{heroData.subTitleLabel}</span>
              <h1 className="text-5xl md:text-7xl  text-white mb-6">
                <FlipWords 
                  words={["Market Insights", "Expert Analysis", "Trends & Data", "Industry Knowledge"]} 

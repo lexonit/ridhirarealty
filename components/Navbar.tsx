@@ -167,7 +167,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
               Insights Hub <Icons.ChevronDown className={`ml-2 w-5 h-5 transition-transform ${mobileInsightsOpen ? 'rotate-180' : ''}`} />
             </button>
             <div className={`overflow-hidden transition-all duration-300 flex flex-col gap-4 items-center ${mobileInsightsOpen ? 'max-h-40 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-              <Link to="/insights" onClick={() => setIsOpen(false)} className="text-sm text-slate-600 dark:text-white/60 hover:text-brand-500 dark:hover:text-brand-400 uppercase tracking-widest">Market Trends</Link>
+              {/* <Link to="/insights" onClick={() => setIsOpen(false)} className="text-sm text-slate-600 dark:text-white/60 hover:text-brand-500 dark:hover:text-brand-400 uppercase tracking-widest">Market Trends</Link> */}
               <Link to="/insights" onClick={() => setIsOpen(false)} className="text-sm text-slate-600 dark:text-white/60 hover:text-brand-500 dark:hover:text-brand-400 uppercase tracking-widest">Video Gallery</Link>
             </div>
           </div>

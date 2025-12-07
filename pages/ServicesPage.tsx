@@ -63,8 +63,8 @@ const ServicesPage: React.FC = () => {
       />
       
       {/* Hero Section */}
-      <div ref={heroRef} className="relative h-[60vh] flex items-center justify-center overflow-hidden" style={{
-        backgroundImage: `url('/home/futuristic-dubai-landscape.jpg')`,
+      <div ref={heroRef} className="relative h-[80vh] flex items-center justify-center overflow-hidden" style={{
+        backgroundImage: `url('/service/service-hero.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
@@ -75,10 +75,10 @@ const ServicesPage: React.FC = () => {
          
          <div className="relative z-10 container mx-auto px-6 text-center">
            <SectionWrapper>
-             <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span>
+             {/* <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span> */}
              <h1 className="text-4xl md:text-6xl  text-white mb-6">
                <FlipWords 
-                 words={["Real Estate Consultation", "Elegant & Premium", "Property Management", "Investment Properties"]} 
+                 words={["Intelligent Services. Tailored for You."]} 
                  duration={3000}
                  className="text-brand-400"
                />
@@ -93,7 +93,7 @@ const ServicesPage: React.FC = () => {
       {/* Services Grid */}
       <div className="py-24 container mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">Our Services</span>
+          {/* <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">Our Services</span> */}
           <h2 className="text-4xl md:text-5xl  text-slate-900 dark:text-white mb-6">Core Advisory & Investment Services</h2>
           <p className="text-slate-600 dark:text-white/60 max-w-2xl mx-auto">Strategic offerings designed for investors, buyers, and institutions.</p>
         </div>
@@ -118,13 +118,13 @@ const ServicesPage: React.FC = () => {
 
                 {/* Content Side */}
                 <div className="p-6 md:p-8 flex-1 flex flex-col justify-center">
-                   <h3 className="text-2xl  text-slate-900 dark:text-white mb-3 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{service.title}</h3>
+                   <h3 className="text-2xl  text-slate-900 dark:text-white mb-3 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors" style={{ color: 'goldenrod' }}>{service.title}</h3>
                    <p className="text-slate-600 dark:text-white/60 text-sm mb-6 leading-relaxed">{service.description}</p>
                    
-                   <ul className="space-y-2 mt-auto">
+                   <ul className="flex flex-wrap gap-2 mt-auto">
                      {service.features?.map((feature, i) => (
-                       <li key={i} className="flex items-start gap-2 text-xs md:text-sm text-slate-700 dark:text-white/80">
-                         <span className="w-1.5 h-1.5 bg-brand-500 rounded-full mt-1.5 shrink-0" />
+                       <li key={i} className="inline-flex items-center gap-2 px-3 py-1.5 bg-amber-50 dark:bg-amber-900/30 border border-amber-500/50 rounded-full text-xs md:text-sm text-slate-700 dark:text-white/80 font-medium">
+                         <span className="w-1.5 h-1.5 bg-amber-500 rounded-full shrink-0" />
                          {feature}
                        </li>
                      ))}
@@ -141,8 +141,8 @@ const ServicesPage: React.FC = () => {
       <SectionWrapper className="py-24 bg-slate-50 dark:bg-luxury-charcoal relative transition-colors duration-300">
          <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-               <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-sm font-semibold">Tailored Portfolio</span>
-               <h2 className="text-4xl  text-slate-900 dark:text-white mt-4">Property Types We Specialize In</h2>
+               {/* <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-sm font-semibold">Tailored Portfolio</span> */}
+               <h2 style={{ color: 'goldenrod' }} className="text-4xl font-semibold text-slate-900 dark:text-white mt-4">Property Types We Specialize In</h2>
                <p className="text-slate-600 dark:text-white/50 mt-4">Curated property types for investor profiles and lifestyles.</p>
             </div>
 

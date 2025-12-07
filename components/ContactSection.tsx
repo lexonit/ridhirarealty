@@ -3,7 +3,15 @@ import { Link, useLocation } from 'react-router-dom';
 import SectionWrapper from './ui/SectionWrapper';
 import { Icons } from './ui/Icons';
 
-const ContactSection: React.FC = () => {
+interface ContactSectionProps {
+  title?: string;
+  subtitle?: string;
+}
+
+const ContactSection: React.FC<ContactSectionProps> = ({ 
+  title = "Begin Your Journey",
+  subtitle = "Schedule a private consultation with our property experts to discover your next legacy."
+}) => {
   const location = useLocation();
   const isContactPage = location.pathname === '/contact';
 
@@ -18,9 +26,9 @@ const ContactSection: React.FC = () => {
         <div className="absolute inset-0 bg-brand-900/40" />
       </div>
       <div className="container mx-auto px-6 relative z-10 text-center">
-        <h2 className="text-5xl md:text-7xl  text-white mb-8">Begin Your Journey</h2>
-        <p className="text-white/60 max-w-xl mx-auto mb-12">
-          Schedule a private consultation with our property experts to discover your next legacy.
+        <h2 className="text-5xl md:text-7xl  text-white mb-8">{title}</h2>
+        <p className="text-white max-w-xl mx-auto mb-12 font-semibold text-lg md:text-xl">
+          {subtitle}
         </p>
         
         {isContactPage ? (

@@ -89,11 +89,11 @@ const Home: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">
+              <span className="text-2xl uppercase tracking-widest font-semibold block mb-4" style={{ color: 'goldenrod' }}>
                 About Ridhira Realty
               </span>
-              <h2 className="text-4xl md:text-5xl  text-slate-900 dark:text-white mb-8">
-                Advisory. Intelligence. Integrity.
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-8">
+                Advisory. <span className="text-amber-500 dark:text-amber-400">Intelligence.</span> Integrity.
               </h2>
             </motion.div>
 
@@ -104,35 +104,53 @@ const Home: React.FC = () => {
               viewport={{ once: true }}
               className="space-y-6 text-center mb-12"
             >
-              <p className="text-lg md:text-xl text-slate-700 dark:text-white/80 leading-relaxed">
+              <p className="text-sm md:text-sm text-slate-700 dark:text-white/80 leading-relaxed">
                 Ridhira Realty exists to transform how people invest in real
-                estate — turning speculation into strategy.
-              </p>
-              <p className="text-lg text-slate-600 dark:text-white/70 leading-relaxed">
-                We combine verified data, market expertise, and human guidance
+                estate — turning speculation into strategy. We combine verified data, market expertise, and human guidance
                 to help clients achieve meaningful growth through Dubai and Ras
                 Al Khaimah's dynamic property markets.
               </p>
-              <p className="text-lg text-slate-600 dark:text-white/70 leading-relaxed">
+              <p className="text-sm md:text-sm text-slate-800 dark:text-white italic leading-relaxed">
                 Every consultation begins with education — because we believe
                 clarity comes before commitment.
               </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="bg-white dark:bg-luxury-black p-8 md:p-12 rounded-2xl border-l-4 border-brand-500 shadow-lg dark:shadow-none">
-                <Icons.MessageSquare className="w-10 h-10 text-brand-500/30 mb-4" />
-                <p className="text-2xl md:text-3xl  text-slate-800 dark:text-white italic leading-relaxed">
+              <p className="text-sm md:text-sm text-slate-800 dark:text-white italic leading-relaxed">
                   "First impressions don't sell — they educate."
                 </p>
-              </div>
             </motion.div>
+
+            {/* Core Values Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+              {[
+                { icon: Icons.ShieldCheck, label: "Trust" },
+                { icon: Icons.Eye, label: "Transparency" },
+                { icon: Icons.Technology, label: "Technology" },
+                { icon: Icons.Intelligence, label: "Intelligence" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                  className="flex flex-col items-center gap-3 group cursor-pointer"
+                >
+                  <motion.div 
+                    className="w-16 h-16 rounded-full border-2 border-amber-500/50 bg-amber-500/10 flex items-center justify-center transition-all duration-300"
+                    whileHover={{ 
+                      scale: 1.15,
+                      boxShadow: "0 0 30px rgba(218, 165, 32, 0.4), 0 0 50px rgba(255, 215, 0, 0.2)",
+                    }}
+                  >
+                    <item.icon className="w-8 h-8" style={{ color: 'goldenrod' }} strokeWidth={1.6} />
+                  </motion.div>
+                  <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                    {item.label}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </SectionWrapper>
@@ -148,13 +166,13 @@ const Home: React.FC = () => {
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">
+              <h2 style={{ color: 'goldenrod' }} className="text-4xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
                 Our Philosophy
-              </span>
-              <h2 className="text-4xl md:text-5xl  text-slate-900 dark:text-white mb-8">
-                Our Foundation: Research. Educate. Advise. Execute.
               </h2>
-              <p className="text-lg text-slate-600 dark:text-white/70 leading-relaxed mb-8">
+              <p className="text-lg dark:text-white/90 text-slate-600 leading-relaxed mb-4">
+                Our Foundation: Research. Educate. Advise. Execute.
+              </p>
+              <p className="text-lg text-slate-600 dark:text-white/70 leading-relaxed mb-4">
                 At Ridhira Realty, we believe real estate success is built on
                 knowledge.
               </p>
@@ -168,21 +186,25 @@ const Home: React.FC = () => {
                     num: "1",
                     title: "Research",
                     desc: "We analyse verified data, trends, and developer insights.",
+                    icon: Icons.Search,
                   },
                   {
                     num: "2",
                     title: "Educate",
                     desc: "We empower clients with transparent comparisons and ROI projections.",
+                    icon: Icons.Globe,
                   },
                   {
                     num: "3",
                     title: "Advise",
                     desc: "We craft personalized strategies aligned with your goals.",
+                    icon: Icons.Briefcase,
                   },
                   {
                     num: "4",
                     title: "Execute",
                     desc: "We manage the entire process with trust, precision, and accountability.",
+                    icon: Icons.ShieldCheck,
                   },
                 ].map((step, idx) => (
                   <motion.div
@@ -193,8 +215,8 @@ const Home: React.FC = () => {
                     viewport={{ once: true }}
                     className="flex gap-4 items-start group"
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-brand-500 text-white rounded-lg flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform duration-300">
-                      {step.num}
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg border border-amber-500/50 bg-amber-500/10 text-amber-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      {step.icon && <step.icon className="w-6 h-6" strokeWidth={1.6} />}
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
@@ -256,9 +278,9 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">
+            <h2 className="text-2xl uppercase tracking-widest font-semibold block mb-4" style={{ color: 'goldenrod' }}>
               Services Offered
-            </span>
+            </h2>
             <h2 className="text-4xl md:text-5xl  text-slate-900 dark:text-white mb-6">
               Comprehensive Real Estate Advisory Services
             </h2>
@@ -301,18 +323,12 @@ const Home: React.FC = () => {
                   viewport={{ once: true }}
                   className="group bg-white dark:bg-luxury-black rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 hover:border-brand-500/50 transition-all duration-300 shadow-lg dark:shadow-none hover:shadow-2xl"
                 >
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative w-full overflow-hidden bg-slate-100 dark:bg-white/5">
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-auto object-contain"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-4 left-4">
-                      <div className="w-12 h-12 bg-brand-500 rounded-lg flex items-center justify-center">
-                        <IconComponent className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
@@ -350,10 +366,10 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-2">
+              <span className="text-2xl uppercase tracking-widest font-semibold block mb-2" style={{ color: 'goldenrod' }}>
                 Latest work{" "}
               </span>
-              <h2 className="text-3xl md:text-5xl  text-slate-900 dark:text-white">
+              <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 dark:text-white">
                 Our Projects
               </h2>
             </div>
@@ -402,9 +418,9 @@ const Home: React.FC = () => {
       <SectionWrapper className="py-24 bg-white dark:bg-luxury-black transition-colors duration-300">
         <div className="mt-24 container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">
+            <h2 className="text-2xl uppercase tracking-widest font-semibold block mb-4" style={{ color: 'goldenrod' }}>
               Featured Projects
-            </span>
+            </h2>
             <h2 className="text-4xl md:text-5xl  text-slate-900 dark:text-white mb-6">
               Curated Opportunities for Intelligent Investors
             </h2>
@@ -443,12 +459,12 @@ const Home: React.FC = () => {
       <SectionWrapper className="py-24 bg-slate-50 dark:bg-luxury-charcoal transition-colors duration-300">
         <div className="container mx-auto px-6">
           {/* Why Dubai & RAK - Placed Next */}
-          <div className="mt-6">
-            <div className="text-center mb-16">
-              <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">
+          <div className="mt-4">
+            <div className="text-center mb-10">
+              <h2 className="text-4xl  tracking-widest font-semibold block mb-4" style={{ color: 'goldenrod' }}>
                 Why Dubai & Ras Al Khaimah
-              </span>
-              <h2 className="text-4xl md:text-5xl  text-slate-900 dark:text-white mb-6">
+              </h2>
+              <h2 className="text-4xl md:text-2xl  text-slate-900 dark:text-white mb-6">
                 Two Powerhouses. One Investment Vision.
               </h2>
               <h3 className="text-xl text-slate-700 dark:text-white/90 mb-8 font-light">
@@ -467,7 +483,7 @@ const Home: React.FC = () => {
                     viewport={{ once: true }}
                     className="flex items-center gap-3"
                   >
-                    <Icons.CheckCircle className="w-5 h-5 text-brand-600 dark:text-brand-400 shrink-0" />
+                    <Icons.CheckCircle className="w-5 h-5 shrink-0" style={{ color: 'goldenrod' }} />
                     <span className="text-sm md:text-base text-slate-700 dark:text-white/80">
                       {benefit}
                     </span>
@@ -480,7 +496,7 @@ const Home: React.FC = () => {
                   viewport={{ once: true }}
                   className="flex items-center gap-3"
                 >
-                  <Icons.ShieldCheck className="w-5 h-5 text-brand-600 dark:text-brand-400 shrink-0" />
+                  <Icons.CheckCircle className="w-5 h-5 shrink-0" style={{ color: 'goldenrod' }} />
                   <span className="text-sm md:text-base text-slate-700 dark:text-white/80">
                     Unmatched Safety
                   </span>
@@ -594,10 +610,10 @@ const Home: React.FC = () => {
       <SectionWrapper className="py-24 bg-slate-50 dark:bg-luxury-black transition-colors duration-300">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold block mb-4">
+            <span className="text-4xl tracking-widest font-bold block mb-4" style={{ color: 'goldenrod' }}>
               The Ridhira Difference
             </span>
-            <h2 className="text-4xl md:text-5xl  text-slate-900 dark:text-white mb-6">
+            <h2 className="text-2xl md:text-2xl  text-slate-900 dark:text-white mb-6">
               Why Investors Choose Ridhira
             </h2>
           </div>
@@ -614,15 +630,16 @@ const Home: React.FC = () => {
                 className="h-full"
               >
                 <CometCard
-                  className="h-full"
+                  className="h-full hover:border-amber-400 transition-colors duration-300"
                   contentClassName="bg-brand-900 dark:bg-brand-900 border border-brand-800"
                 >
                   <div className="p-8 flex flex-col h-full">
                     <div className="mb-6">
                       {item.icon && (
                         <item.icon
-                          className="w-12 h-12 text-brand-400"
+                          className="w-12 h-12"
                           strokeWidth={1.5}
+                          style={{ color: 'goldenrod' }}
                         />
                       )}
                     </div>
@@ -643,9 +660,9 @@ const Home: React.FC = () => {
       {/* --- TRUSTED DEVELOPERS MARQUEE --- */}
       <SectionWrapper className="py-16 bg-slate-50 dark:bg-luxury-charcoal border-y border-slate-200 dark:border-white/5 overflow-hidden">
         <div className="text-center mb-10">
-          <span className="text-brand-600 dark:text-brand-400 uppercase tracking-widest text-xs font-semibold">
+          <h2 className="text-2xl uppercase tracking-widest font-semibold block mb-4" style={{ color: 'goldenrod' }}>
             Authorized Channel Partner
-          </span>
+          </h2>
         </div>
 
         <div className="relative flex overflow-hidden group">
@@ -674,17 +691,17 @@ const Home: React.FC = () => {
       {/* <GallerySection /> */}
 
       {/* --- NEW CUSTOM CTA SECTION --- */}
-      <SectionWrapper id="contact" className="py-24 relative overflow-hidden">
+      <SectionWrapper id="contact" className="py-60 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/home/create a banner Dubai Burj Khalifa image _with out words_ (2) (1).jpg"
-            className="w-full h-full object-cover"
+            src="/service/burj.jpg"
+            className="w-full h-full"
             alt="Dubai Burj Khalifa"
           />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <h1>Ready to Begin Your Property Journey?</h1>
+          <h1 className="text-4xl font-bold text-white mb-6">Ready to Begin Your Property Journey?</h1>
           <p className="text-white/70 max-w-2xl mx-auto mb-10 text-lg font-light">
             Let Ridhira Realty guide you through the UAE’s most promising
             investment destinations — backed by research, clarity, and trust.

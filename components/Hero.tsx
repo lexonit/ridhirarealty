@@ -104,20 +104,10 @@ const Hero: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-20 text-center px-4 max-w-5xl mx-auto w-full">
-        {/* @ts-ignore: Suppressing strict type check for standard motion props */}
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="text-brand-400 tracking-[0.3em] uppercase text-xs md:text-sm mb-4"
-        >
-          Redefining Luxury Living
-        </motion.p>
-        
         {currentSlide && (
           <div className="min-h-[220px] md:min-h-[260px] flex flex-col items-center justify-center">
             {/* Static Heading */}
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-baskerville text-white mb-6 leading-tight drop-shadow-lg">
+            <h2 className="text-5xl md:text-5xl lg:text-6xl font-baskerville text-white mb-6 leading-tight drop-shadow-lg">
               {currentSlide.heading}
             </h2>
             

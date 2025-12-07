@@ -12,10 +12,10 @@ const Footer: React.FC = () => {
             <Link to="/" className="block">
               <img src="/logo/logo.png" alt="Ridhira Realty" className="h-28 w-auto" />
             </Link>
-            <p className="text-slate-600 dark:text-white/50 text-sm leading-relaxed">
+            {/* <p className="text-slate-600 dark:text-white/50 text-sm leading-relaxed">
               Redefining the skyline of Dubai with architectural masterpieces. 
               We create spaces that inspire, endure, and elevate.
-            </p>
+            </p> */}
             <div className="flex gap-4">
               <a href="https://www.youtube.com/@invest_dubai_ramesh" target="_blank" rel="noopener noreferrer">
                 <Icons.Youtube className="w-5 h-5 text-slate-500 dark:text-white/70 hover:text-red-600 dark:hover:text-red-500 cursor-pointer transition-colors" />
@@ -28,12 +28,15 @@ const Footer: React.FC = () => {
 
           {/* Links */}
           <div>
-            <h4 className=" text-lg mb-6 text-slate-900 dark:text-white">Discovery</h4>
-            <ul className="space-y-4 text-sm text-slate-600 dark:text-white/60">
-              <li><Link to="/about" className="hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer transition-colors">Our Story</Link></li>
-              <li><Link to="/projects" className="hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer transition-colors">Residences</Link></li>
-              <li><Link to="/services" className="hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer transition-colors">Lifestyle</Link></li>
-              <li><Link to="/insights" className="hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer transition-colors">Insights</Link></li>
+            <h4 className=" text-lg mb-6 text-slate-900 dark:text-white">Quick Links</h4>
+            <ul className="space-y-3 text-sm text-slate-600 dark:text-white/60">
+              <li><Link to="/" className="hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer transition-colors">Home</Link></li>
+              <li><Link to="/about" className="hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer transition-colors">About Us</Link></li>
+              <li><Link to="/services" className="hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer transition-colors">Services Offered</Link></li>
+              <li><Link to="/projects" className="hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer transition-colors">Projects</Link></li>
+              <li><Link to="/insights" className="hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer transition-colors">Insights Hub</Link></li>
+              <li><a href="#gallery" className="hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer transition-colors">Gallery</a></li>
+              <li><Link to="/contact" className="hover:text-brand-600 dark:hover:text-brand-400 cursor-pointer transition-colors">Contact us</Link></li>
             </ul>
           </div>
 

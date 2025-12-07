@@ -18,6 +18,13 @@ const HERO_SLIDES: HeroSlide[] = [
     subHeading: "Empowering investors and homebuyers with insights, trust, <br> and opportunities — powered by market intelligence.",
     ctaText: "Explore Projects",
     ctaLink: "/projects"
+  },
+  {
+    id: 2,
+    heading: "Invest Smart. Live Inspired.",
+    subHeading: "Empowering investors and homebuyers with insights, trust,We don’t sell first — we research, educate, advise, and  <br> execute so that every investor makes <br> a confident, informed decision.",
+    ctaText: "Explore Projects",
+    ctaLink: "/projects"
   }
 ];
 
@@ -33,27 +40,27 @@ const DIFFERENTIATORS: FeatureItem[] = [
   {
     title: "Data-Driven Advisory Approach",
     description: "Evidence-backed market insights and trend analysis.",
-    icon: Icons.TrendingUp
+    icon: Icons.DataDriven
   },
   {
     title: "Developer-Direct Access",
     description: "Relationships that unlock exclusive opportunities.",
-    icon: Icons.Briefcase
+    icon: Icons.DeveloperAccess
   },
   {
     title: "End-to-End Legal & Visa Support",
     description: "Full legal guidance for domestic and international investors.",
-    icon: Icons.FileCheck
+    icon: Icons.LegalVisa
   },
   {
     title: "Transparent & Ethical Guidance",
     description: "Clear, honest advice with compliance at the core.",
-    icon: Icons.ShieldCheck
+    icon: Icons.EthicalGuidance
   },
   {
     title: "Global Investor Network",
     description: "(India | GCC | Europe) — Active international connections.",
-    icon: Icons.Globe
+    icon: Icons.GlobalNetwork
   }
 ];
 

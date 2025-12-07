@@ -64,6 +64,20 @@ const SERVICES: FeatureItem[] = [
     features: ["Eligibility assessment", "DLD-verified project curation", "Escrow compliance certification"],
     image: "/service/goldenvisa.jpg", 
     icon: Icons.Star
+  },
+  {
+    title: "Investor Advisory & Portfolio Dashboard",
+    description: "Real-time tracking of your holdings through our upcoming Investor Dashboard.",
+    features: ["ROI calculator", "Comparison tracker", "Market alerts", "AI Assistant"],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop", 
+    icon: Icons.DataDriven
+  },
+  {
+    title: "Property Valuation & Market Insights",
+    description: "Get data-driven valuations and market updates across Dubai and RAK.",
+    features: ["Comparative Market Analysis (CMA)", "Yield benchmarking", "Developer credibility index"],
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop", 
+    icon: Icons.TrendingUp
   }
 ];
 

@@ -40,6 +40,7 @@ export interface BlogPost {
   content: string; // HTML or Markdown string
   author: string;
   readTime: string;
+  link: string; // External blog post URL
 }
 
 // --- Content Types ---

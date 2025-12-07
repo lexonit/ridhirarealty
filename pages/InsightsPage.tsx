@@ -100,12 +100,12 @@ const InsightsPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
               {articles.map((article, idx) => (
                 <SectionWrapper key={article.id} delay={idx * 0.1}>
-                  <Link to={`/insights/${article.id}`} className="group cursor-pointer block h-full">
-                    <div className="overflow-hidden rounded-2xl mb-6 relative h-[300px] shadow-lg dark:shadow-none">
+                  <div className="group cursor-pointer block h-full flex flex-col">
+                    <div className="overflow-hidden rounded-2xl mb-6 relative h-[300px] shadow-lg dark:shadow-none bg-slate-100 dark:bg-slate-800">
                       <img 
                         src={article.image} 
                         alt={article.title} 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute top-4 left-4 bg-brand-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-widest">
                         {article.category}
@@ -117,10 +117,20 @@ const InsightsPage: React.FC = () => {
                     <h3 className="text-2xl  text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors mb-3">
                       {article.title}
                     </h3>
-                    <p className="text-slate-600 dark:text-white/60 text-sm line-clamp-2">
+                    {/* <p className="text-slate-600 dark:text-white/60 text-sm line-clamp-2 mb-4 flex-grow">
                       {article.excerpt}
-                    </p>
-                  </Link>
+                    </p> */}
+                    <a 
+                      href={article.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-semibold text-sm uppercase tracking-wider transition-colors group/btn"
+                      style={{ color: 'goldenrod' }}
+                    >
+                      Read More
+                      <Icons.ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" style={{ color: 'goldenrod' }} />
+                    </a>
+                  </div>
                 </SectionWrapper>
               ))}
           </div>

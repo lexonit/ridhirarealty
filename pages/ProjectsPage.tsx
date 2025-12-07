@@ -90,30 +90,34 @@ const ProjectsPage: React.FC = () => {
       />
       
       {/* Hero Section */}
-      <div ref={heroRef} className="relative h-[60vh] flex items-center justify-center overflow-hidden" style={{
+      <div ref={heroRef} className="relative flex items-center justify-center overflow-hidden" style={{
         backgroundImage: `url('/home/create a banner Dubai Burj Khalifa image _with out words_ (2) (1).jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat',
+        minHeight: '100vh'
       }}>
          <motion.div style={{ y }} className="absolute inset-0 z-0">
-           <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
+           <div className="absolute inset-0 bg-black/40 dark:bg-black/50" />
          </motion.div>
          
          <div className="relative z-10 container mx-auto px-6 text-center">
            <SectionWrapper>
-             <div className="w-px h-16 bg-gradient-to-b from-brand-500 to-transparent mx-auto mb-6"></div>
-             <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">Our Portfolio</span>
-             <h1 className="text-5xl md:text-7xl  text-white mb-6">
-               <FlipWords 
-                 words={["Master Projects", "Iconic Developments", "Luxury Living", "Premium Properties"]} 
-                 duration={3000}
-                 className="text-brand-400"
-               />
-             </h1>
-             <p className="text-white/80 max-w-xl mx-auto text-lg font-light">
-               Explore our collection of iconic developments defining the future of luxury living in Dubai and beyond.
-             </p>
+             <div className="min-h-[220px] md:min-h-[260px] flex flex-col items-center justify-center">
+               {/* Static Heading */}
+               <h1 className="text-5xl md:text-5xl lg:text-6xl font-baskerville text-white mb-6 leading-tight drop-shadow-lg">
+                 <FlipWords 
+                   words={["Master Projects", "Iconic Developments", "Luxury Living", "Premium Properties"]} 
+                   duration={3000}
+                   className="text-brand-400"
+                 />
+               </h1>
+               {/* Subheading */}
+               <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light max-w-3xl mx-auto leading-relaxed">
+                 Explore our collection of iconic developments defining the future of luxury living in Dubai and beyond.
+               </p>
+             </div>
            </SectionWrapper>
          </div>
       </div>

@@ -70,22 +70,25 @@ const ServicesPage: React.FC = () => {
         backgroundAttachment: 'fixed'
       }}>
          <motion.div style={{ y }} className="absolute inset-0 z-0">
-           <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
+           <div className="absolute inset-0 bg-black/60" />
          </motion.div>
          
          <div className="relative z-10 container mx-auto px-6 text-center">
            <SectionWrapper>
-             {/* <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span> */}
-             <h1 className="text-4xl md:text-6xl  text-white mb-6">
-               <FlipWords 
-                 words={["Intelligent Services. Tailored for You."]} 
-                 duration={3000}
-                 className="text-brand-400"
-               />
-             </h1>
-             <p className="text-white/80 max-w-3xl mx-auto leading-relaxed text-lg font-light">
-               {heroData.subtitle}
-             </p>
+             <div className="min-h-[220px] md:min-h-[260px] flex flex-col items-center justify-center">
+               {/* Static Heading */}
+               <h1 className="text-5xl md:text-5xl lg:text-6xl font-baskerville text-white mb-6 leading-tight drop-shadow-lg">
+                 <FlipWords 
+                   words={["Intelligent Services", "Tailored for You"]} 
+                   duration={3000}
+                   className="text-brand-400"
+                 />
+               </h1>
+               {/* Subheading */}
+               <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light max-w-3xl mx-auto leading-relaxed">
+                 {heroData.subtitle}
+               </p>
+             </div>
            </SectionWrapper>
          </div>
       </div>

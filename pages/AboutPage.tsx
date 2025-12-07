@@ -80,7 +80,7 @@ const AboutPage: React.FC = () => {
       {/* Hero Section with Parallax */}
       <div
         ref={heroRef}
-        className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800"
+        className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800 dark:from-slate-950 dark:to-luxury-black"
         style={{
           backgroundImage: `url('/aboutus/aboutus.jpg')`,
           backgroundSize: "cover",
@@ -89,28 +89,29 @@ const AboutPage: React.FC = () => {
         }}
       >
         <motion.div style={{ y }} className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
         </motion.div>
 
         <div className="relative z-10 container mx-auto px-6 text-center">
           <SectionWrapper>
-            {/* <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">
-              About Ridhira Realty
-            </span> */}
-            <h1 className="text-5xl md:text-7xl  text-white mb-6">
-              <FlipWords
-                words={[
-                  "Discover",
-                  "Invest",
-                  "Prosper",
-                ]}
-                duration={3000}
-                className="text-brand-400"
-              />
-            </h1>
-            <p className="text-white/80 max-w-2xl mx-auto text-lg font-light leading-relaxed">
-              Dubai real estate outlook
-            </p>
+            <div className="min-h-[220px] md:min-h-[260px] flex flex-col items-center justify-center">
+              {/* Static Heading */}
+              <h1 className="text-5xl md:text-5xl lg:text-6xl font-baskerville text-white mb-6 leading-tight drop-shadow-lg">
+                <FlipWords
+                  words={[
+                    "Discover",
+                    "Invest",
+                    "Prosper",
+                  ]}
+                  duration={3000}
+                  className="text-brand-400"
+                />
+              </h1>
+              {/* Subheading */}
+              <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light max-w-3xl mx-auto leading-relaxed">
+                Dubai real estate outlook
+              </p>
+            </div>
           </SectionWrapper>
         </div>
       </div>
@@ -219,7 +220,7 @@ const AboutPage: React.FC = () => {
       <div className="py-24 bg-slate-50 dark:bg-luxury-charcoal transition-colors duration-300">
         <div className="container mx-auto px-6">
           <SectionWrapper>
-            <h2 className="text-3xl  text-slate-900 dark:text-white text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white text-center mb-16">
               Our Core Values
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">

@@ -124,11 +124,11 @@ const InsightsPage: React.FC = () => {
                       href={article.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 font-semibold text-sm uppercase tracking-wider transition-colors group/btn"
+                      className="inline-flex items-center gap-2 font-semibold text-sm uppercase tracking-wider transition-colors group/btn focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/70 active:translate-x-0.5"
                       style={{ color: 'goldenrod' }}
                     >
                       Read More
-                      <Icons.ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" style={{ color: 'goldenrod' }} />
+                      <Icons.ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1 group-active/btn:translate-x-1" style={{ color: 'goldenrod' }} />
                     </a>
                   </div>
                 </SectionWrapper>

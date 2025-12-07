@@ -65,6 +65,31 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   const textColorClass = (!scrolled && isHome && !isOpen) 
     ? 'text-white hover:text-brand-300' 
     : 'text-slate-800 dark:text-white hover:text-brand-500 dark:hover:text-brand-300';
+
+  // Animated underline for hover/active states
+  const navUnderline = 'relative after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:bg-brand-500 after:w-full after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100';
+
+  // Simple route matcher for active nav highlighting
+  const isActivePath = (path: string) => {
+    if (path === '/') return location.pathname === '/';
+    return location.pathname === path || location.pathname.startsWith(`${path}/`);
+  };
+
+  const desktopLinkClasses = (path: string) => {
+    const active = isActivePath(path);
+    const base = `text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors ${textColorClass} ${navUnderline}`;
+    return active
+      ? `${base} text-brand-600 dark:text-brand-300 after:scale-x-100`
+      : base;
+  };
+
+  const mobileLinkClasses = (path: string) => {
+    const active = isActivePath(path);
+    const base = `text-xl  text-slate-900 dark:text-white hover:text-brand-500 transition-colors ${navUnderline}`;
+    return active
+      ? `${base} text-brand-600 dark:text-brand-300 after:scale-x-100`
+      : base;
+  };
   
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${navBackground}`}>
@@ -72,10 +97,10 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
         
         {/* Desktop Layout - Left Links */}
         <div className="hidden lg:flex items-center space-x-4 xl:space-x-8 w-1/2">
-          <Link to="/" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors ${textColorClass}`}>Home</Link>
-          <Link to="/about" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors ${textColorClass}`}>About Us</Link>
-          <Link to="/services" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors ${textColorClass}`}>Services Offered</Link>
-          <Link to="/projects" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors ${textColorClass}`}>Projects</Link>
+          <Link to="/" className={desktopLinkClasses('/')}>Home</Link>
+          <Link to="/about" className={desktopLinkClasses('/about')}>About Us</Link>
+          <Link to="/services" className={desktopLinkClasses('/services')}>Services Offered</Link>
+          <Link to="/projects" className={desktopLinkClasses('/projects')}>Projects</Link>
         </div>
 
         {/* Desktop Layout - Centered Logo */}
@@ -91,7 +116,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
         <div className="hidden lg:flex items-center justify-end space-x-4 xl:space-x-8 w-1/2">
           {/* Insights Hub Dropdown */}
           <div className="relative group">
-            <Link to="/insights" className={`flex items-center text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors py-4 ${textColorClass}`}>
+            <Link to="/insights" className={`flex items-center text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors py-4 ${textColorClass} ${navUnderline} ${isActivePath('/insights') ? 'text-brand-600 dark:text-brand-300 after:scale-x-100' : ''}`}>
               Insights Hub
               <Icons.ChevronDown className="w-3 h-3 ml-1 group-hover:rotate-180 transition-transform duration-300" />
             </Link>
@@ -99,14 +124,14 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
             {/* Dropdown Menu */}
             <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white dark:bg-luxury-charcoal/95 backdrop-blur-xl border border-black/5 dark:border-white/10 shadow-2xl rounded-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
               <div className="py-2">
-                <Link to="/insights" className="block px-6 py-3 text-xs text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-white/5 hover:text-brand-500 dark:hover:text-brand-400 transition-colors uppercase tracking-wider">
+                <Link to="/insights" className={`block px-6 py-3 text-xs text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-white/5 hover:text-brand-500 dark:hover:text-brand-400 transition-colors uppercase tracking-wider ${isActivePath('/insights') ? 'text-brand-600 dark:text-brand-300 font-semibold' : ''}`}>
                   Gallery
                 </Link>
               </div>
             </div>
           </div>
 
-          <Link to="/contact" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.15em] transition-colors ${textColorClass}`}>Contact Us</Link>
+          <Link to="/contact" className={desktopLinkClasses('/contact')}>Contact Us</Link>
           
           <div className={`flex items-center gap-3 xl:gap-6 pl-3 xl:pl-4 border-l ${(!scrolled && isHome && !isOpen) ? 'border-white/20' : 'border-black/10 dark:border-white/20'}`}>
             <a href="tel:+971561705995" className="flex items-center text-brand-500 dark:text-brand-400 hover:text-brand-700 dark:hover:text-white transition-colors text-[10px] xl:text-[11px] font-bold tracking-wider whitespace-nowrap">
@@ -153,10 +178,10 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
         className={`fixed inset-0 bg-white/98 dark:bg-luxury-black/98 backdrop-blur-xl z-40 flex flex-col pt-24 items-center transition-all duration-500 overflow-y-auto ${isOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-full invisible pointer-events-none'}`}
       >
         <div className="flex flex-col items-center space-y-6 p-8 text-center w-full min-h-full">
-          <Link to="/" onClick={() => setIsOpen(false)} className="text-xl  text-slate-900 dark:text-white hover:text-brand-500 transition-colors">Home</Link>
-          <Link to="/about" onClick={() => setIsOpen(false)} className="text-xl  text-slate-900 dark:text-white hover:text-brand-500 transition-colors">About Us</Link>
-          <Link to="/services" onClick={() => setIsOpen(false)} className="text-xl  text-slate-900 dark:text-white hover:text-brand-500 transition-colors">Services Offered</Link>
-          <Link to="/projects" onClick={() => setIsOpen(false)} className="text-xl  text-slate-900 dark:text-white hover:text-brand-500 transition-colors">Projects</Link>
+          <Link to="/" onClick={() => setIsOpen(false)} className={mobileLinkClasses('/')}>Home</Link>
+          <Link to="/about" onClick={() => setIsOpen(false)} className={mobileLinkClasses('/about')}>About Us</Link>
+          <Link to="/services" onClick={() => setIsOpen(false)} className={mobileLinkClasses('/services')}>Services Offered</Link>
+          <Link to="/projects" onClick={() => setIsOpen(false)} className={mobileLinkClasses('/projects')}>Projects</Link>
           
           {/* Mobile Insights Dropdown */}
           <div className="w-full flex flex-col items-center">
@@ -168,11 +193,11 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
             </button>
             <div className={`overflow-hidden transition-all duration-300 flex flex-col gap-4 items-center ${mobileInsightsOpen ? 'max-h-40 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
               {/* <Link to="/insights" onClick={() => setIsOpen(false)} className="text-sm text-slate-600 dark:text-white/60 hover:text-brand-500 dark:hover:text-brand-400 uppercase tracking-widest">Market Trends</Link> */}
-              <Link to="/insights" onClick={() => setIsOpen(false)} className="text-sm text-slate-600 dark:text-white/60 hover:text-brand-500 dark:hover:text-brand-400 uppercase tracking-widest">Gallery</Link>
+              <Link to="/insights" onClick={() => setIsOpen(false)} className={`text-sm text-slate-600 dark:text-white/60 hover:text-brand-500 dark:hover:text-brand-400 uppercase tracking-widest ${isActivePath('/insights') ? 'text-brand-600 dark:text-brand-300 font-semibold' : ''}`}>Gallery</Link>
             </div>
           </div>
 
-          <Link to="/contact" onClick={() => setIsOpen(false)} className="text-xl  text-slate-900 dark:text-white hover:text-brand-500 transition-colors">Contact Us</Link>
+          <Link to="/contact" onClick={() => setIsOpen(false)} className={mobileLinkClasses('/contact')}>Contact Us</Link>
           
           <div className="flex gap-8 mt-auto mb-8 border-t border-slate-200 dark:border-white/10 pt-8 w-full justify-center">
             <a href="tel:+971561705995" className="flex items-center text-brand-500 dark:text-brand-400 hover:text-brand-700 dark:hover:text-white transition-colors text-lg ">

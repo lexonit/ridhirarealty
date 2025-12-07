@@ -99,7 +99,7 @@ const ContactPage: React.FC = () => {
          
          <div className="relative z-10 container mx-auto px-6 text-center">
            <SectionWrapper>
-             <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span>
+             {/* <span className="text-brand-400 uppercase tracking-widest text-sm block mb-4 font-semibold">{heroData.subTitleLabel}</span> */}
              <h1 className="text-5xl md:text-7xl  text-white mb-6">
                <FlipWords 
                  words={["Get In Touch", "Let's Connect", "Reach Out", "Contact Us"]} 
@@ -119,9 +119,12 @@ const ContactPage: React.FC = () => {
          <SectionWrapper>
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {contactInfo.map((info, idx) => (
-                <div key={idx} className="bg-slate-50 dark:bg-luxury-charcoal p-8 rounded-xl border border-slate-200 dark:border-white/5 text-center group hover:border-brand-500/50 transition-all shadow-md dark:shadow-none">
+                <div
+                  key={idx}
+                  className="bg-gradient-to-br from-white via-brand-50/60 to-white dark:from-luxury-charcoal dark:via-luxury-black/60 dark:to-luxury-charcoal p-8 rounded-xl border border-slate-200/70 dark:border-white/10 text-center group hover:border-brand-500/60 transition-all shadow-md dark:shadow-none"
+                >
                    <div className="w-12 h-12 bg-brand-100 dark:bg-brand-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                     {info.icon && <info.icon className="w-5 h-5 text-brand-600 dark:text-brand-500" />}
+                     {info.icon && <info.icon className="w-5 h-5 text-[#d4af37]" />}
                    </div>
                    <h3 className="text-xl  text-slate-900 dark:text-white mb-2">{info.title}</h3>
                    <p className="text-slate-600 dark:text-white/60" dangerouslySetInnerHTML={{ __html: info.description || '' }}></p>
